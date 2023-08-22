@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: IRANSans;
+  src: url("./../assets/fonts/IRANSans/IRANSans.ttf");
+}
+:root {
+  --primary-font: "IRANSans";
+  --primary-color: #525fe1;
+  --green-color: #5bc7be;
+  --orange-color: #ffa41b;
+  --mode-color: #fefefe;
+  --black-color: #3a3a40;
+  --second-orange: #eb6700;
+  --gray-color: #868686;
+  --text-color: #3a3a40;
+  --box-color: #ffffff;
+  --mode-shadow:0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  --text-shadow: 0 1px 1px #6e6e6eda;
+  --register-bg: #f1f5f9;
+  --gray-secondary: #f1f1f1;
+  --gray-bg: #f9f9f9;
+  --linear-1: linear-gradient(
+      -100deg,
+      rgba(255, 241, 230, 1),
+      #fef1e9,
+      rgba(243, 233, 241, 1) 85.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-2: linear-gradient(
+      140deg,
+      rgba(255, 241, 230, 1),
+      #fef1e9,
+      rgba(243, 233, 241, 1) 85.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --shadow: 0 0px 7px -2px #3a3a3a;
+  --shadowTop : 0 -1.5px 5px -2px #6e6e6eda;
+  --shadow2: 0 1.5px 5px -2px #6e6e6eda;
+  --register-text-color: #939393;
+  --linear-3: linear-gradient(180deg, #525fe1, #293071 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-4: linear-gradient(100deg, #525fe1, #293071 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-5: linear-gradient(100deg, #fefefe, #fefefe 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+body {
+  background-color: var(--mode-color);
+  padding: 0 !important;
+  overflow: hidden;
+}
+* {
+  font-family: var(--primary-font) !important;
+}
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+  overflow-x: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+:root:has(#blue:checked) {
+  --primary-color: #525fe1;
+}
+:root:has(#orange:checked) {
+  --primary-color: #ffa41b;
+  --linear-3: linear-gradient(180deg, #ffa41b, #be7b16 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-4: linear-gradient(100deg, #ffa41b, #be7b16 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --register-text-color: #d8d8d8;
+}
+:root:has(#green:checked) {
+  --primary-color: #5bc7be;
+
+  --linear-3: linear-gradient(180deg, #5bc7be, #438f89 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-4: linear-gradient(180deg, #5bc7be, #438f89 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --register-text-color: #d3d3d3;
+}
+:root:has(#green:checked) {
+  --primary-color: #5bc7be;
+}
+:root:has(#dark:checked) {
+  --register-bg: #090930;
+  --mode-color: #090930;
+  --box-color: linear-gradient(180deg, #363f9e, #1a204e 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-1: linear-gradient(-100deg, rgb(35, 31, 64, 1), #1f223f 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-2: linear-gradient(100deg, rgb(35, 31, 64, 1), #1f223f 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --linear-5: linear-gradient(100deg, rgb(35, 31, 64, 1), #1f223f 85.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 90.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  --black-color: #fff;
+  --text-color: #fff;
+  --shadow: 0 0;
+  --shadow2: 0 0px 15px -2px #3a3a3a;
+  --shadowTop: 0 0px 15px -2px #3a3a3a;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* .image-card {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 1rem;
+  width: 240px;
+  height: 320px;
+  padding: 8px;
+  border-radius: 1rem;
+  background: url("https://picsum.photos/id/1049/240/320");
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+} */
