@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Tilt from "react-tilting";
+import {Tilt} from "react-tilt";
 
 const CourseBoxAnim = ({ children, delay }) => {
   const defaultOptions = {
