@@ -8,7 +8,6 @@ import { useSearchParams } from "next/navigation";
 import { useCoursesGridShow } from "@/context/coursesGridShow";
 
 import CourseBox from "@/components/common/courseBox/CourseBox";
-import CourseBox2 from "@/components/common/courseBox2/CourseBox2";
 import Skeleton from "@/components/common/Skeleton/Skeleton";
 import Skeleton2 from "@/components/common/Skeleton/Skeleton2";
 import { filteringTheCourses } from "@/core/utils/filteringBox";
@@ -56,11 +55,11 @@ const FIrstCourseBox = ({ posts }) => {
             ? "grid gap-y-10 gap-x-6  xl:gap-x-8 grid-cols-1 ss:grid-cols-2 md:grid-cols-3 hlg:grid-cols-4 xl:grid-cols-4"
             : "grid md:grid-cols-2 gap-y-10 gap-x-6  xl:gap-x-8"
         } `}>
-        {gridShow
-          ? filteredData.map((item, index) => (
+        {
+           filteredData.map((item, index) => (
               <CourseBox key={item._id} delay={index} {...item} />
             ))
-          : filteredData.map((item) => <CourseBox2 key={item._id} {...item} />)}
+         }
       </motion.div>
     </div>
   );
