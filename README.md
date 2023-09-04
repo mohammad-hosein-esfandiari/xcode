@@ -1,2 +1,2 @@
 # xcode
-*** My sepehr academy project ***
+*** training full shopping website with the real API and backend ***
