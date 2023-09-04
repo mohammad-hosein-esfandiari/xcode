@@ -8,6 +8,7 @@ import PopularSubjects from "./PopularSubjects";
 import LastPosts from "./LastPosts";
 
 const RightSection = ({news,lastCourses}) => {
+
   return (
     <div className="sm:pl-5">
       {/* <Title title="بگرد و پیدا کن" />

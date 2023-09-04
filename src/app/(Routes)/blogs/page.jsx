@@ -20,7 +20,7 @@ const BlogsPage = async () => {
   return (
     <main>
       <AnimTrue/>
-        <Blogs lastCourses={posts.result.reverse().slice(0,3)} news={news.result.reverse()}/>
+        <Blogs lastCourses={posts.result.reverse().slice(0,3)} news={news.result}/>
     </main>
   );
 };
