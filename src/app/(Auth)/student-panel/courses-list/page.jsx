@@ -1,6 +1,6 @@
 import CourseList from "@/components/pages/StudentPanel/courseList/CourseList";
 
-const URL = process.env.NEXT_PUBLIC_BASE_URL
+const URL = process.env.BASE_URL
 async function getPosts() {
   const res = await fetch(URL+"/course/getall",{cache:'no-store'});
   const posts = await res.json();

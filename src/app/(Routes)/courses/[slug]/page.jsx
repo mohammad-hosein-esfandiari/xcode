@@ -2,7 +2,7 @@ import AnimTrue from "@/components/common/AnimTrue";
 import ToastBox from "@/components/common/Toast/ToastBox";
 import CourseDetails from "@/components/pages/CourseDetails/CourseDetails";
 import { notFound } from "next/navigation";
-const URL = process.env.NEXT_PUBLIC_BASE_URL
+const URL = process.env.BASE_URL
 async function getCourseById(slug) {
   const res = await fetch(URL+"/course/"+slug,{cache:'no-store'});
   if (!res.ok) return undefined;

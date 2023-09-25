@@ -1,7 +1,7 @@
 
 import AnimTrue from "@/components/common/AnimTrue";
 import BlogsDetail from "@/components/pages/BlogsDetail/BlogsDetail";
-const URL = process.env.NEXT_PUBLIC_BASE_URL
+const URL = process.env.BASE_URL
 
 async function getNewsById(id) {
     const res = await fetch(URL+"/news/"+id,{cache:'no-store'});

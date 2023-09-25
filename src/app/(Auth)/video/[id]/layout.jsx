@@ -2,7 +2,7 @@ import VideoRightTabs from "@/components/pages/Video/VideoRightTasb";
 import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
 import Link from "next/link";
 import { AiOutlineHome } from "react-icons/ai";
-const URL = process.env.NEXT_PUBLIC_BASE_URL
+const URL = process.env.BASE_URL
 async function getLessons(id) {
   const res = await fetch(URL+"/lesson/"+id,{cache:'no-store'});
   const lessons = await res.json();

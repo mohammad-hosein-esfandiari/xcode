@@ -2,7 +2,7 @@ import AnimTrue from "@/components/common/AnimTrue";
 import InfoEmployee from "@/components/pages/Video/InfoEmployee";
 import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
 
-const URL = process.env.NEXT_PUBLIC_BASE_URL;
+const URL = process.env.BASE_URL;
 async function getLessons(id) {
   const res = await fetch(URL + "/lesson/" + id, { cache: "no-store" });
   const lessons = await res.json();

@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = process.env.NEXT_PUBLIC_BASE_URL;
+const URL = process.env.BASE_URL;
 import { toast } from "react-toastify";
 import { getCookie } from "../utils/cookies.storage";
 const api = axios.create({
