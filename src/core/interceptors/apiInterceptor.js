@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = process.env.BASE_URL;
+const URL = "https://api.xcode.sepehracademy.ir/api";
 import { toast } from "react-toastify";
 import { getCookie } from "../utils/cookies.storage";
 const api = axios.create({

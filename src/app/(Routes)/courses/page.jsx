@@ -6,7 +6,7 @@ import Courses from "@/components/pages/Courses/Courses";
 import FilteringRow from "@/components/pages/Courses/MainSection/FilteringRow";
 import MainSection from "@/components/pages/Courses/MainSection/MainSection";
 import { notFound } from "next/navigation";
-const URL = process.env.BASE_URL
+const URL = "https://api.xcode.sepehracademy.ir/api"
 
 async function getPosts() {
   const res = await fetch(URL+"/course/getall", {

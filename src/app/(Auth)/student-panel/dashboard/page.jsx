@@ -1,5 +1,5 @@
 import Dashboard from "@/components/pages/StudentPanel/dashboard/Dashboard";
-const URL = process.env.BASE_URL
+const URL = "https://api.xcode.sepehracademy.ir/api"
 async function getPosts() {
   const res = await fetch(URL+"/course/getall",{cache:'no-store'});
   const posts = await res.json();
