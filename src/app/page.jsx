@@ -12,11 +12,7 @@ import Transition from "@/components/common/Transition";
 import AnimTrue from "@/components/common/AnimTrue";
 import PopState from "@/components/common/PopState";
 const URL = "https://api.xcode.sepehracademy.ir/api"
-// async function getPosts() {
-//   const res = await fetch(URL+"/course/getall",{cache:'no-store'});
-//   const posts = await res.json();
-//   return posts;
-// }
+
 // async function getNews() {
 //   const res = await fetch(URL+"/news",{cache:'no-store'});
 //   const posts = await res.json();
