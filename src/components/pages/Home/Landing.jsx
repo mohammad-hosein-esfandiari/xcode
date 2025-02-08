@@ -11,12 +11,12 @@ const Landing = ({posts,news,teachers}) => {
     return (
       <>
         <HeroSection/>
-        <Counters news={news} posts={posts}/>
+        {/* <Counters news={news} posts={posts}/>
         <Services/>
         <CourseBoxHolder posts={posts}/>
         <Teachers teachers={teachers}/>
         <News news={news}/>
-        <NewsRegister/>
+        <NewsRegister/> */}
       </>
     );
 }

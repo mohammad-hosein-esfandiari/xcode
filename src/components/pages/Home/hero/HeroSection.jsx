@@ -20,7 +20,7 @@ const HeroSection = () => {
             initial={{ x: 1000, opacity: 0 }}
             transition={{ duration: 1 }}
             className="text-primary font-bold sm:whitespace-nowrap xl:text-[25px] hlg:text-[22px]  lg:text-[15px] xs:text-[13px] ss:pt-[40px] pt-[50px] sss:text-[15px] text-[10px]">
-            ما سعی داریم شما را با برترین اساتید و منابع آشنا کنیم
+We are trying to introduce you to the best professors and resources
           </motion.h3>
           <motion.div
             animate={{ y: 0, opacity: 1 }}

@@ -61,7 +61,7 @@ body {
 }
 html {
   scroll-behavior: smooth;
-  direction: rtl;
+  direction: ltr;
   overflow-x: hidden;
   list-style: none;
   padding: 0;
