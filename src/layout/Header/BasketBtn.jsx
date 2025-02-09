@@ -19,7 +19,7 @@ const BasketBtn = ({ type, icon }) => {
         className={` ${
           type
             ? type
-            : "h-[34px] relative z-[8] cursor-pointer group sm:mr-0 hover:bg-primary  w-[36px] rounded-[4px] sm:ml-[8px] flex items-center justify-center p-[6px] sm:shadow-btnShadow  sm:bg-white"
+            : "h-[34px] relative z-[8] cursor-pointer group sm:ml-0 hover:bg-primary  w-[36px] rounded-[4px] sm:mr-[8px] flex items-center justify-center p-[6px] sm:shadow-btnShadow  sm:bg-white"
         } `}>
         {icon ? (
           <HiShoppingCart className={icon} />
@@ -42,7 +42,7 @@ const BasketBtn = ({ type, icon }) => {
             initial={{ opacity: 0, display: "block" }}
             animate={{ opacity: 1, display: "block" }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className=" z-[100]   bg-[#0d0d0d8b] fixed w-screen h-screen right-0 top-0">
+            className=" z-[100]   bg-[#0d0d0d8b] fixed w-screen h-screen left-0 top-0">
             <BasketBox setToggle={setIsShowBasket} toggle={isShowBasket} />
           </motion.div>
         )}

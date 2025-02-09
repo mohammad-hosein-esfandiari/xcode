@@ -8,14 +8,14 @@ export const toggleMenus = {
     },
     closed: {
       opacity: 0,
-      x: "100%",
+      x: "-100%",
       transition: {
         duration:0.8,
       },
     },
     exit: {
       opacity: 0,
-      x: "100%",
+      x: "-100%",
       transition: {
         duration:1.5,
       },

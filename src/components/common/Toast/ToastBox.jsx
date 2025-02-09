@@ -12,7 +12,7 @@ const ToastBox = () => {
   useEffect(() => {
     if (randomCode) {
       setTimeout(() => {
-        toast(`کد یک بار مصرف : ${randomCode}`, {
+        toast(`Verification Vode Is: ${randomCode}`, {
           autoClose: 120000,
         });
       }, 3000);
@@ -25,7 +25,7 @@ const ToastBox = () => {
   return (
     <>
       <ToastContainer
-        position="top-right"
+        position="top-left"
         autoClose={5000}
         hideProgressBar={false}
         closeOnClick={true}

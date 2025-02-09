@@ -4,7 +4,7 @@ const PictureBox = (props) => {
   return (
     <motion.div
       animate={{ x: 0, opacity: 1 }}
-      initial={{ x: -100, opacity: 0 }}
+      initial={{ x: 100, opacity: 0 }}
       transition={{
         duration: 1,
         delay: props.boxDelay,
@@ -25,11 +25,12 @@ const PictureBox = (props) => {
             stiffness: 20,
             damping: 15,
           }}
-          className="w-fit">
+          className="w-fit"
+          style={{scaleX:-1}}>
           <Image
             src={props.image}
             style={{ scale: props.scale }}
-            className="block mr-[-1px] hlg:pt-[1.2px] lg:pt-[5.2px] md:pt-[8px]"
+            className="block ml-[-1px] hlg:pt-[1.2px] lg:pt-[5.2px] md:pt-[8px]"
             alt=""
           />
         </motion.div>

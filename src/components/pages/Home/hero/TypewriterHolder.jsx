@@ -5,13 +5,13 @@ const TypewriterHolder = () => {
   return (
     <h1
       className="text-color-black 
-      lg:text-[40px] 
-      xl:text-[60px] 
-      hlg:text-[50px] 
-      md:text-[35px] 
-      sm:text-[23px]
-      xs:text-[40px]
-      sss:text-[25px] 
+      lg:text-[30px] 
+      xl:text-[50px] 
+      hlg:text-[40px] 
+      md:text-[25px] 
+      sm:text-[18px]
+      xs:text-[30px]
+      sss:text-[20px] 
       text-[15px]
 
       md:block
@@ -21,12 +21,12 @@ const TypewriterHolder = () => {
 
       
       first-letter
-      font-extrabold mt-6  sm:pl-[100px]">
+      font-extrabold mt-6 ">
       <Typewriter
         onInit={(typeWriter) => {
           typeWriter
           .pauseFor(1800)
-            .typeString("داستان یادگیری برنامه نویسی شما از اینجا شروع میشه")
+            .typeString("Your programming learning story starts here")
             .start()
             
             

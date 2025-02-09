@@ -2,7 +2,7 @@ import { ImLinkedin2 } from "react-icons/im";
 import { TbBrandTelegram } from "react-icons/tb";
 import { FaPinterestP } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
-import { RxDoubleArrowLeft } from "react-icons/rx";
+import { RxDoubleArrowRight } from "react-icons/rx";
 import { TiLocation } from "react-icons/ti";
 import { AiFillPhone } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
@@ -28,75 +28,75 @@ export const icons = [
 export const footerCenterItems = [
   {
     id:1,
-    title: "اکسپلور",
+    title: "Explore",
     size:"50%",
     child: [
       {
         id: 1,
         href: "/",
-        text: "درباره ما",
-        icon: <RxDoubleArrowLeft />,
+        text: "About Us",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 2,
         href: "/",
-        text: "رویداد های آینده",
-        icon: <RxDoubleArrowLeft />,
+        text: "Upcoming Events",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 3,
         href: "/news",
-        text: "اخبار و مقالات",
-        icon: <RxDoubleArrowLeft />,
+        text: "Blog & News",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 4,
         href: "/",
-        text: "سوالات متداول",
-        icon: <RxDoubleArrowLeft />,
+        text: "FAQ Question",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 5,
         href: "/",
-        text: "گواهینامه",
-        icon: <RxDoubleArrowLeft />,
+        text: "Testimonial",
+        icon: <RxDoubleArrowRight />,
       },
     ],
   },
   {
     id:2,
-    title: "لینک های مفید",
+    title: "Useful Links",
     size:"50%",
     child: [
       {
         id: 1,
         href: "/",
-        text: "با ما تماس بگیرید",
-        icon: <RxDoubleArrowLeft />,
+        text: "Contact Us",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 2,
         href: "/",
-        text: "طرح قیمت گذاری",
-        icon: <RxDoubleArrowLeft />,
+        text: "Pricing Plan",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 3,
         href: "/news",
-        text: "مشخصات مربی",
-        icon: <RxDoubleArrowLeft />,
+        text: "Instructor Profile",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 4,
         href: "/",
-        text: "دوره های محبوب",
-        icon: <RxDoubleArrowLeft />,
+        text: "Popular Courses",
+        icon: <RxDoubleArrowRight />,
       },
       {
         id: 5,
         href: "/",
-        text: "شرایط و ضوابط",
-        icon: <RxDoubleArrowLeft />,
+        text: "Terms & Conditions",
+        icon: <RxDoubleArrowRight />,
       },
     ],
   },
@@ -105,23 +105,23 @@ export const footerCenterItems = [
 export const footerLeftItem = [
     {
         id:1,
-        title:"اطلاعات تماس",
+        title:"Contact Info",
         size:"100%",
         child:[
             {
                 id:1,
                 icon:<TiLocation/>,
-                text:"خیابان کوادرادا کوه 28"
+                text:"Quardado ave mountain 28"
             },
             {
                 id:2,
                 icon:<AiFillPhone/>,
-                text:"۰۹۳۸۰۱۶۳۴۶۵"
+                text:"09380163465"
             },
             {
                 id:3,
                 icon:<AiFillPhone/>,
-                text:"۰۹۳۳۳۲۴۲۶۱۹"
+                text:"09333242619"
             },
             {
                 id:4,

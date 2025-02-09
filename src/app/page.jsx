@@ -11,7 +11,7 @@ import ScrollBug from "@/components/common/ScrollBug";
 import Transition from "@/components/common/Transition";
 import AnimTrue from "@/components/common/AnimTrue";
 import PopState from "@/components/common/PopState";
-const URL = "https://api.xcode.sepehracademy.ir/api"
+// const URL = "https://api.xcode.sepehracademy.ir/api"
 
 // async function getNews() {
 //   const res = await fetch(URL+"/news",{cache:'no-store'});

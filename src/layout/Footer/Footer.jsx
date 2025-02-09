@@ -16,7 +16,7 @@ const Footer = () => {
         </li>
         <li className="">
           <ul className="grid lg:grid-cols-3 sm:grid-cols-2 gap-10">
-            <li className="pb-4 pl-4">
+            <li className="pb-4 pr-4">
               <LinkCp href="/" className="">
                 <svg
                   className="w-[150px]  pb-6"
@@ -51,22 +51,20 @@ const Footer = () => {
               </LinkCp>
               <ul>
                 <p className="text-white text-[13px] leading-6 mb-16">
-                  این یک واقعیت ثابت شده است که خواننده هنگام تماشای طرح بندی
-                  آن، با محتوای قابل خواندن یک صفحه، حواسش پرت می شود. نکته
-                  استفاده از لورم اپیسوم
+                It is a proven fact that the reader is distracted by the readable content of a page when looking at its layout. Tips for using Lorem Episum
                 </p>
                 {icons.map((item) => (
                   <Link
                     key={item.id}
                     href="/"
-                    className="text-white hover:bg-primary transition-all duration-500 ml-2 rounded-md bg-color-gray p-2 text-[30px] w-fit inline-block ">
+                    className="text-white hover:bg-primary transition-all duration-500 mr-2 rounded-md bg-color-gray p-2 text-[30px] w-fit inline-block ">
                     {item.icon}
                   </Link>
                 ))}
               </ul>
             </li>
             <li className="pb-4">
-              <ul className="xs:flex xs:[&>*:nth-child(2)]:mt-0 [&>*:nth-child(2)]:mt-10 sm:justify-evenly sm:[&>*:nth-child(2)]:mr-0 xs:[&>*:nth-child(2)]:mr-10">
+              <ul className="xs:flex xs:[&>*:nth-child(2)]:mt-0 [&>*:nth-child(2)]:mt-10 sm:justify-evenly sm:[&>*:nth-child(2)]:ml-0 xs:[&>*:nth-child(2)]:ml-10">
                 {footerCenterItems.map((item) => (
                   <FooterItem key={item.id} {...item} />
                 ))}

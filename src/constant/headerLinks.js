@@ -1,18 +1,18 @@
 export const header = [
     {
         id:"header-1",
-        title:"خانه",
+        title:"Home",
         href:"/",
     },
     {
         id:"header-2",
-        title:"دوره ها",
+        title:"Courses",
         href:"/courses?limit=12&page=1&filter=newest",
 
     },
     {
         id:"header-3",
-        title:"اخبار و مقالات",
+        title:"News & Articles",
         href:"/blogs?limit=6&page=1&category=all",
     },
  

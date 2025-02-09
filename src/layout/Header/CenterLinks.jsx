@@ -7,7 +7,7 @@ import LinkCp from "@/components/common/LinkCp";
 export const CenterLinks = () => {
 const {pathname} = useUrlArray()
   return (
-    <motion.div  className="md:flex flex-1 sm:hidden hidden items-center justify-center pl-[30px]">
+    <motion.div  className="md:flex flex-1 sm:hidden hidden items-center justify-center pr-[30px]">
       {header.map((item) => (
         <LinkCp
        
@@ -24,12 +24,12 @@ const {pathname} = useUrlArray()
               transition={{ ease: 0, duration: 0.3, delay: 0, ease: "linear" }}
               className=" absolute transition-all duration-500 bg-primary w-full bottom-0 right-0 h-[1.5px] block"></motion.span>
           )}
-          { item.title === 'خانه'&& pathname[1] === '' && (
+          { item.title === 'Home'&& pathname[1] === '' && (
              <motion.span
              initial={{ width: 0 }}
              animate={{ width: "100%" }}
              transition={{ ease: 0, duration: 0.3, delay: 0, ease: "linear" }}
-             className=" absolute transition-all duration-500 bg-primary w-full bottom-0 right-0 h-[1.5px] block"></motion.span>
+             className=" absolute transition-all duration-500 bg-primary w-full bottom-0 left-0 h-[1.5px] block"></motion.span>
           )}
         </LinkCp>
       ))}

@@ -10,7 +10,7 @@ import Image from "next/image";
 const HeroSmallerIcon = () => {
     return (
         <>
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.5}} className="absolute animate-spinning top-[130px] left-[650px] md:block hidden">
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.5}} className="absolute animate-spinning top-[130px] right-[650px] md:block hidden">
             <svg
               className="opacity-10"
               xmlns="http://www.w3.org/2000/svg"
@@ -24,21 +24,21 @@ const HeroSmallerIcon = () => {
               <path d="M297.428 271.875a7.966 7.966 0 00-7.967 7.967c0 7.027-5.717 12.745-12.745 12.745-7.026 0-12.744-5.717-12.744-12.745 0-4.4-3.566-7.967-7.967-7.967a7.966 7.966 0 00-7.967 7.967c0 7.027-5.717 12.745-12.744 12.745s-12.745-5.717-12.745-12.745c0-4.4-3.566-7.967-7.967-7.967s-7.967 3.567-7.967 7.967c0 15.814 12.865 28.68 28.68 28.68 8.133 0 15.487-3.404 20.711-8.861 5.225 5.458 12.578 8.861 20.711 8.861 15.815 0 28.68-12.866 28.68-28.68a7.97 7.97 0 00-7.969-7.967zM351.668 232.131a7.966 7.966 0 00-7.967 7.967v8.797c0 4.4 3.566 7.967 7.967 7.967s7.967-3.567 7.967-7.967v-8.797a7.966 7.966 0 00-7.967-7.967zM160.339 232.131a7.966 7.966 0 00-7.967 7.967v8.797c0 4.4 3.566 7.967 7.967 7.967s7.967-3.567 7.967-7.967v-8.797a7.966 7.966 0 00-7.967-7.967z"></path>
             </svg>
         </motion.div>
-        <motion.div animate={{opacity:1,x:0}} initial={{opacity:0,x:-100}} transition={{delay:0.5 , duration:0.8}} className="absolute w-[20px] h-[20px] left-[40px] top-[190px] md:block hidden">
+        <motion.div animate={{opacity:1,x:0}} initial={{opacity:0,x:-100}} transition={{delay:0.5 , duration:0.8}} className="absolute w-[20px] h-[20px] right-[40px] top-[190px] md:block hidden">
             <Image src={image2} width='auto' height='auto' priority={true} alt="pic" />
         </motion.div>
 
-        <motion.div animate={{opacity:1,x:0}} initial={{opacity:0,x:-100}} transition={{delay:0.5 , duration:0.8}} className="absolute z-0 w-[180px] h-[180px] scale-x-[-1] left-[40px] bottom-[-50px] md:block hidden">
+        <motion.div animate={{opacity:1,x:0}} initial={{opacity:0,x:-100}} transition={{delay:0.5 , duration:0.8}} className="absolute z-0 w-[180px] h-[180px] scale-x-[-1] right-[40px] bottom-[-50px] md:block hidden">
             <Image src={image24}  width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>
-        <motion.div animate={{opacity:1}} initial={{opacity:0}} transition={{delay:0.5 , duration:0.8}} className="absolute w-[40px] h-[40px] opacity-70 left-[52%] bottom-[100px] md:block hidden">
+        <motion.div animate={{opacity:1}} initial={{opacity:0}} transition={{delay:0.5 , duration:0.8}} className="absolute w-[40px] h-[40px] opacity-70 right-[52%] bottom-[100px] md:block hidden">
             <Image src={image3} width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>
 
-        <motion.div initial={{x:0,y:0}} animate={{x:[0,-50,-50,-50,0],y:[0,0,100,0,0]}} transition={{repeat:'Infinity',ease:"linear" , repeatType:"loop",duration:23}} className="absolute w-[130px] h-[130px] opacity-70 left-[80px] bottom-[-200px] md:block hidden">
+        <motion.div initial={{x:0,y:0}} animate={{x:[0,-50,-50,-50,0],y:[0,0,100,0,0]}} transition={{repeat:'Infinity',ease:"linear" , repeatType:"loop",duration:23}} className="absolute w-[130px] h-[130px] opacity-70 right-[80px] bottom-[-200px] md:block hidden">
             <Image src={image6} width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>
-        <motion.div whileInView={{opacity:1}} initial={{opacity:0}} transition={{delay:0.5,duration:0.8}} viewport={{once:true}} className="absolute w-[130px] h-[130px] opacity-70 left-[42%] bottom-[-180px] md:block hidden">
+        <motion.div whileInView={{opacity:1}} initial={{opacity:0}} transition={{delay:0.5,duration:0.8}} viewport={{once:true}} className="absolute w-[130px] h-[130px] opacity-70 right-[42%] bottom-[-180px] md:block hidden">
             <Image src={image9} width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>
 
