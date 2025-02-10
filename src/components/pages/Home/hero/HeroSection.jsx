@@ -32,7 +32,7 @@ const HeroSection = () => {
               stiffness: 15,
             }}>
             <h1 className="text-color-black  lg:text-[40px]  xl:text-[60px]  hlg:text-[50px]  md:text-[35px]  sm:text-[23px] xs:text-[40px] sss:text-[25px]  text-[15px] md:hidden first-letter font-extrabold mt-6  sm:pr-[100px]">
-              Your programming learning story starts here
+            Education Is About Academic Excellence
             </h1>
             <TypewriterHolder />
             <motion.p

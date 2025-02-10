@@ -12,7 +12,7 @@ const Landing = ({posts,news,teachers}) => {
       <>
         <HeroSection/>
         <Counters/>
-        {/* <Services/> */}
+        <Services/>
         {/* <CourseBoxHolder posts={posts}/> */}
         {/* <Teachers teachers={teachers}/> */}
         {/* <News news={news}/> */}

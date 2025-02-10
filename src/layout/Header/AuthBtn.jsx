@@ -40,7 +40,7 @@ const AuthBtn = () => {
           <li className="sm:block hidden">
             <PrimaryBtn
               href="/auth/login"
-              text="Register/Login"
+              text="Register / Login"
               icon={<AiOutlineUserAdd />}
             />
           </li>

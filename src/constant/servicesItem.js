@@ -6,25 +6,25 @@ import { BiChalkboard } from "react-icons/bi";
 export const servicesItem = [
     {
         id:1,
-        title:"مدرک معتبر",
+        title:"Valid Certificate",
         icon:<TbLicense/>,
         
     },
     {
         id:2,
-        title:"مشاوره رایگان",
+        title:"Free Consultation",
         icon:<BiSupport/>,
         
     },
     {
         id:3,
-        title:"پشتیبانی 24 ساعته",
+        title:"24 Hour Support",
         icon:<FiPhoneCall/>,
         
     },
     {
         id:4,
-        title:"برگذاری کارگاه های رایگان",
+        title:"Holding Free Workshops",
         icon:<BiChalkboard className="text-textColor " />,
         
     },
