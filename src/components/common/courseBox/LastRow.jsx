@@ -2,30 +2,26 @@ import Image from "next/image";
 import { SlUser } from "react-icons/sl";
 import free from "@/assets/images/free.png";
 const LastRow = ({ price , studentCount}) => {
-  const money = price?.toLocaleString("fa-IR");
-  const student = studentCount?.toLocaleString("fa-IR");
   return (
     <ul className="border-t-[1px] relative border-gray-500 h-[60px] pt-2">
       <li className=" text-gray-400 flex text-[12px] justify-between items-center">
         <div className="flex items-center">
           <SlUser />
-          <span className="pt-[2px] mr-2">{student}</span>
-          <span className="pt-[2px] mr-1">دانش آموز</span>
+          <span className="pt-[2px] ml-2">132</span>
+          <span className="pt-[2px] ml-1">Students</span>
         </div>
         <div>
           {price !== 0 ? (
             <>
-              {" "}
-              <span className="text-[22px] ml-4 font-bold text-[#e05858]">
-                {money}
+              <span className="text-[22px] relative text-gray-400">
+              $
               </span>
-              <span className="text-[12px] relative text-gray-400">
-                توما
-                <span className="absolute left-0 top-[-12px]">ن</span>
+              <span className="text-[22px] ml-2 font-bold text-[#e05858]">
+                {price}
               </span>
             </>
           ) : (
-            <div className="w-[80px] absolute top-[-20px] left-1">
+            <div className="w-[80px] absolute top-[-20px] right-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
@@ -127,7 +123,7 @@ const LastRow = ({ price , studentCount}) => {
           )}
         </div>
       </li>
-      <li className="flex absolute left-0 top-[34px] flex-row-reverse ">
+      <li className="flex absolute right-0 top-[34px] flex-row-reverse ">
         {/* <span className="text-gray-400 ml-12 line-through">۳۰۰,۰۰۰</span> */}
       </li>
     </ul>

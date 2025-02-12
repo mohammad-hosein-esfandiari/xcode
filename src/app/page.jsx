@@ -11,7 +11,24 @@ import ScrollBug from "@/components/common/ScrollBug";
 import Transition from "@/components/common/Transition";
 import AnimTrue from "@/components/common/AnimTrue";
 import PopState from "@/components/common/PopState";
-// const URL = "https://api.xcode.sepehracademy.ir/api"
+import { toast } from "react-toastify";
+
+async function getAllCourses() {
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'courses', { cache: 'no-store' });
+
+    // Check if the response is OK (status code 200-299)
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+    }
+    const data = await res.json();
+    console.log('Data:', data);
+    return data;
+  } catch (error) {
+    console.error('Failed to load data:', error.message);
+    throw error; // Re-throw the error to handle it in the calling function
+  }
+}
 
 // async function getNews() {
 //   const res = await fetch(URL+"/news",{cache:'no-store'});
@@ -25,7 +42,7 @@ import PopState from "@/components/common/PopState";
 // }
 
 export default async function Home() {
-  // const posts = await getPosts();
+  const courses = await getAllCourses();
   // const news = await getNews();
   // const teachers = await getTeachers();
   return (
@@ -34,7 +51,7 @@ export default async function Home() {
       <ScrollBug />
       <ProgressBar />
       <Header />
-      <Landing  />
+      <Landing posts={courses} />
       <Footer />
     </>
   );

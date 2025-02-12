@@ -12,13 +12,13 @@ import image29 from "@/assets/images/smallerIcon/29.png"
 const CourseboxSmallerIcon = () => {
     return (
         <>
-        <motion.div whileInView={{opacity:1}} viewport={{once:true}} initial={{opacity:0}} transition={{delay:0.5}} className="absolute w-[120px] h-[120px] opacity-80 left-[210px] top-[-280px] md:block hidden">
+        <motion.div whileInView={{opacity:1}} viewport={{once:true}} initial={{opacity:0}} transition={{delay:0.5}} className="absolute w-[120px] h-[120px] opacity-80 right-[210px] top-[-280px] md:block hidden">
             <Image src={image7} width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>
-        <motion.div whileInView={{opacity:1}} viewport={{once:true}} initial={{opacity:0}} transition={{delay:0.5}} className="absolute w-[110px] h-[110px] opacity-80 right-[40px] top-[-280px] md:block hidden">
+        <motion.div whileInView={{opacity:1}} viewport={{once:true}} initial={{opacity:0}} transition={{delay:0.5}} className="absolute w-[110px] h-[110px] opacity-80 left-[40px] top-[-280px] md:block hidden">
             <Image src={image10} width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>
-        <motion.div initial={{opacity:0}} viewport={{once:true}} whileInView={{opacity:1}} transition={{delay:0.5}} className="absolute top-[-80px] left-[65%] md:block hidden">
+        <motion.div initial={{opacity:0}} viewport={{once:true}} whileInView={{opacity:1}} transition={{delay:0.5}} className="absolute top-[-80px] right-[65%] md:block hidden">
             <svg
               className="opacity-10"
               xmlns="http://www.w3.org/2000/svg"
@@ -32,14 +32,14 @@ const CourseboxSmallerIcon = () => {
               <path d="M297.428 271.875a7.966 7.966 0 00-7.967 7.967c0 7.027-5.717 12.745-12.745 12.745-7.026 0-12.744-5.717-12.744-12.745 0-4.4-3.566-7.967-7.967-7.967a7.966 7.966 0 00-7.967 7.967c0 7.027-5.717 12.745-12.744 12.745s-12.745-5.717-12.745-12.745c0-4.4-3.566-7.967-7.967-7.967s-7.967 3.567-7.967 7.967c0 15.814 12.865 28.68 28.68 28.68 8.133 0 15.487-3.404 20.711-8.861 5.225 5.458 12.578 8.861 20.711 8.861 15.815 0 28.68-12.866 28.68-28.68a7.97 7.97 0 00-7.969-7.967zM351.668 232.131a7.966 7.966 0 00-7.967 7.967v8.797c0 4.4 3.566 7.967 7.967 7.967s7.967-3.567 7.967-7.967v-8.797a7.966 7.966 0 00-7.967-7.967zM160.339 232.131a7.966 7.966 0 00-7.967 7.967v8.797c0 4.4 3.566 7.967 7.967 7.967s7.967-3.567 7.967-7.967v-8.797a7.966 7.966 0 00-7.967-7.967z"></path>
             </svg>
         </motion.div>
-        <motion.div animate={{y:[0,80,0]}} initial={{y:0}} transition={{delay:0.5,duration:10,ease: "linear",repeat:Infinity,repeatType:"loop"}} className="absolute w-[110px] h-[110px] opacity-80 right-[20px] top-[80px] md:block hidden">
+        <motion.div animate={{y:[0,80,0]}} initial={{y:0}} transition={{delay:0.5,duration:10,ease: "linear",repeat:Infinity,repeatType:"loop"}} className="absolute w-[110px] h-[110px] opacity-80 left-[20px] top-[80px] md:block hidden">
             <Image src={image27} width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>
                 
-        <div className="absolute w-[300px] h-[300px] opacity-80 right-[30%] top-[400px] md:block hidden">
+        <div className="absolute w-[300px] h-[300px] opacity-80 left-[30%] top-[400px] md:block hidden">
             <Image src={image18} width='auto' height='auto' priority={true} alt="pic"/>
         </div>
-        <div className="absolute w-[130px] h-[130px] opacity-70 left-0 bottom-[300px] md:block hidden">
+        <div className="absolute w-[130px] h-[130px] opacity-70 right-0 bottom-[300px] md:block hidden">
             <Image src={image6} width='auto' height='auto' priority={true} alt="pic"/>
         </div>
 
