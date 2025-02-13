@@ -11,7 +11,7 @@ const Landing = ({posts,news,teachers}) => {
     return (
       <>
         <HeroSection/>
-        <Counters/>
+        <Counters/> 
         <Services/>
         <CourseBoxHolder posts={posts}/>
         {/* <Teachers teachers={teachers}/> */}

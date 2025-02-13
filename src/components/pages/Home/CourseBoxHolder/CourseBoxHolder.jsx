@@ -24,7 +24,7 @@ const CourseBoxHolder = ({ posts }) => {
             {posts.map((item, index) => (
               <CourseBox key={item._id} delay={index} {...item} />
             ))}
-          </div>
+          </div> 
           {/* <div
             dir="rtl"
             className="absolute w-full top-[64px] grid  gap-y-10 gap-x-6  xl:gap-x-8 grid-cols-1 ss:grid-cols-2 md:grid-cols-3 hlg:grid-cols-4 xl:grid-cols-4 xl:container lg:px-[100px] px-8  ">

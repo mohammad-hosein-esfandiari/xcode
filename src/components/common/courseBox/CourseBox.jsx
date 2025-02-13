@@ -20,7 +20,7 @@ const CourseBox = ({ title,likedCount,students,disLikedCount, cost, _id, delay ,
           <LastRow studentCount={students.length+247} price={cost} />
         </div>
       </LinkCp>
-    </CourseBoxAnim>
+    </CourseBoxAnim> 
   );
 };
 

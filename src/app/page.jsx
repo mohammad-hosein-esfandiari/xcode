@@ -22,7 +22,6 @@ async function getAllCourses() {
       throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
     }
     const data = await res.json();
-    console.log('Data:', data);
     return data;
   } catch (error) {
     console.error('Failed to load data:', error.message);
@@ -51,7 +50,7 @@ export default async function Home() {
       <ScrollBug />
       <ProgressBar />
       <Header />
-      <Landing posts={courses} />
+      <Landing posts={courses} /> 
       <Footer />
     </>
   );
