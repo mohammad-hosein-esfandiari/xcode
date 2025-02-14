@@ -1,23 +1,33 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose from 'mongoose';
 
-export interface ICourse extends Document {
-  title: string;
-  likedCount: number;
-  students: number;
-  disLikedCount: number;
-  cost: number;
-  lesson: string;
-}
-
-const CourseSchema: Schema = new Schema({
-  title: { type: String, required: true },
-  likedCount: { type: Number, default: 0 },
-  students: { type: Number, default: 0 },
-  disLikedCount: { type: Number, default: 0 },
-  cost: { type: Number, required: true },
-  lesson: { type: String, required: true },
+const lessonSchema = new mongoose.Schema({
+  title: { type: String, required: true }, // عنوان درس
+  link: { type: String, required: true }, // لینک درس
 });
 
-const Course = mongoose.models.Course || mongoose.model<ICourse>('Course', CourseSchema);
+const courseSchema = new mongoose.Schema({
+  title: { type: String, required: true }, // عنوان دوره
+  likedCount: { type: Number, default: 0 }, // تعداد لایک‌ها
+  disLikedCount: { type: Number, default: 0 }, // تعداد دیس‌لایک‌ها
+  students: [
+    {
+      type:String
+      // type: mongoose.Schema.Types.ObjectId,
+      // ref: 'User', // ارجاع به مدل کاربران (اگر مدل User داری)
+    },
+  ], // لیست کاربران ثبت‌نام‌کرده در دوره
+  cost: { type: Number, required: true }, // هزینه دوره
+  image: { type: String, required: true }, // تصویر دوره
+  description: { type: String, required: true }, // توضیحات دوره
+  teacher: {
+    type:String
+    // type: mongoose.Schema.Types.ObjectId,
+    // ref: 'User', // ارجاع به مدل کاربران (اگر مدل User داری)
+    // required: true,
+  }, // استاد دوره
+  lessons: [lessonSchema], // لیست درس‌های دوره
+});
+
+const Course = mongoose.models.Course || mongoose.model('Course', courseSchema);
 
 export default Course;

@@ -3,15 +3,18 @@ import Course from "@/models/course";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-
   await dbConnect();
   try {
-    const courses = await Course.find({});
-
+    // دریافت تمام دوره‌ها از دیتابیس
+    const courses = await Course.find({})
+    // const courses = await Course.find({}).populate('students teacher'); // populate برای دریافت اطلاعات کامل کاربران
     return NextResponse.json(courses);
   } catch (error) {
     console.error("Error fetching courses:", error);
-    return NextResponse.json({ error: "Failed to fetch courses" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to fetch courses" },
+      { status: 500 }
+    );
   }
 }
 
@@ -20,12 +23,26 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { title, likedCount, students, disLikedCount, cost, lesson } = body;
+    // دریافت داده‌های ارسالی از درخواست POST
+    const {
+      title,
+      likedCount,
+      students,
+      disLikedCount,
+      cost,
+      image,
+      description,
+      teacher,
+      lessons,
+    } = body;
 
     // اعتبارسنجی داده‌ها
-    if (!title || !cost || !lesson) {
+    if (!title || !cost || !image || !description || !teacher || !lessons) {
       return NextResponse.json(
-        { error: "Title, cost, and lesson are required" },
+        {
+          error:
+            "Title, cost, image, description, teacher, and lessons are required",
+        },
         { status: 400 }
       );
     }
@@ -34,14 +51,19 @@ export async function POST(req: Request) {
     const newCourse = new Course({
       title,
       likedCount: likedCount || 0,
-      students: students || 0,
+      students: students || [], // اگر students ارسال نشده باشد، آرایه خالی در نظر گرفته می‌شود
       disLikedCount: disLikedCount || 0,
       cost,
-      lesson,
+      image,
+      description,
+      teacher, // انتظار می‌رود teacher به عنوان ObjectId ارسال شود
+      lessons, // انتظار می‌رود lessons به شکل [{ title: "...", link: "..." }] ارسال شود
     });
 
+    // ذخیره دوره در دیتابیس
     await newCourse.save();
 
+    // بازگرداندن پاسخ موفقیت‌آمیز
     return NextResponse.json(newCourse, { status: 201 });
   } catch (error) {
     console.error("Error creating course:", error);
@@ -50,5 +72,4 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
-
 }
