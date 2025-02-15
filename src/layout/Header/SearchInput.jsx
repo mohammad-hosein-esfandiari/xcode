@@ -45,8 +45,8 @@ const SearchInput = () => {
             onInput={onChangeHandler}
             value={value}
             type="text"
-            placeholder="جستجو ..."
-            className="block w-full bg-mode-color text-mode-color rounded-r-[4px] text-sm focus:outline-none focus:border-primary focus:border-[1px] px-6 placeholder:text-sm h-[100%]"
+            placeholder="Search ..."
+            className="block w-full bg-mode-color text-mode-color rounded-l-[4px] text-sm focus:outline-none focus:border-primary focus:border-[1px] px-6 placeholder:text-sm h-[100%]"
           />
         </div>
         <button className="py-3 px-5 h-full bg-primary">
@@ -61,7 +61,7 @@ const SearchInput = () => {
             exit={{ minHeight: 0, opacity: 0 }}
             className=" max-h-[400px] transition-all duration-300 min-h-[100px] relative overflow-y-auto bg-linear5 mt-3 rounded-[4px] shadow-md">
             {isLoading ? (
-              <div className=" absolute  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+              <div className=" absolute  top-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%]">
                 <BeatLoader size={7} color="var(--primary-color)" />
               </div>
             ) : (
@@ -77,13 +77,13 @@ const SearchInput = () => {
                             : "/blogs/" + item._id
                         }
                         className="p-3 hover:bg-primary transition-all duration-100 hover:text-white border-b-[1px] flex items-center text-mode-color border-[#99999990] ">
-                        <div className="pr-2">{item.title.split("|")[0]}</div>
+                        <div className="pl-2">{item.title.split("|")[0]}</div>
                       </LinkCp>
                     ))}
                   </>
                 ) : (
-                  <div className=" absolute  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[12px] text-red-400 ">
-                    موردی یافت نشد!
+                  <div className=" absolute  top-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-[12px] text-red-400 ">
+                  No Result Were Found!
                   </div>
                 )}
               </>

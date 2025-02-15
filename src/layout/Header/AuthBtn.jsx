@@ -16,19 +16,21 @@ const AuthBtn = () => {
   const userInfo = useUserInfo((state) => state.userInfo);
   const isUserLoggedIn = useUserInfo((state) => state.login);
 
-
   return (
     <ul className="flex items-center">
+      <SearchBtn />
+      <BasketBtn />
       {isUserLoggedIn ? (
         <>
           <li className="sm:block relative hidden">
-            <UserBtn userRole={userInfo.studentModel.role} text={userInfo.studentModel.fullName}/>
-            
-        
+            <UserBtn
+              userRole={userInfo.studentModel.role}
+              text={userInfo.studentModel.fullName}
+            />
           </li>
           <LinkCp
             href="/student-panel/dashboard"
-            className="md:bg-white  rounded-[4px] hover:bg-primary w-[40px] h-[34px] flex sm:hidden sm:ml-[16px] group items-center justify-center  overflow-hidden md:shadow-btnShadow  sm:hover:bg-slate-500 ">
+            className="md:bg-white  rounded-[4px] hover:bg-primary w-[40px] h-[34px] flex sm:hidden sm:mr-[16px] group items-center justify-center  overflow-hidden md:shadow-btnShadow  sm:hover:bg-slate-500 ">
             <AiOutlineUserAdd className="text-primary group-hover:text-white transition-all duration-300  font-bold text-[18px]" />
           </LinkCp>
         </>
@@ -38,7 +40,7 @@ const AuthBtn = () => {
           <li className="sm:block hidden">
             <PrimaryBtn
               href="/auth/login"
-              text="ورود/ثبت نام"
+              text="Register / Login"
               icon={<AiOutlineUserAdd />}
             />
           </li>
@@ -49,9 +51,6 @@ const AuthBtn = () => {
           </LinkCp>
         </>
       )}
-
-      <BasketBtn />
-      <SearchBtn />
     </ul>
   );
 };

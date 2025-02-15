@@ -3,7 +3,7 @@ export default function Logo  (){
     return (
         <Link
         href="/"
-        className="flex md:ml-0 ml-[-4px] items-center justify-center h-full">
+        className="flex md:mr-0 mr-[-4px] items-center justify-center h-full">
         <svg
           className="sm:w-[150px] w-[100px]"
           xmlns="http://www.w3.org/2000/svg"

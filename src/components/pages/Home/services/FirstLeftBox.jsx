@@ -46,17 +46,17 @@ const FirstLeftBox = () => {
       </li>
       <li className=" h-[50%] px-2 ">
         <ul className=" flex items-center pt-4">
-          <li className="flex pl-[14px] items-center">
+          <li className="flex pr-[14px] items-center">
             <SlNotebook
               className="text-color-orange2 text-[10px]
                 xs:text-[24px]
                 "
             />
             <span
-              className="text-[8px] text-gray-500 pr-2 flex items-center
+              className="text-[8px] text-gray-500 pl-2 flex items-center
                 xs:text-[14px]
                 ">
-              32 درس
+              Lesson 32
             </span>
           </li>
           <li className="flex items-center ">
@@ -65,10 +65,10 @@ const FirstLeftBox = () => {
                 xs:text-[24px]"
             />
             <span
-              className="text-[8px] flex pr-2 text-gray-500 items-center 
+              className="text-[8px] flex pl-2 text-gray-500 items-center 
                 xs:text-[14px]
                 ">
-              10 ساعت و 34 دقیقه
+              10 Hours & 34 Minutes
             </span>
           </li>
           <li></li>
@@ -77,16 +77,13 @@ const FirstLeftBox = () => {
           className=" flex text-mode-color transition-all duration-500  hover:text-indigo-600 items-center py-5
           font-bold text-[18px]
             ">
-          آموزش نحوه نوشتن به عنوان یک نویسنده حرفه ای
+          How to write as a professional author
         </h1>
         <p
           className=" font-normal mb-2  leading-6  text-color-gray  line-clamp-3 text-[14px]
      
             ">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-          از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
-          سطرآنچنان که لازم است. و برای شرایط فعلی تکنولوژی مورد نیاز و
-          کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates architecto tempore est commodi accusantium quae sint suscipit tenetur placeat sunt voluptatem, dolorum dolor beatae velit laborum necessitatibus esse delectus adipisci?
         </p>
       </li>
     </ul>

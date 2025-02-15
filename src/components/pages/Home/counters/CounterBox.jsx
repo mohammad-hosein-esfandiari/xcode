@@ -26,19 +26,20 @@ const CounterBox = (props) => {
   const [odometerValue, setOdometerValue] = useState(0);
 
   useEffect(() => {
+    console.log(isInView)
     if(isInView){
       setTimeout(()=>{
         if(props.index === 0){
-          setOdometerValue(props.students+214);
+          setOdometerValue(214);
         }
         if(props.index === 1){
           setOdometerValue(props.count);
         }
         if(props.index === 2){
-          setOdometerValue(props.news+142);
+          setOdometerValue(142);
         }
         if(props.index === 3){
-          setOdometerValue(props.lengthDetails);
+          setOdometerValue(113);
         }
       },100)
     }

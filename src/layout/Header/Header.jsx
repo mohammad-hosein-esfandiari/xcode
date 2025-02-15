@@ -6,8 +6,8 @@ import  RightPart  from "./RightPart";
 export const Header = () => {
   return (
     <HeaderWrapper>
-        <RightPart/>
         <Logo/>
+        <RightPart/>
     </HeaderWrapper>
   );
 };

@@ -11,12 +11,14 @@ const Landing = ({posts,news,teachers}) => {
     return (
       <>
         <HeroSection/>
-        <Counters news={news} posts={posts}/> 
+
+        <Counters/> 
+
         <Services/>
-        <CourseBoxHolder posts={posts}/>
-        <Teachers teachers={teachers}/>
-        <News news={news}/>
-        <NewsRegister/>
+        <CourseBoxHolder posts={posts}/> 
+        {/* <Teachers teachers={teachers}/> */}
+        {/* <News news={news}/> */}
+        {/* <NewsRegister/> */}
       </>
     );
 }

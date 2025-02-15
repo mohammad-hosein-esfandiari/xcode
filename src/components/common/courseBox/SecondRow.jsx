@@ -22,8 +22,7 @@ const SecondRow = ({ likeCount, disLikedCount, courseId }) => {
   const [dislikeCountNum, setDisLikeCountNum] = useState(disLikedCount);
   const userInfo = useUserInfo((state) => state.userInfo);
   const like = likeCountNum + 36;
-  const likeNumber = like?.toLocaleString("fa-IR");
-  const disLikedNumber = dislikeCountNum?.toLocaleString("fa-IR");
+
 
   const likeHandler = async (event) => {
     event.preventDefault();
@@ -35,7 +34,7 @@ const SecondRow = ({ likeCount, disLikedCount, courseId }) => {
       };
       await likeFunc(obj, setLikeCountNum,setIslike);
     } else {
-      toast.error("برای ثبت نظر لطفا وارد سایت شوید");
+      toast.error("To post a comment please sing in");
     }
   };
 
@@ -50,7 +49,7 @@ const SecondRow = ({ likeCount, disLikedCount, courseId }) => {
       };
       await disLikeFunc(obj, setDisLikeCountNum,setDisIslike);
     } else {
-      toast.error("برای ثبت نظر لطفا وارد سایت شوید");
+      toast.error("To post a comment please sing in");
     }
   };
   return (
@@ -64,10 +63,10 @@ const SecondRow = ({ likeCount, disLikedCount, courseId }) => {
             }
           
         </div>
-        <span className="text-[12px] pt-[4px] mr-2">{likeNumber}</span>
+        <span className="text-[12px] pt-[4px] ml-2">{likeCountNum}</span>
       </li>
 
-      <li className="flex text-mode-color text-[24px] hover:scale-[1.2] transition-all duration-300 items-center mr-3 hover:shadow-modeShadow bg-[#c3c3c348]  rounded-[7px] px-3 py-[3px] ">
+      <li className="flex text-mode-color text-[24px] hover:scale-[1.2] transition-all duration-300 items-center ml-3 hover:shadow-modeShadow bg-[#c3c3c348]  rounded-[7px] px-3 py-[3px] ">
         <div
           onClick={disLikeHandler}
           className="group hover:scale-[1.2] transition-all duration-300">
@@ -77,7 +76,7 @@ const SecondRow = ({ likeCount, disLikedCount, courseId }) => {
           
           
         </div>
-        <span className="text-[12px] pt-[2px] mr-2">{disLikedNumber}</span>
+        <span className="text-[12px] pt-[2px] ml-2">{dislikeCountNum}</span>
       </li>
     </ul>
   );

@@ -11,35 +11,49 @@ import ScrollBug from "@/components/common/ScrollBug";
 import Transition from "@/components/common/Transition";
 import AnimTrue from "@/components/common/AnimTrue";
 import PopState from "@/components/common/PopState";
-const URL = "https://api.xcode.sepehracademy.ir/api"
-async function getPosts() {
-  const res = await fetch(URL+"/course/getall",{cache:'no-store'});
-  const posts = await res.json();
-  return posts;
-}
-async function getNews() {
-  const res = await fetch(URL+"/news",{cache:'no-store'});
-  const posts = await res.json();
-  return posts;
-}
-async function getTeachers() {
-  const res = await fetch(URL+"/employee/getallteachers",{cache:'no-store'});
-  const teachers = await res.json();
-  return teachers;
+import { toast } from "react-toastify";
+
+async function getAllCourses() {
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'courses', { cache: 'no-store' });
+
+    // Check if the response is OK (status code 200-299)
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error('Failed to load data:', error.message);
+    throw error; // Re-throw the error to handle it in the calling function
+  }
 }
 
+// async function getNews() {
+//   const res = await fetch(URL+"/news",{cache:'no-store'});
+//   const posts = await res.json();
+//   return posts;
+// }
+// async function getTeachers() {
+//   const res = await fetch(URL+"/employee/getallteachers",{cache:'no-store'});
+//   const teachers = await res.json();
+//   return teachers;
+// }
+
 export default async function Home() {
-  const posts = await getPosts();
-  const news = await getNews();
-  const teachers = await getTeachers();
+  const courses = await getAllCourses();
+  // const news = await getNews();
+  // const teachers = await getTeachers();
   return (
     <>
       <AnimTrue />
       <ScrollBug />
       <ProgressBar />
       <Header />
-      <Landing teachers={teachers.result} news={news.result.reverse().slice(0,8)} posts={posts.result.reverse().slice(0,12)} />
+      <Landing posts={courses} /> 
       <Footer />
     </>
   );
 }
+
+{/* <Landing teachers={teachers.result} news={news.result.reverse().slice(0,8)} posts={posts.result.reverse().slice(0,12)} /> */}

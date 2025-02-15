@@ -19,10 +19,10 @@ const DrawerMenu = () => {
     event.stopPropagation();
     setToggleMenu((prev) => !prev);
   };
-  const logOutHandler = ()=>{
-    setUserLogout()
-    setToggleMenu(false)
-  }
+  const logOutHandler = () => {
+    setUserLogout();
+    setToggleMenu(false);
+  };
   useEffect(() => {
     window.addEventListener(
       "resize",
@@ -33,7 +33,7 @@ const DrawerMenu = () => {
     <div>
       <motion.li
         onClick={toggleMenuBtn}
-        className="h-full sm:mr-0 mr-[-9px] overflow-hidden w-[36px] rounded-[4px] sm:ml-[8px]  md:hidden flex items-center justify-center p-[6px] sm:shadow-btnShadow  sm:bg-white">
+        className="h-full sm:ml-0 ml-[-9px] overflow-hidden w-[36px] rounded-[4px] sm:mr-[8px]  md:hidden flex items-center justify-center p-[6px] sm:shadow-btnShadow  sm:bg-white">
         <button className="h-full group ">
           {toggleMenu ? (
             <motion.li
@@ -57,10 +57,10 @@ const DrawerMenu = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className=" z-10  bg-[#0d0d0d8b] fixed w-[100vw] h-[100vh] flex right-0 top-0">
+            className=" z-10  bg-[#0d0d0d8b] fixed w-[100vw] h-[100vh] flex left-0 top-0">
             <motion.li
               onClick={(event) => event.stopPropagation()}
-              initial={{ x: "100%" }}
+              initial={{ x: "-100%" }}
               animate={toggleMenu ? toggleMenus.open : toggleMenus.closed}
               exit={toggleMenus.exit}
               className={` flex flex-col md:w-[0] ss:w-1/2 w-full h-[100vh]  pl-0  shadow-boxShadow2 z-30 bg-mode-color  `}>
@@ -103,7 +103,7 @@ const DrawerMenu = () => {
                   <button
                     onClick={logOutHandler}
                     className="text-white bg-red-500 w-fit px-4 mx-auto my-3 rounded-[4px] py-2 text-center">
-                    خروج از حساب کاربری
+                    Sign Out{" "}
                   </button>
                 )}
               </div>

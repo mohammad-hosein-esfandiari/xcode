@@ -1,4 +1,4 @@
-import ThemeSwithcher from "@/layout/ThemeSwitcher/ThemeSwithcher";
+import ThemeSwitcher from "@/layout/ThemeSwitcher/ThemeSwitcher";
 
 import "react-toastify/dist/ReactToastify.css";
 import "@/styles/globals.css";
@@ -13,13 +13,13 @@ export const metadata = {
 export default async function RootLayout({ children }) {
 
   return (
-    <html lang="fa">
+    <html>
       <body>
     <Transition/>
       <ToastBox/>
       <GetUserInfo/>
         {children}
-        <ThemeSwithcher />
+        <ThemeSwitcher />
       </body>
     </html>
   );
