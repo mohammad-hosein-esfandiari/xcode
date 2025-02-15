@@ -10,7 +10,7 @@ const CourseBoxHolder = ({ posts }) => {
         title="New Courses"
         link="courses?limit=12&page=1&filter=newest"
       />
-      <div className="bg-linear1 ">
+      <div className="bg-linear1 "> 
         <section className="xl:container relative py-16">
           <CourseboxSmallerIcon />
           <div className="grid  gap-y-10 gap-x-6  xl:gap-x-8 grid-cols-1 ss:grid-cols-2 md:grid-cols-3 hlg:grid-cols-4 xl:grid-cols-4 xl:container lg:px-[100px] px-8  ">
