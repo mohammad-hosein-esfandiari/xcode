@@ -55,7 +55,7 @@ const HeroSection = () => {
                 duration: 1,
                 delay: 3.2,
                 type: "spring",
-                stiffness: 15,
+                stiffness: 15, 
               }}
               className="mt-8 w-full">
               <Link
