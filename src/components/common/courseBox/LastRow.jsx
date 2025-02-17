@@ -7,7 +7,7 @@ const LastRow = ({ price , studentCount}) => {
       <li className=" text-gray-400 flex text-[12px] justify-between items-center">
         <div className="flex items-center">
           <SlUser />
-          <span className="pt-[2px] ml-2">132</span>
+          <span className="pt-[2px] ml-2">{studentCount}</span>
           <span className="pt-[2px] ml-1">Students</span>
         </div>
         <div>

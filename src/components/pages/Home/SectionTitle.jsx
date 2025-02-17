@@ -2,7 +2,7 @@
 import LinkCp from "@/components/common/LinkCp";
 import Link from "next/link";
 
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import { HiOutlineArrowSmRight } from "react-icons/hi";
 
 const SectionTitle = ({ title, link }) => {
     return (
@@ -15,8 +15,8 @@ const SectionTitle = ({ title, link }) => {
             </h2>
             {link && (
               <LinkCp href={`/${link}`} className="flex items-center mt-2 hover:scale-[1.05] transition-all duration-300 w-[100%] justify-center">
-                <span className="pl-2 text-textColor ">مشاهده همه</span>
-                <HiOutlineArrowSmLeft className="text-textColor" />
+                <span className="pr-2 text-textColor ">See all courses</span>
+                <HiOutlineArrowSmRight className="text-textColor" />
               </LinkCp>
             )}
           </div>
