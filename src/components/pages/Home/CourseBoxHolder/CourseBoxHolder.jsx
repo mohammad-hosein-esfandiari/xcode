@@ -5,7 +5,7 @@ import SkeletonBox from "./SkeletonBox";
 
 const CourseBoxHolder = ({ posts }) => {
   return (
-    <div id="courses">
+    <div id="courses"> 
       <SectionTitle
         title="New Courses"
         link="courses?limit=12&page=1&filter=newest"

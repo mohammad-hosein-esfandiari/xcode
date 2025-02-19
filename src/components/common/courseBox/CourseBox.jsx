@@ -16,9 +16,9 @@ const CourseBox = ({ title,likedCount,image,students,duration,disLikedCount,leve
           <div className="flex-1 flex flex-col justify-between">
             <FirstRow lessons={lessons} duration={duration} title={title} />
             <SecondRow courseId={_id} disLikedCount={disLikedCount} likeCount={likedCount} />
-          </div>
+          </div> 
           <LastRow studentCount={students.length} price={cost} />
-        </div>
+        </div> 
       </LinkCp>
     </CourseBoxAnim> 
   );
