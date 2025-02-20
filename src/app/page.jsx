@@ -3,7 +3,7 @@ import { Header } from "@/layout/Header/Header";
 import dynamic from "next/dynamic";
 import Landing from "@/components/pages/Home/Landing";
 import Footer from "@/layout/Footer/Footer";
-const ProgressBar = dynamic(() => import('@/layout/ProrgressBar/ProgressBar'), {
+const ProgressBar = dynamic(() => import("@/layout/ProrgressBar/ProgressBar"), {
   ssr: false,
 });
 // import ProgressBar from "@/layout/ProrgressBar/ProgressBar";
@@ -15,7 +15,9 @@ import { toast } from "react-toastify";
 
 async function getAllCourses() {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'courses', { cache: 'no-store' });
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
+      cache: "no-store",
+    });
 
     // Check if the response is OK (status code 200-299)
     if (!res.ok) {
@@ -24,7 +26,7 @@ async function getAllCourses() {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error('Failed to load data:', error.message);
+    console.error("Failed to load data:", error.message);
     throw error; // Re-throw the error to handle it in the calling function
   }
 }
@@ -34,26 +36,41 @@ async function getAllCourses() {
 //   const posts = await res.json();
 //   return posts;
 // }
-// async function getTeachers() {
-//   const res = await fetch(URL+"/employee/getallteachers",{cache:'no-store'});
-//   const teachers = await res.json();
-//   return teachers;
-// }
+async function getTeachers() {
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "teachers", {
+      cache: "no-store",
+    });
+
+    // Check if the response is OK (status code 200-299)
+    if (!res.ok) {
+      throw new Error(`Failed to fetch teachers: ${res.status} ${res.statusText}`);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to load data:", error.message);
+    throw error; // Re-throw the error to handle it in the calling function
+  }
+}
 
 export default async function Home() {
   const courses = await getAllCourses();
   // const news = await getNews();
-  // const teachers = await getTeachers();
+  const teachers = await getTeachers();
+  
   return (
     <>
       <AnimTrue />
       <ScrollBug />
       <ProgressBar />
       <Header />
-      <Landing posts={courses} /> 
+      <Landing posts={courses} teachers={teachers} />
       <Footer />
     </>
   );
 }
 
-{/* <Landing teachers={teachers.result} news={news.result.reverse().slice(0,8)} posts={posts.result.reverse().slice(0,12)} /> */}
+{
+  /* <Landing teachers={teachers.result} news={news.result.reverse().slice(0,8)} posts={posts.result.reverse().slice(0,12)} /> */
+}
