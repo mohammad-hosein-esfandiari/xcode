@@ -5,7 +5,7 @@ import NewsSearchBox from "./NewsSearchBox";
 const NewsRegister = () => {
     return (
         <>
-      <SectionTitle title=" دریافت آخرین اخبار" />
+      <SectionTitle title="Get The Latest News" />
 
         <section className=" bg-linear1">
         <div className="xl:container relative md:px-[100px] text-textColor px-6 py-[8rem]">

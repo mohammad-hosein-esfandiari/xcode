@@ -18,7 +18,7 @@ const Landing = ({posts,news,teachers}) => {
         <CourseBoxHolder posts={posts}/> 
         <Teachers teachers={teachers}/>
         {/* <News news={news}/> */}
-        {/* <NewsRegister/> */}
+        <NewsRegister/>
       </>
     );
 }
