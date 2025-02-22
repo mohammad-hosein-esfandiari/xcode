@@ -31,11 +31,23 @@ async function getAllCourses() {
   }
 }
 
-// async function getNews() {
-//   const res = await fetch(URL+"/news",{cache:'no-store'});
-//   const posts = await res.json();
-//   return posts;
-// }
+async function getAllNews() {
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "blogs", {
+      cache: "no-store",
+    });
+
+    // Check if the response is OK (status code 200-299)
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to load data:", error.message);
+    throw error; // Re-throw the error to handle it in the calling function
+  }
+}
 async function getTeachers() {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "teachers", {
@@ -56,7 +68,7 @@ async function getTeachers() {
 
 export default async function Home() {
   const courses = await getAllCourses();
-  // const news = await getNews();
+  const news = await getAllNews();
   const teachers = await getTeachers();
   
   return (
@@ -65,7 +77,7 @@ export default async function Home() {
       <ScrollBug />
       <ProgressBar />
       <Header />
-      <Landing posts={courses} teachers={teachers} />
+      <Landing posts={courses} teachers={teachers} news={news} />
       <Footer />
     </>
   );
