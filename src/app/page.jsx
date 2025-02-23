@@ -18,7 +18,7 @@ async function getAllCourses() {
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
       cache: "no-store",
     });
-
+ 
     // Check if the response is OK (status code 200-299)
     if (!res.ok) {
       throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);

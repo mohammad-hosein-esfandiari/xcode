@@ -8,13 +8,13 @@ const News = ({ news }) => {
       <SectionTitle title="News and articles" link="blogs?limit=6&page=1&category=all" />
       <div className=" xl:container relative lg:px-[100px] ss:px-8 sss:px-6 px-4">
         <NewsSmallerIcon />
-        <div className="w-[100%] grid hlg:grid-cols-4 md:grid-cols-3 ss:grid-cols-2  sm:gap-8 gap-4">
+        <div className="w-[100%] grid hlg:grid-cols-4 md:grid-cols-3 ss:grid-cols-2 sm:gap-8 gap-4">
           {news.map((item) => (
             <NewsBox key={item._id} {...item} />
           ))}
         </div>
       </div>
-    </div>
+    </div> 
   );
 };
 
