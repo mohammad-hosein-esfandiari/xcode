@@ -31,10 +31,10 @@ const LoginForm = () => {
     const {  isSuccess } = await loginFunc(value);
     if (isSuccess) {
       setLoading(false);
-      toast.success("ورود با موفقیت انجام شد");
+      toast.success("Login successful");
       setTimeout(()=>{
 
-        toast.info("در حال انتقال به صفحه اصلی");
+        toast.info("Moving to home page");
       },500)
       actions.resetForm();
      
@@ -51,11 +51,11 @@ const LoginForm = () => {
   };
   const validationSchema = {
     email: Yup.string()
-      .email(" ایمیل را اشتباه وارد کرده اید")
-      .required("وارد کردن ایمیل الزامی است"),
+      .email("Email format is invalid")
+      .required("Email is required"),
     password: Yup.string()
-      .required("وارد کردن رمز عبور الزامی است")
-      .min(8, "رمز عبور باید حداقل ۸ کاراکتر داشته باشد"),
+      .required("Password is required")
+      .min(8, "Password must be at least 8 character"),
       remember:Yup.boolean()
   };
   return (
@@ -69,13 +69,13 @@ const LoginForm = () => {
             <TextInput
               color="white"
               name="email"
-              label="پست الکترونیک"
+              label="Email"
               type="email"
             />
             <TextInput
               color="white"
               name="password"
-              label="رمز عبور"
+              label="Password"
               type="password"
             />
 
@@ -99,14 +99,14 @@ const LoginForm = () => {
                           )}/>
                 <label
                   htmlFor="checked_checkbox"
-                  className="mr-2 text-[8px]  text-mode-color sm:text-white">
-                  مرا بخاطر بسپار{" "}
+                  className="ml-2 text-[8px]  text-mode-color sm:text-white">
+                  Remember me{" "}
                 </label>
               </div>
               <LinkCp
                 href="/auth/forget-pass"
                 className="text-[8px] text-mode-color sm:text-white pl-4 hover:text-color-orange ">
-                فراموشی رمز عبور
+                Forgot password
               </LinkCp>
             </motion.div>
             <motion.div {...stepAnimate}>
@@ -115,7 +115,7 @@ const LoginForm = () => {
                 type="submit"
                 className=" w-full shadow-modeShadow px-20 hover:scale-[1.05] disabled:opacity-50 transition duration-500 py-[6px] bg-primary text-white rounded-[4px] text-[10px] mt-4">
                 {!loading ? (
-                  "ورود"
+                  "Login"
                 ) : (
                   <BeatLoader color="white" size={6} margin={0} />
                 )}

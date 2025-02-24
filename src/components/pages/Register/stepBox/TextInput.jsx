@@ -52,7 +52,7 @@ export default function TextInput({ color, label, type, ...props }) {
       {type === "password" && (
         <motion.span
           whileTap={{ scale: 1.05 }}
-          className={`absolute cursor-pointer left-2 top-[9.8px] text-[13px]  ${
+          className={`absolute cursor-pointer right-2 top-[9.8px] text-[13px]  ${
             isShowPass ? "text-gray-500" : "text-gray-400 "
           } `}
           onClick={clickHandler}>
