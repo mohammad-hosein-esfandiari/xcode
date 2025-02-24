@@ -13,7 +13,7 @@ const Pricing = () => {
           <>
             {" "}
             <div className="flex justify-between  w-full items-center ">
-              <h4 className="font-bold text-primary ml-2">مجموع قیمت ها : </h4>
+              <h4 className="font-bold text-primary ml-2"> Total price : </h4>
               <PriceCount price={basketPriceSum} />
              <SubmitBasketBtn basket={priceArray}/>
             </div>
@@ -21,7 +21,7 @@ const Pricing = () => {
         ) : (
           <>
             <div className="text-[#e05858] text-[12px]">
-              دوره ای برای خرید موجود نیست
+                No course to buy!!
             </div>
           </>
         )}
