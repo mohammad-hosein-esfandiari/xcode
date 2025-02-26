@@ -7,7 +7,7 @@ const LeftStep = () => {
         <Image
         alt="login"
         priority={true}
-          src={login}
+          src={login} 
           className="w-full h-full bg-cover object-cover object-center"
         />
         <div className="w-full h-full  absolute bg-[#131731c7]"></div>

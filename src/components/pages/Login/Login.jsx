@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import RightStep from "./RightStep";
 import LeftStep from "./LeftStep";
 
-
+ 
 const Login = () => {
     useEffect(() => {
         document.body.style.backgroundImage = "var(--linear-1)"
