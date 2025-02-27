@@ -6,10 +6,10 @@ const PasswordHolder = () => {
         <motion.div
         {...stepAnimate}
         className="mt-[-30px]">
-            <TextInput name="password" label="رمز عبور" type="password" />
+            <TextInput name="password" label="Password" type="password" />
         <TextInput
           name="confirmpassword"
-          label="تکرار رمز عبور"
+          label="Password confirmation"
           type="password"
         />
         </motion.div>

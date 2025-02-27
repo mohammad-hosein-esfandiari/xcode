@@ -5,9 +5,9 @@ import DatePicker from "./DatePicker";
 const AuthHolder = () => {
   return (
     <motion.div {...stepAnimate}>
-      <TextInput name="name" label="نام" type="text" />
-      <TextInput name="lastname" label="نام خانوادگی" type="text" />
-      <DatePicker name="date" label="تاریخ تولد" type="text" />
+      <TextInput name="name" label="Name" type="text" />
+      <TextInput name="lastname" label="Last name" type="text" />
+      <DatePicker name="date" label="Birthday" type="text" />
 
     </motion.div>
   );

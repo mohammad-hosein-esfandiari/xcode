@@ -29,7 +29,7 @@ export default function TextInput({ color, label, type, ...props }) {
     <motion.div
       key={step}
       {...stepAnimate}
-      className="w-fit h-[52px] flex flex-col  mx-auto relative ">
+      className="w-fit h-[52px] flex flex-col  mx-auto ">
       <input
         type={isShowPass ? "text" : type}
         onKeyDown={keydown}
@@ -44,7 +44,7 @@ export default function TextInput({ color, label, type, ...props }) {
                   ? "sm:text-black text-mode-color"
                   : "text-mode-color"
               } `
-        } w-[200px] focus:shadow-lg  focus:scale-[1.03] focus:border-[2px] transition-all duration-500 outline-none  py-[5px] px-[8px] text-[10px] rounded-[4px] `}
+        } w-[200px] focus:shadow-lg relative focus:scale-[1.03] focus:border-[2px] transition-all duration-500 outline-none  py-[5px] px-[8px] text-[10px] rounded-[4px] `}
         {...field}
         {...props}
         autoComplete="off"

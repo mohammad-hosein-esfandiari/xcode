@@ -35,7 +35,7 @@ const LastStep = () => {
             type="button"
             onClick={registerFunc}
             className="mt-6 scale-[0.7] bg-primary text-white px-6 py-2 rounded-[4px]">
-            دوباره امتحان کنید
+            Try again
           </button>
         </>
       ) : (
@@ -50,13 +50,13 @@ const LastStep = () => {
                 </div>
               ))}
               <div className=" text-primary mt-3 sm:text-[11px] text-[8px]">
-                در حال انتقال به بخش مورد نظر
+               Moving to the desired section
               </div>
             </>
           ) : (
             <>
               <div className=" font-bold text-mode-color sm:text-[17px]">
-                در حال انجام فرآیند ثبت نام
+               Registration in progress
               </div>
             </>
           )}

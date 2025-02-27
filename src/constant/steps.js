@@ -1,7 +1,7 @@
 export const stepText = [
-    "شماره تماس خود را وارد کنید",
-    "کد ارسال شده را وارد کنید",
-    "نام کاربری و تاریخ تولد خود را وارد کنید",
-    " ایمیل و کد ملی خود را وارد کنید",
-    "رمز خود را وارد کنید",
+    "Phone number",
+    "Verification code",
+    "Username and birthday",
+    "Email and national code",
+    "Password",
   ];

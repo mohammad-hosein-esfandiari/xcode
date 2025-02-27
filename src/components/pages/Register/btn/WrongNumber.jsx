@@ -6,11 +6,11 @@ const WrongNumber = ({click}) => {
         <motion.div
         {...stepAnimate}
         className="mx-auto w-fit text-mode-color pt-5 text-[8px]">
-        شماره تماس خود را اشتباه وارد کرده اید؟
+        Wrong phone number?
         <button
           onClick={click}
-          className=" text-color-orange hover:text-blue-500 pr-[2px] underline  ">
-          اینجا کلیک کنید
+          className=" text-color-orange hover:text-blue-500 pl-[2px] underline  ">
+          Click here
         </button>
       </motion.div>
     );

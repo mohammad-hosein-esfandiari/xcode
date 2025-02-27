@@ -82,7 +82,8 @@ const InputBoxWrapper = ({ children }) => {
             <Form
               onKeyDown={keyDownHandler}
               onKeyUp={keyUpHandler}
-              autoComplete="off">
+              autoComplete="off"
+              className="flex flex-col justify-center items-center">
               {children[step]}
               <motion.div
                 key={step}

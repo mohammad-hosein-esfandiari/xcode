@@ -19,8 +19,8 @@ const RegisterForm = () => {
              <PhonePicker
         validationschema={Yup.object({
           phonenumber: Yup.string()
-            .required("وارد کردن شماره تماس الزامی است")
-            .min(14, "شماره تماس باید حداقل ۱۰ کاراکتر باشد"),
+            .required("Phone number is required")
+            .min(10, "Phone number must be at least 10 character"),
         })}
         name="phonenumber"
         type="number"
@@ -28,41 +28,41 @@ const RegisterForm = () => {
             <CodePhone
         validationschema={Yup.object({
           codephone: Yup.string()
-            .required("کد وارد شده اشتباه است")
-            .matches(randomCode, "کد وارد شده اشتباه است"),
+            .required("Invalid verification code")
+            .matches(randomCode, "Verification code is wrong"),
         })}
         name="codephone"
       />
       <AuthHolder validationschema={Yup.object({
-          name: Yup.string().required("وارد کردن نام الزامی می باشد"),
+          name: Yup.string().required("Name is required"),
           lastname: Yup.string().required(
-            "وارد کردن نام خانوادگی الزامی می باشد"
+            "Last name is required"
           ),
-          date:Yup.string().required("وارد کردن تاریخ تولد الزامی می باشد"),
+          date:Yup.string().required("Birthday is required"),
         
         })} />
         <BirthdayHolder  validationschema={Yup.object({
           nationalcode: Yup.string()
-            .required("وارد کردن کد ملی الزامی است")
-            .min(10, "کد ملی باید حداقل 10 رقم داشته باشد")
-            .max(10,'کد ملی نباید بیشتر از ۱۰ رقم باشد'),
+            .required("National code is required")
+            .min(10, "National code must be exactly 10 numbers")
+            .max(10,"National code must be exactly 10 numbers"),
             email: Yup.string()
-            .required("وارد کردن ایمیل الزامی می باشد")
-            .email("ایمیل را به درستی وارد کنید")
+            .required("Email is required")
+            .email("Wrong email format")
             ,
 
         })}/>
         <PasswordHolder   validationschema={Yup.object({
           password: Yup.string()
-            .required("!وارد کردن رمز عبور الزامی است")
-            .min(8, "رمز عبور باید حداقل ۸ کاراکتر داشته باشد")
+            .required("Password is required")
+            .min(8, "Password must be at least 8 characters")
             .matches(
               /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
-              "رمز عبور باید ترکیبی از حروف لاتین بزرگ و کوچک و سمبل و اعداد باشد"
+              "The password must be a combination of uppercase and lowercase Latin letters, symbols and numbers"
               ),
           confirmpassword: Yup.string()
-            .oneOf([Yup.ref("password"), null], "رمز عبور مطابقت ندارد")
-            .required("وارد کردن تایید رمز الزامی است"),
+            .oneOf([Yup.ref("password"), null], "Password doesn't match")
+            .required("Password confirmation is required"),
         })}/>
         <LastStep/>
      </InputBoxWrapper>
