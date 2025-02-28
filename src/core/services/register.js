@@ -26,7 +26,7 @@ export const registerFunc = async (info) => {
   } catch (error) {
     console.log(error);
     if (error.message == "Network Error") {
-      await useErrorText.getState().setError("به اینترنت متصل نیستید");
+      await useErrorText.getState().setError("No connection");
     }
     if (error.response?.status === 401 || error.response?.status === 400) {
       setStates.setLastStepError(error.response.data.message);

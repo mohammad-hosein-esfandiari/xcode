@@ -1,33 +1,29 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-  fullName: { type: String, required: true }, // نام کاربر
-  profile: { type: String, required: true }, // عکس کاربر
-  password: { type: String, required: true }, // رمز عبور حساب
-  phoneNumber: { type: String, required: true }, // شماره تلفن کاربر
-  birthDate: { type: Date, required: true }, // تاریخ تولد کاربر
-  nationalId: { type: String, required: true }, // کدملی کاربر
-  email: { type: String, required: true, unique: true }, // ایمیل کاربر
+  fullName: { type: String, required: true }, 
+  profile: { type: String, required: true },
+  password: { type: String, required: true }, 
+  phoneNumber: { type: String, required: true },
+  birthDate: { type: Date, required: true }, 
+  nationalId: { type: String, required: true },
+  email: { type: String, required: true, unique: true }, 
   role: {
     type: String,
     required: true,
-    enum: ["admin", "teacher", "student"], // نقش کاربر
+    enum: ["admin", "teacher", "student"],
   },
   // فیلدهای اختصاصی برای استاد
   teacherFields: {
     expertise: {
       type: String,
       enum: ["frontend", "backend", "seo & design", "ai"],
-    }, // تخصص استاد
-    bio: { type: String }, // بیوگرافی استاد
-  },
-  // فیلدهای اختصاصی برای دانشجو
-  studentFields: {
-    grade: { type: String }, // مقطع تحصیلی دانشجو
+    }, 
+    bio: { type: String }, 
   },
   // فیلدهای اختصاصی برای ادمین
   adminFields: {
-    permissions: [{ type: String }], // دسترسی‌های ادمین
+    permissions: [{ type: String }], 
   },
 });
 

@@ -1,9 +1,9 @@
 import axios from "axios";
-const URL = "https://api.xcode.sepehracademy.ir/api";
+// const URL = "https://api.xcode.sepehracademy.ir/api";
 import { toast } from "react-toastify";
 import { getCookie } from "../utils/cookies.storage";
 const api = axios.create({
-  baseURL: URL,
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
 });
 
 api.interceptors.request.use(
@@ -12,7 +12,7 @@ api.interceptors.request.use(
     if (config.url.includes("forgetpassword")) {
       config.headers["Content-Type"] = "application/json";
     }
-    if (config.url === "/auth/register" || "/auth/login") {
+    if (config.url === "auth/register" || "auth/login") {
       config.headers["Content-Type"] = "application/json";
     }
     if (config.url.includes("upload")) {
@@ -50,27 +50,27 @@ api.interceptors.response.use(
           toast.error(item.message);
         });
       } else {
-        toast.error("خطایی رخ داده است");
+        toast.error("Error occured!");
       }
     }
     if (error.message === "Network Error") {
-      toast.error("خطا در برقراری ارتباط");
+      toast.error("Network Error");
     }
     if (error.config.url.includes("resetPassword")) {
       if (error.response) {
         error.response.data.message.forEach((item) => {
           if (item.message.includes("password")) {
-            toast.error("رمز وارد شده با الگو مطابقت ندارد");
-            toast.warning("لطفا رمز دیگری را وارد کنید");
+            toast.error("Password doesn't meet the requirements");
+            toast.warning("Please enter the password correctly");
           }
           if (item.message.includes("token")) {
-            toast.error("تلاش بیش از حد");
-            toast.info("لطفا در یک وقت دیگر امتحان کنید");
+            toast.error("Too many atempts");
+            toast.info("Please try again later");
           }
         });
         if (error.response.status === 501) {
-          toast.error("تلاش بیش از حد");
-          toast.info("لطفا در یک وقت دیگر امتحان کنید");
+          toast.error("Too many atempts");
+          toast.info("Please try again later");
         }
       }
     }
