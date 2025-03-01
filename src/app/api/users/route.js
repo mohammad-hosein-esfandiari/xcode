@@ -10,7 +10,7 @@ export async function GET(req) {
 
   
       // دریافت کاربران از دیتابیس
-      const users = await User.find({});
+      const users = await User.find({}); 
   
       // بازگرداندن پاسخ موفقیت‌آمیز
       return NextResponse.json(users, { status: 200 });

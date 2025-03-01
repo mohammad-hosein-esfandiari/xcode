@@ -59,7 +59,7 @@ const LastStep = () => {
                Registration in progress
               </div>
             </>
-          )}
+          )} 
           <div className="pt-6 text-primary ">
             <BarLoader
               color="var(--primary-color)"
