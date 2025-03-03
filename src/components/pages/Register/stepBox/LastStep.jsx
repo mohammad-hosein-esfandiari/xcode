@@ -65,7 +65,7 @@ const LastStep = () => {
               color="var(--primary-color)"
               size={4}
               margin={1}
-              speedMultiplier={1}
+              speedMultiplier={1} 
             />
           </div>
         </>

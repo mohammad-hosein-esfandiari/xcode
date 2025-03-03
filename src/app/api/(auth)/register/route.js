@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { cookies } from "next/headers";
 
 // اتصال به دیتابیس
-await dbConnect();
+await dbConnect(); 
 
 // تعریف طرح اعتبارسنجی Yup
 const userSchema = yup.object().shape({
