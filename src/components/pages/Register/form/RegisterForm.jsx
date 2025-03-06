@@ -10,7 +10,6 @@ import LastStep from "../stepBox/LastStep";
 
 const RegisterForm = () => {
     const randomCode = useStepperStore((state) => state.randomCode);
-    const error = useStepperStore((state) => state.error);
 
 
 

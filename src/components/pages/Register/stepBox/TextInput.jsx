@@ -29,12 +29,14 @@ export default function TextInput({ color, label, type, ...props }) {
     <motion.div
       key={step}
       {...stepAnimate}
-      className="w-fit h-[52px] flex flex-col  mx-auto ">
+      className=" w-fit h-[52px] flex flex-col  mx-auto ">
+        <div className="relative">
+
       <input
         type={isShowPass ? "text" : type}
         onKeyDown={keydown}
         placeholder={label}
-        className={` ${
+        className={`relative ${
           color === "white" ? "sm:bg-white bg-transparent" : "bg-transparent"
         }  border-[1px]  h-[34px]   ${
           meta.error && meta.touched
@@ -59,6 +61,7 @@ export default function TextInput({ color, label, type, ...props }) {
           {!isShowPass ? <AiFillEyeInvisible /> : <AiFillEye />}
         </motion.span>
       )}
+        </div>
       {meta.error && meta.touched && (
         <p className="text-[7px] transition-all text-red-600  mt-1 pr-2">{meta.error}</p>
       )}

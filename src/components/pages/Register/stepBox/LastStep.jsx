@@ -10,7 +10,6 @@ const LastStep = () => {
   const userData = useStepperStore((state) => state.data);
   const lastStepError = useStepperStore((state) => state.lastStepError);
   const lastStepLoading = useStepperStore((state) => state.lastStepLoading);
-
   const userInfo = {
     fullName: userData.name + " " + userData.lastname,
     email: userData.email,

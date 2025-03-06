@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 
 function Final() {
   const userData = useStepperStore((state) => state.data);
+  const step = useStepperStore((state) => state.step);
   const navigate = useRouter();
   useEffect(() => {
     setTimeout(() => {

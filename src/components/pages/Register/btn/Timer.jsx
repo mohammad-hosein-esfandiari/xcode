@@ -19,9 +19,7 @@ function Timer({color}) {
   useEffect(() => {
     console.log(randomCode);
   }, [randomCode]);
-  useEffect(() => {
-    return () => emptyRandomCode();
-  }, []);
+
   useEffect(() => {
     let timer;
     if (randomCode) {
@@ -64,7 +62,7 @@ function Timer({color}) {
       ) : (
         <button
           onClick={clickHandler}
-          className={` border-[1px] border-primary w-fit bg-transparent px-2 hover:scale-[1.03]  transition duration-500 py-[5px] ${color == 'white' ? 'sm:text-white text-mode-color mr-4': ' text-mode-color'}  rounded-[4px] text-[10px] mt-4`}>
+          className={` border-[1px] border-primary w-fit mr-2 bg-transparent px-2 hover:scale-[1.03]  transition duration-500 py-[5px] ${color == 'white' ? 'sm:text-white text-mode-color': ' text-mode-color'}  rounded-[4px] text-[10px] mt-4`}>
           Resend verification code
         </button>
       )}

@@ -19,7 +19,7 @@ export const loginFunc = async (info) => {
       };
     
         if (info.remember) {
-          setCookie("UoXa-I", obj, 30);
+          setCookie("UoXa-I", obj, 7);
         } else {
           setCookie("UoXa-I", obj);
         }
