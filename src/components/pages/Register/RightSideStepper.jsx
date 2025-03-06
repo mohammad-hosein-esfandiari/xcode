@@ -56,7 +56,7 @@ const RightSideStepper = ({steps,currentStep}) => {
           </div>
           {/* description detail */}
           <div
-            className={` transition-all hidden md:block duration-800 h-fit pt-3 pr-3 ${
+            className={` transition-all hidden md:block duration-800 h-fit pt-3 pl-3 ${
               currentStep + 1 === index + 1
                 ? " text-white font-bold text-[25px] pr-6 opacity-100 "
                 : currentStep + 1 > index + 1

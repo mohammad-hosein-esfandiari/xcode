@@ -14,7 +14,7 @@ const ImgHolder = ({versian,img,level}) => {
         height={200}
         className="h-full w-full object-cover object-center  transition-all duration-500"
       />
-      <span className="absolute top-6 text-[12px] text-gray-500 left-0 py-1 text-center rounded-r-[4px] bg-[#ffffffcf] px-2">
+      <span className="absolute top-6 text-[12px] text-gray-500 right-0 py-1 text-center rounded-l-[4px] bg-[#ffffffcf] px-2">
       {level}
       </span>
 

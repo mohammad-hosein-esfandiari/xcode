@@ -15,14 +15,14 @@ const Register = () => {
 
   useEffect(() => {
     document.body.style.backgroundImage = "var(--linear-1)";
-    setStepZero();
-    return () => setStepZero();
+    setStepZero(0);
+    return () => setStepZero(0);
   }, []);
   return (
     <>
       <div className=" flex flex-col  justify-center w-full min-h-[100vh]">
         <div className="xl:container px-[10px] sm:px-[50px]  lg:px-[110px]">
-          {currentStep === 6 ? (
+          {currentStep == 6 ? (
             <>
               <Final />
             </>

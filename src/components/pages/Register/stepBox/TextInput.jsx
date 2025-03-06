@@ -29,12 +29,14 @@ export default function TextInput({ color, label, type, ...props }) {
     <motion.div
       key={step}
       {...stepAnimate}
-      className="w-fit h-[52px] flex flex-col  mx-auto relative ">
+      className=" w-fit h-[52px] flex flex-col  mx-auto ">
+        <div className="relative">
+
       <input
         type={isShowPass ? "text" : type}
         onKeyDown={keydown}
         placeholder={label}
-        className={` ${
+        className={`relative ${
           color === "white" ? "sm:bg-white bg-transparent" : "bg-transparent"
         }  border-[1px]  h-[34px]   ${
           meta.error && meta.touched
@@ -44,7 +46,7 @@ export default function TextInput({ color, label, type, ...props }) {
                   ? "sm:text-black text-mode-color"
                   : "text-mode-color"
               } `
-        } w-[200px] focus:shadow-lg  focus:scale-[1.03] focus:border-[2px] transition-all duration-500 outline-none  py-[5px] px-[8px] text-[10px] rounded-[4px] `}
+        } w-[200px] focus:shadow-lg relative focus:scale-[1.03] focus:border-[2px] transition-all duration-500 outline-none  py-[5px] px-[8px] text-[10px] rounded-[4px] `}
         {...field}
         {...props}
         autoComplete="off"
@@ -52,13 +54,14 @@ export default function TextInput({ color, label, type, ...props }) {
       {type === "password" && (
         <motion.span
           whileTap={{ scale: 1.05 }}
-          className={`absolute cursor-pointer left-2 top-[9.8px] text-[13px]  ${
+          className={`absolute cursor-pointer right-2 top-[9.8px] text-[13px]  ${
             isShowPass ? "text-gray-500" : "text-gray-400 "
           } `}
           onClick={clickHandler}>
           {!isShowPass ? <AiFillEyeInvisible /> : <AiFillEye />}
         </motion.span>
       )}
+        </div>
       {meta.error && meta.touched && (
         <p className="text-[7px] transition-all text-red-600  mt-1 pr-2">{meta.error}</p>
       )}

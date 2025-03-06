@@ -19,9 +19,7 @@ function Timer({color}) {
   useEffect(() => {
     console.log(randomCode);
   }, [randomCode]);
-  useEffect(() => {
-    return () => emptyRandomCode();
-  }, []);
+
   useEffect(() => {
     let timer;
     if (randomCode) {
@@ -53,19 +51,19 @@ function Timer({color}) {
             className={`flex ${
               minute < 1 ? "text-red-500" : "text-green-700"
             } items-center text-[8px]`}>
-            <span>{second < 10 ? "0" + second : second}</span>
-            <span className="mt-[-3px]">:</span>
-            <span>0{minute}</span>
-          </div>
-          <span className="text-[7px] mt-[-2px] text-gray-400 pr-2">
-            زمان باقی مانده تا اعتبار کد
+          <span className="text-[8px] mt-[-2px] text-gray-400 pr-2">
+          time remaining until the code expire
           </span>
+            <span>0{minute}</span>
+            <span className="mt-[-3px]">:</span>
+            <span className="pr-2">{second < 10 ? "0" + second : second}</span>
+          </div>
         </div>
       ) : (
         <button
           onClick={clickHandler}
-          className={` border-[1px] border-primary w-fit bg-transparent px-5 hover:scale-[1.05]  transition duration-500 py-[5px] ${color == 'white' ? 'sm:text-white text-mode-color ml-4': ' text-mode-color'}  rounded-[4px] text-[10px] mt-4`}>
-          دریافت مجدد رمز
+          className={` border-[1px] border-primary w-fit mr-2 bg-transparent px-2 hover:scale-[1.03]  transition duration-500 py-[5px] ${color == 'white' ? 'sm:text-white text-mode-color': ' text-mode-color'}  rounded-[4px] text-[10px] mt-4`}>
+          Resend verification code
         </button>
       )}
     </motion.div>

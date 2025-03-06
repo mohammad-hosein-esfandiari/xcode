@@ -8,7 +8,7 @@ const SkeletonBox = ({ posts , array}) => {
         },
       };
   return (
-    <>
+    <> 
       {Array(array)
         .fill()
         .map((item, index) => (

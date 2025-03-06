@@ -4,7 +4,7 @@ import Register from "@/components/pages/Register/Register";
 
 const RegisterPage = () => {
     return (
-        <>
+        <> 
         <AnimTrue/>
             <Register/>
         </>

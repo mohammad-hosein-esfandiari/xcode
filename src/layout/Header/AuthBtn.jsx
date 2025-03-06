@@ -1,7 +1,5 @@
 "use client";
-import Link from "next/link";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
 import PrimaryBtn from "@/components/common/PrimaryBtn";
 import SearchBtn from "./SearchBtn";
 import { useUserInfo } from "@/context/userInfoStore";

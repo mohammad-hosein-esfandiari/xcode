@@ -7,17 +7,17 @@ const LeftStep = () => {
         <Image
         alt="login"
         priority={true}
-          src={login}
+          src={login} 
           className="w-full h-full bg-cover object-cover object-center"
         />
         <div className="w-full h-full  absolute bg-[#131731c7]"></div>
       </div>
       <div className="absolute top-0 right-0 w-full h-full flex flex-col items-center justify-center">
         <h1 className="text-color-green drop-shadow-text text-[45px] font-bold">
-          به XCODE خوش اومدید
+        Welcome to XCODE   
         </h1>
         <span className="mt-4 text-white drop-shadow-text">
-          با ما بهترین و ساده ترین روش آموزش را تجربه کنید...
+        Experience the best and easiest training method with us ...
         </span>
       </div>
     </div>

@@ -6,9 +6,9 @@ import TextInput from "./TextInput";
 const BirthdayHolder = () => {
   return (
     <motion.div {...stepAnimate}>
-      <TextInput name="email" label="پست الکترونیک" type="email" />
+      <TextInput name="email" label="Email" type="email" />
 
-      <TextInput name="nationalcode" label="کد ملی" type="text" />
+      <TextInput name="nationalcode" label="National code" type="text" />
     </motion.div>
   );
 };

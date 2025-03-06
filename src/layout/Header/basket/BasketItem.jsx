@@ -20,19 +20,19 @@ const BasketItem = ({image,title,price,id}) => {
       </li>
       <li className="flex-1 flex flex-col justify-between px-3 text-[18px] text-mode-color">
         <div>
-        <h2 className="pl-2 py-1 text-[14px]  ">{title.split('|')[0]}</h2>
+        <h2 className="pl-2 py-1 text-[14px]">{title}</h2>
         </div>
         <div className="mt-2 flex justify-between">
            {
             price ? (  <div>
               <span className="text-[16px] ml-2 font-bold text-[#e05858]">
-                {price.toLocaleString('fa-IR')}
+                {price}
               </span>
               <span className="text-[8px] relative text-gray-400">
-                توما
-                <span className="absolute left-0 top-[-8px]">ن</span>
+              $
+               
               </span>
-            </div>) : (<span className="py-1 text-[#e05858] font-bold text-[12px]">رایگان</span>)
+            </div>) : (<span className="py-1 text-[#e05858] font-bold text-[12px]">Free</span>)
            }
           
           <button onClick={removeHandler} className="text-[20px] hover:scale-[1.2] transition-all duration-300 py-1 rounded-lg text-[#e05858b5] "><RiDeleteBinLine/></button>

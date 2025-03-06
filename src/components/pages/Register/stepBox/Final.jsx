@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 
 function Final() {
   const userData = useStepperStore((state) => state.data);
+  const step = useStepperStore((state) => state.step);
   const navigate = useRouter();
   useEffect(() => {
     setTimeout(() => {
@@ -30,14 +31,14 @@ function Final() {
           <div className=" flex items-center justify-center ">
             <TiTick className="text-[80px] text-white border-8 rounded-full " />
           </div>
-          <span className="">ثبت نام با موفقیت انجام شد</span>
+          <span className="">Registration successful</span>
           <span className="font-bold text-center text-[20px]">
-            کاربر گرامی {userData.name} به سایت ما خوش آمدید.{" "}
+             Dear {userData.name} Welcome to our website.
           </span>
         </div>
         <div className="flex items-center">
           <ClipLoader size={12} />
-          <span className="pr-2">در حال انتقال به صفحه اصلی</span>
+          <span className="pr-2">Moving to home page ...</span>
         </div>
       </motion.div>
     </motion.div>

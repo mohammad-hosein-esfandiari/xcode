@@ -20,7 +20,7 @@ const BasketItemHolder = () => {
           <ul className=" w-full flex items-center justify-center h-full">
             <li className="flex  w-fit p-4 rounded-[4px] flex-col items-center justify-center">
               <FaShopify className="text-[100px] text-primary mb-4"/>
-              <span className="text-[20px] font-bold text-[#e05858]">سبد خرید شما خالی است</span>
+              <span className="text-[20px] font-bold text-[#e05858]">Your cart is empty</span>
             </li>
           </ul>
         </>)

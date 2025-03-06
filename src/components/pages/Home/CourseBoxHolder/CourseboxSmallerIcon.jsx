@@ -11,7 +11,7 @@ import image29 from "@/assets/images/smallerIcon/29.png"
 
 const CourseboxSmallerIcon = () => {
     return (
-        <>
+        <> 
         <motion.div whileInView={{opacity:1}} viewport={{once:true}} initial={{opacity:0}} transition={{delay:0.5}} className="absolute w-[120px] h-[120px] opacity-80 right-[210px] top-[-280px] md:block hidden">
             <Image src={image7} width='auto' height='auto' priority={true} alt="pic"/>
         </motion.div>

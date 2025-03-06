@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import { stepAnimate } from "@/constant/stepperInputAnimation";
 import JCalendar from "reactjs-persian-calendar";
 export default function DatePicker ({ name }) {
-  const [showDate, setSHowDate] = useState(false);
+  const [showDate, setShowDate] = useState(false);
   const handleCalendarShow = () => {
-    setSHowDate(false);
+    setShowDate(false);
   };
   const openCalendar = (event) => {
     event.stopPropagation();
-    setSHowDate(true);
+    setShowDate(true);
   };
   useEffect(() => {
     window.addEventListener("click", handleCalendarShow);
@@ -26,7 +26,7 @@ export default function DatePicker ({ name }) {
           const clickHandler = (date) => {
           
             setFieldValue(name, date.split('-').join('/'));
-            setSHowDate(false);
+            setShowDate(false);
           };
          
           return (
@@ -41,7 +41,7 @@ export default function DatePicker ({ name }) {
                   showDate && "shadow-lg scale-[1.01]"
                 } transition-all duration-500 outline-none  py-[5px] px-[8px] text-[10px] rounded-[4px] `}
                 readOnly
-                placeholder='تاریخ تولد'
+                placeholder="Birthday"
                 {...field}
                
               />
@@ -53,7 +53,7 @@ export default function DatePicker ({ name }) {
                   onClick={(event) => event.stopPropagation()}
                   className="w-fit rounded-[6px] overflow-hidden scale-[0.7] top-[-180px] shadow-boxShadow right-0 absolute z-20">
                   <JCalendar
-                    locale={"fa"}
+                    locale={"en"}
                     color={"var(--primary-color)"}
                     size={30}
                     

@@ -3,29 +3,12 @@ import teacher from "@/assets/images/instructor2.png";
 import Image from "next/image";
 import unknown from "@/assets/images/user.jpg";
 
-
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { TiSocialLinkedin } from "react-icons/ti";
 
-const TeacherBox = ({ fullName,profile }) => {
-  const checkTeacherWork = (name) => {
-    let text;
-    if (name.includes("اسفندیاری")) {
-      text = "فرانت اند";
-    }
-    if (name.includes("اصغری")) {
-      text = "بک اند";
-    }
-    if (name.includes("محمدحسین")) {
-      text = "هوش مصنوعی";
-    }
-    if (name.includes("نظری")) {
-      text = "دیزاین و سئو";
-    }
-    return text;
-  };
-  const teacherWork = checkTeacherWork(fullName);
+const TeacherBox = ({ fullName,profile,teacherFields }) => {
+
   return (
     <ul className="relative z-10 md:mb-0 mb-8">
       <li className="relative z-10 group cursor-pointer ">
@@ -46,8 +29,8 @@ const TeacherBox = ({ fullName,profile }) => {
             </div>
           </li>
           <li
-            className="flex rounded-full justify-center z-10 items-center w-full h-full absolute top-0 right-0
-               [&>i]:bg-white [&>i]:text-primary [&>i]:rounded-full hlg:[&>i]:p-5 lg:[&>i]:p-3 md:[&>i]:p-2 ss:[&>i]:p-5 sss:[&>i]:p-3 [&>i]:p-[2.5px] [&>i]:opacity-0 group-hover:[&>i]:opacity-100 [&>i]:transition [&>i]:duration-700 [&>i]:delay-100
+            className="flex rounded-full justify-center z-10 items-center w-full h-full absolute top-0 left-0
+               [&>i]:bg-white [&>i]:text-primary [&>i]:rounded-full hlg:[&>i]:p-5 lg:[&>i]:p-3 md:[&>i]:p-2 ss:[&>i]:p-5 sss:[&>i]:p-3 [&>i]:p-[2.5px] [&>i]:opacity-0 group-hover:[&>i]:opacity-100 [&>i]:transition [&>i]:duration-700 [&>i]:delay-75
                   ">
             <i className="hlg:text-[25px] hover:bg-primary hover:text-white xs:text-[18px]">
               <BsTwitter />
@@ -70,10 +53,10 @@ const TeacherBox = ({ fullName,profile }) => {
       </li>
       <li className="text-center py-5">
         <span className="font-bold lg:text-[20px] md:text-[16px] ss:text-[20px] xs:text-[16px] text-[20px] text-textColor">
-          استاد {fullName}
+          Professor {fullName}
         </span>
         <h4 className="text-color-gray mt-2 text-[12px]">
-          کارشناس {teacherWork}
+          {teacherFields.expertise}
         </h4>
       </li>
     </ul>

@@ -20,10 +20,8 @@ const InputBoxWrapper = ({ children }) => {
   const setStepPrev = useStepperStore((state) => state.setStepPrev);
   const setRandomCode = useStepperStore((state) => state.setRandomCode);
   const setUserInfo = useStepperStore((state) => state.setData);
-  const data = useStepperStore((state) => state.data);
   const error = useStepperStore((state) => state.error);
   const setError = useStepperStore((state) => state.setError);
-
   const handleNext = () => {
     setIsLoading(true);
     setTimeout(() => {
@@ -33,6 +31,8 @@ const InputBoxWrapper = ({ children }) => {
   };
 
   const onSubmit = (values, actions) => {
+
+    handleNext();
     if (!isLoading) {
       if (step === children.length - 2) {
         setUserInfo({ ...values });
@@ -44,7 +44,6 @@ const InputBoxWrapper = ({ children }) => {
         }
       }
 
-      handleNext();
     }
   };
   return (
@@ -82,7 +81,8 @@ const InputBoxWrapper = ({ children }) => {
             <Form
               onKeyDown={keyDownHandler}
               onKeyUp={keyUpHandler}
-              autoComplete="off">
+              autoComplete="off"
+              className="flex flex-col justify-center items-center">
               {children[step]}
               <motion.div
                 key={step}

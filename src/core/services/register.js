@@ -8,15 +8,14 @@ export const registerFunc = async (info) => {
   setStates.setLastStepLoading(true);
   useErrorText.getState().setError("");
   try {
-    const response = await api.post("/auth/register", info);
-    console.log(response);
-    if (response.data.success && response?.status === 200) {
-      const loginUserObj = {
-        email: response.data.result.email,
-        password: useStepperStore.getState().data.password,
-        remember:false,
-      };
-      await loginFunc(loginUserObj);
+    const response = await api.post("auth/register", info);
+    if (response?.status === 201) {
+      // const loginUserObj = {
+      //   email: response.data.result.email,
+      //   password: useStepperStore.getState().data.password,
+      //   remember:false,
+      // };
+      // await loginFunc(loginUserObj);
       // useUserInfo.getState().setUserInfo(info);
       // useUserInfo.getState().setUserLogin();
 
@@ -26,7 +25,7 @@ export const registerFunc = async (info) => {
   } catch (error) {
     console.log(error);
     if (error.message == "Network Error") {
-      await useErrorText.getState().setError("به اینترنت متصل نیستید");
+      await useErrorText.getState().setError("No connection");
     }
     if (error.response?.status === 401 || error.response?.status === 400) {
       setStates.setLastStepError(error.response.data.message);
@@ -37,6 +36,6 @@ export const registerFunc = async (info) => {
         setStates.setLastStepLoading(true);
       }, 3000);
     }
-    console.log(error);
+
   }
 };

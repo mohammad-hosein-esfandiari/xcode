@@ -5,9 +5,9 @@ import { BsBookmark } from "react-icons/bs";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
-const FirstRow = ({ title ,lesson }) => {
- 
-
+import formatDuration from "@/core/utils/timeFormat"
+const FirstRow = ({ title ,lessons,duration }) => {
+  const courseDuration = formatDuration(duration)
   return (
     <div>
       <ul className="flex items-center justify-between">
@@ -24,7 +24,7 @@ const FirstRow = ({ title ,lesson }) => {
                 className="text-[11px] text-gray-400 pl-2 flex items-center
             xs:text-[12px]
     ">
-                4 Lessons
+                {lessons.length} Lessons
               </span>
             </li>
             <li className="flex items-center ">
@@ -36,7 +36,7 @@ const FirstRow = ({ title ,lesson }) => {
                 className="text-[11px] text-gray-400 flex pl-2  items-center 
             xs:text-[12px]
     ">
-                10 Hours & 34 Minutes
+                {courseDuration}
               </span>
             </li>
             <li></li>

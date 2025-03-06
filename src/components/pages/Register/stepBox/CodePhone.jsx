@@ -79,7 +79,7 @@ export function CodePhone({ name, color }) {
                   regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
                 />
                 {meta.error && (
-                  <p className="text-[7px] text-red-400  pr-4 " dir="rtl">
+                  <p className="text-[7px] text-red-400  pl-4 ">
                     {meta.error}
                   </p>
                 )}
