@@ -58,6 +58,11 @@ export async function POST(req) {
       nationalId,
       email,
       role:"student",
+      isActive:true,
+      courses:[],
+      resetPasswordToken:"",
+      resetPasswordExpires:"",
+      registerDate:Date.now(),
       teacherFields: role === "teacher" ? teacherFields : undefined,
       adminFields: role === "admin" ? adminFields : undefined,
     });

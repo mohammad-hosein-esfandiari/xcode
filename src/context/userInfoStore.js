@@ -37,7 +37,6 @@ export const useUserInfo = create((set) => ({
             phoneNumber: info.phoneNumber,
             nationalId: info.nationalId,
             profile: info.profile,
-            registerDate: info.registerDate,
             role: info.role,
             courses: info.courses,
             resetPasswordExpires: info.resetPasswordExpires,
