@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 await dbConnect();
 
 export async function GET(req) {
-  const {id}=req.params
+    console.log("req ====>",req)
     try {
 
   

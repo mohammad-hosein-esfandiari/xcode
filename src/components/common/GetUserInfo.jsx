@@ -32,34 +32,34 @@ const GetUserInfo = () => {
       useBasket.getState().setBasket(newArray);
       console.log(res);
     } catch (error) {
-      try {
-        const res = await api("/employee/" + user.id,{
-          headers:{
-            "x-auth-token": user.token
-          }
-        });
-        setUserLogin();
-        setUserInfo(user.token, res.data.result);
-        // setUserItemObj({resetPasswordToken:null})
-        useImage.getState().setImage(res.data.result.profile);
-        let newArray = basket.state.basket.filter((item) =>
-          item.students.every((el) => el._id !== res.data.result._id)
-        );
-        useBasket.getState().setBasket(newArray);
-        console.log(res);
+      // try {
+      //   const res = await api("/employee/" + user.id,{
+      //     headers:{
+      //       "x-auth-token": user.token
+      //     }
+      //   });
+      //   setUserLogin();
+      //   setUserInfo(user.token, res.data.result);
+      //   // setUserItemObj({resetPasswordToken:null})
+      //   useImage.getState().setImage(res.data.result.profile);
+      //   let newArray = basket.state.basket.filter((item) =>
+      //     item.students.every((el) => el._id !== res.data.result._id)
+      //   );
+      //   useBasket.getState().setBasket(newArray);
+      //   console.log(res);
         
-      } catch (error2) {
+      // } catch (error2) {
         
         
-              toast.error('خطایی رخ داده است ')
-              toast.warning('لطفا دوباره تلاش کنید')
-              toast.update('درحال انتقال به صفحه ورود')
-              setTimeout(()=>{navigate.push('/auth/login')},1000)
-              eraseCookie('UoXa-I')
-              setUserLogout()
-      }
-
-
+      //         toast.error("An error occured")
+      //         toast.warning("Please try again later")
+      //         toast.update("Moving to home page ...")
+      //         setTimeout(()=>{navigate.push('/auth/login')},1000)
+      //         // eraseCookie('UoXa-I')
+      //         // setUserLogout()
+      // }
+      toast("An error occured")
+      console.log("error in get user info",error)
     }
   },[login,setUserLogout,setUserLogin]);
   const logOut =useCallback( ()=>{
