@@ -8,7 +8,7 @@ await dbConnect();
 export async function GET(req) {
     console.log("req ====>",req)
     try {
-
+ 
   
       // دریافت کاربران از دیتابیس
       const user = await User.find({_id:id}); 

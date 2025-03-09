@@ -24,7 +24,7 @@ export const loginFunc = async (info) => {
         } else {
           setCookie("UoXa-I", obj);
         }
-     
+       
 
       useUserInfo.getState().setUserInfo(response.data.token,response.data.user);
       useUserInfo.getState().setUserLogin();

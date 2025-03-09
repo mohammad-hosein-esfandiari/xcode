@@ -9,7 +9,7 @@ export default function RightStep (){
       <div className=" w-fit ">
         <LoginHead/>
         <LoginForm/>
-      </div>
+      </div> 
         <RegisterLink/>
     </div>
   );
