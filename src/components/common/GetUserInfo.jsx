@@ -21,7 +21,7 @@ const GetUserInfo = () => {
  
   const getUser = useCallback(async () => {
     try {
-      const res = await api("student/" + user._id);
+      const res = await api("student/" + user.id);
       setUserLogin();
       setUserInfo(user.token, res.data.user);
       // setUserItemObj({resetPasswordToken:null})
@@ -30,7 +30,6 @@ const GetUserInfo = () => {
         item.students.every((el) => el._id !== res.data.user._id)
       );
       useBasket.getState().setBasket(newArray);
-      console.log(res);
     } catch (error) {
       // try {
       //   const res = await api("/employee/" + user.id,{
@@ -73,7 +72,6 @@ const GetUserInfo = () => {
       logOut()
     }
     console.log(userInfo);
-    console.log(login);
   }, [login]);
   return null;
 };
