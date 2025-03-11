@@ -37,13 +37,13 @@ const Chips = ({href}) => {
         </li>
       ))}
       {queryArray?.length > 3 && (
-        <li className="rounded-[4px] shadow-lg sm:block hidden text-white bg-color-orange mr-2 py-1 px-2">
+        <li className="rounded-[4px] shadow-lg sm:block hidden text-white bg-color-orange ml-2 py-1 px-2">
           <>
             <span className="sm:hidden block">
-              +{queryArray.length.toLocaleString("fa-IR")}
+              +{queryArray.length}
             </span>{" "}
             <span className="sm:block hidden">
-              +{(queryArray.length - 3).toLocaleString("fa-IR")}
+              +{(queryArray.length - 3)}
             </span>
           </>
         </li>

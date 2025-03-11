@@ -1,63 +1,63 @@
 export const filterAccordion = [
   {
     id: 1,
-    label: "مرتب سازی",
+    label: "Sort by",
     name:'arrange',
     radioGroup: [
       {
         id: "newest",
-        radioLabel: "جدیدترین",
+        radioLabel: "The Newest",
       },
       {
         id: "oldest",
-        radioLabel: "قدیمی ترین",
+        radioLabel: "The Oldest",
       },
       {
         id:"popular",
-        radioLabel: "محبوب ترین",
+        radioLabel: "Most Popular",
       },
     ],
     radio:true
   },
   {
     id: 2,
-    label: "دسته بندی",
+    label: "Category",
     name:'order',
     radioGroup: [
       {
         id: "frontend",
-        radioLabel: "فرانت اند",
+        radioLabel: "Frontend",
       },
       {
         id: "backend",
-        radioLabel: "بک اند",
+        radioLabel: "Backend",
       },
       {
         id: "python",
-        radioLabel: "پایتون",
+        radioLabel: "Python",
       },
       {
         id: "miscellaneous",
-        radioLabel: "متفرقه",
+        radioLabel: "Miscellaneous",
       },
     ],
   },
   {
     id: 3,
-    label: "قیمت",
+    label: "Price",
     name:'price',
     radioGroup: [
       {
         id:"cheapest" ,
-        radioLabel: "ارزان ترین",
+        radioLabel: "The Cheapest",
       },
       {
         id: "expensive",
-        radioLabel: "گران ترین",
+        radioLabel: "Most Expensive",
       },
       {
         id: "discounted",
-        radioLabel: "تخفیف خورده ها",
+        radioLabel: "Discounted",
       },
     ],
     radio:true,

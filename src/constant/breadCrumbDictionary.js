@@ -1,14 +1,14 @@
 export const courseDetailsName = {
     javascript: {
-      title: "جاوا اسکریپت",
+      title: "Javascript",
       href: "javascript",
     },
     backend: {
-      title: "بک اند",
+      title: "Backend",
       href: "backend",
     },
     "edit-profile": {
-      title: "ویرایش پروفایل",
+      title: "Edit Profile",
       href: "student-panel/edit-profile",
     }
   }
@@ -18,15 +18,15 @@ export const courseDetailsName = {
 
  export const coursesName = {
     courses: {
-      title: "دوره ها",
+      title: "Courses",
       href: "courses",
     },
     blogs: {
-      title: "اخبار و مقالات",
+      title: "Blogs",
       href: "blogs",
     },
     "student-panel": {
-      title: "پنل دانشجو",
+      title: "Student Panel",
       href: "student-panel/dashboard",
     },
   };

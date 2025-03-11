@@ -83,7 +83,7 @@ const FilterInput = ({ type, label, name, id ,href}) => {
       />
       <label
         htmlFor={`${id}`}
-        className="block w-full cursor-pointer  pr-4 peer-checked:text-primary text-mode-color">
+        className="block w-full cursor-pointer  pl-4 peer-checked:text-primary text-mode-color">
         {label}
       </label>
     </div>

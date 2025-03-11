@@ -28,7 +28,7 @@ const RightFIlter = ({href,posts}) => {
         onClick={filterBtnClick}
         className=" shadow-lg rounded-[4px] px-4 xs:py-1 py-2 flex items-center justify-between bg-primary">
         <FaFilter className="text-white" />
-        <div className="xs:pr-4 text-white"><span className="xs:block hidden">فیلترسازی</span></div>
+        <div className="xs:pl-4 text-white"><span className="xs:block hidden">Filter</span></div>
       </button>
       <AnimatePresence>
         {isShow && <FilterBox posts={posts} href={href} show={setIsShow} />}

@@ -18,7 +18,7 @@ const Hero = ({ title }) => {
             </h1>
           </li>
           <li className="">
-            {/* <BreadCrumb /> */}
+            <BreadCrumb />
           </li>
         </ul>
       </section>

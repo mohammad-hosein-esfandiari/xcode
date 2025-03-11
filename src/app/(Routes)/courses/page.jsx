@@ -6,10 +6,9 @@ import Courses from "@/components/pages/Courses/Courses";
 import FilteringRow from "@/components/pages/Courses/MainSection/FilteringRow";
 import MainSection from "@/components/pages/Courses/MainSection/MainSection";
 import { notFound } from "next/navigation";
-const URL = "https://api.xcode.sepehracademy.ir/api"
 
 async function getPosts() {
-  const res = await fetch(URL+"/course/getall", {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"courses", {
     cache: "no-store",
   });
   if(!res.ok) notFound()
@@ -22,9 +21,9 @@ const CoursesPage = async ({ searchParams, params }) => {
     <>
       <AnimTrue />
       <ScrollBug />
-      <Hero params={params} title="دوره ها" />
-      <FilteringRow posts={posts.result.reverse()} />
-      <MainSection posts={posts.result.reverse()} />
+      <Hero params={params} title="Courses" />
+      <FilteringRow posts={posts.reverse()} />
+      <MainSection posts={posts.reverse()} />
     </>
   );
 };
