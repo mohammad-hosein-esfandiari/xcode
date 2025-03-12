@@ -28,11 +28,11 @@ const Chips = ({href}) => {
         <li
           key={index}
           name={query}
-          className="bg-[#9d9d9d7d] mr-2 sm:flex hidden items-center text-[13px] text-mode-color px-3 py-[6px] rounded-[4px]">
+          className="bg-[#9d9d9d7d] ml-2 sm:flex hidden items-center text-[13px] text-mode-color px-3 py-[6px] rounded-[4px]">
           {filterName[query]}
           <IoMdClose
             onClick={() => deleteHandler(index,query)}
-            className="mr-3 cursor-pointer bg-[#3e3e3e76] hover:scale-[1.1] hover:text-red-400 hover:bg-white transition-all duration-300 rounded-full h-[20px] w-[20px] p-1 text-white"
+            className="ml-3 cursor-pointer bg-[#3e3e3e76] hover:scale-[1.1] hover:text-red-400 hover:bg-white transition-all duration-300 rounded-full h-[20px] w-[20px] p-1 text-white"
           />
         </li>
       ))}
@@ -53,7 +53,7 @@ const Chips = ({href}) => {
 
       <li className="rounded-[4px] shadow-lg sm:hidden block text-white bg-color-orange mr-2 py-1 px-2">
         <span className="sm:hidden block">
-          +{queryArray?.length.toLocaleString("fa-IR")}
+          +{queryArray?.length}
         </span>
       </li>
         )

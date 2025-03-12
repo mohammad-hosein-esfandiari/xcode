@@ -7,16 +7,21 @@ import FilteringRow from "@/components/pages/Courses/MainSection/FilteringRow";
 import MainSection from "@/components/pages/Courses/MainSection/MainSection";
 import { notFound } from "next/navigation";
 
-async function getPosts() {
+async function getPosts(page,limit) {
   const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"courses", {
     cache: "no-store",
   });
   if(!res.ok) notFound()
   const posts = await res.json();
-  return posts;
+const endIndex = page * limit;
+const startIndex = endIndex - limit;
+  const filteredPosts = posts.slice(startIndex,endIndex)
+  return filteredPosts;
 }
 const CoursesPage = async ({ searchParams, params }) => {
-  const posts = await getPosts();
+  const {limit , page} = searchParams
+  const posts = await getPosts(page,limit);
+  
   return (
     <>
       <AnimTrue />

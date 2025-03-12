@@ -15,7 +15,7 @@ import { notFound } from "next/navigation";
 export const filteringTheCourses = (posts, queryArray, limit, page) => {
   const filteredData = useFilteredArrayCourses.getState().filteredData;
   const filter = useSearchParamsStore.getState().filter;
-
+  console.log("filter ==>",filter)
   let filteredArray = [...posts];
   
   if (
@@ -51,7 +51,7 @@ export const filteringTheCourses = (posts, queryArray, limit, page) => {
 
   if (filter.other.some((item) => filterItemObj.find((el) => el === item))) {
     const arr = filteredArray.filter((item) =>
-      filter.other.some((el) => item.title.split('|')[1] === el)
+      filter.other.some((el) => item.category === el)
     );
     filteredArray = arr;
   }

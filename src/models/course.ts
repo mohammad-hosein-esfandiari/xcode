@@ -18,10 +18,11 @@ const courseSchema = new mongoose.Schema({
   image: { type: String, required: true }, // تصویر دوره
   description: { type: String, required: true }, // توضیحات دوره
   duration : {type : Number , required:true},
+  category:{type:String,required:true,enum:["frontend","backend","python","miscellaneous"]},
   level: {
     type: String,
     required: true,
-    enum: ["Preliminary", "Intermediate", "Advanced"], // فقط یکی از این سه مقدار مجاز است
+    enum: ["preliminary", "intermediate", "advanced"], // فقط یکی از این سه مقدار مجاز است
   }, // سطح دوره
   teacher: {
     type: String, // یا type: mongoose.Schema.Types.ObjectId برای ارجاع به کاربران

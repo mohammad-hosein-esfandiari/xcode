@@ -44,6 +44,26 @@ export const filterAccordion = [
   },
   {
     id: 3,
+    label: "Level",
+    name:'level',
+    radioGroup: [
+      {
+        id: "preliminary",
+        radioLabel: "Preliminary",
+      },
+      {
+        id: "intermediate",
+        radioLabel: "Intermediate",
+      },
+      {
+        id: "advanced",
+        radioLabel: "Advanced",
+      },
+
+    ],
+  },
+  {
+    id: 4,
     label: "Price",
     name:'price',
     radioGroup: [
