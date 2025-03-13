@@ -7,7 +7,7 @@ import LinkCp from "@/components/common/LinkCp";
 export const CenterLinks = () => {
 const {pathname} = useUrlArray()
   return (
-    <motion.div  className="md:flex flex-1 sm:hidden hidden items-center justify-center pr-[30px]">
+    <motion.div  className="md:flex flex-1 sm:hidden hidden items-center justify-center">
       {header.map((item) => (
         <LinkCp
        

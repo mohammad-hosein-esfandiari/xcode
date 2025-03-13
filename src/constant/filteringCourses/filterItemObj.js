@@ -30,7 +30,7 @@ export const allCheckboxItem = [
   "backend",
   "python",
   "miscellaneous",
-  "beginner",
-  "medium",
+  "preliminary",
+  "intermediate",
   "advanced"
 ]

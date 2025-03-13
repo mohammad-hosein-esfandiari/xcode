@@ -15,7 +15,6 @@ import { notFound } from "next/navigation";
 export const filteringTheCourses = (posts, queryArray, limit, page) => {
   const filteredData = useFilteredArrayCourses.getState().filteredData;
   const filter = useSearchParamsStore.getState().filter;
-  console.log("filter ==>",filter)
   let filteredArray = [...posts];
   
   if (
@@ -65,7 +64,6 @@ export const filteringTheCourses = (posts, queryArray, limit, page) => {
   useFilteredArrayCourses.getState().setFirstArray(filteredArray);
 
   let completedArray = filteredArray.slice(startIndex, lastIndex);
-console.log(completedArray)
   useFilteredArrayCourses.getState().setFilteredData(completedArray);
 };
 
