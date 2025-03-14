@@ -13,7 +13,7 @@ const Pagination2 = ({ posts, bgNone,href }) => {
         `/${href}?limit=${limit}&page=${
           event.selected + 1
         }&filter=${queryArray.join("_")}`
-      );
+      ); 
     } else if(category) {
       router.push(`/${href}?limit=${limit}&page=${event.selected + 1}&category=${category}`);
     } else{
