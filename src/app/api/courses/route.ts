@@ -32,7 +32,9 @@ export async function POST(req: Request) {
       cost,
       image,
       description,
+      category,
       level,
+      duration,
       teacher,
       lessons,
     } = body;
@@ -56,6 +58,9 @@ export async function POST(req: Request) {
       disLikedCount: disLikedCount || 0,
       cost,
       image,
+      category,
+      level,
+      duration,
       description,
       teacher, // انتظار می‌رود teacher به عنوان ObjectId ارسال شود
       lessons, // انتظار می‌رود lessons به شکل [{ title: "...", link: "..." }] ارسال شود
