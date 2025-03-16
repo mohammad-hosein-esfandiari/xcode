@@ -21,9 +21,9 @@ const BlogsDetail = ({post,news}) => {
   })
   return (
     <>
-      <Hero title="جزئیات اخبار و مقالات" />
+      <Hero title="News & Articles Details" />
       <section className=" xl:container w-full  mt-4 lg:px-[100px] sm:px-6 px-4">
-        <TitleRow title={post.title.split('|')[0]} />
+        <TitleRow title={post.title} />
         <div className="w-full md:px-40  overflow-hidden">
         <Image alt="news" priority={true} className="w-full rounded-[4px] h-full " width={500} height={500} src={post.image} />
 
