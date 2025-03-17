@@ -3,7 +3,7 @@ import RightSection from "./rightSection/RightSection";
 
 
 const BlogsMainSection = ({ news ,newsArray,firstArray,lastCourses}) => {
-
+ 
 
 
   return (

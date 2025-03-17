@@ -18,7 +18,7 @@ const BlogsDetail = ({post,news}) => {
       id:item.id,
       title:item.title
     }
-  })
+  }) 
   return (
     <>
       <Hero title="News & Articles Details" />

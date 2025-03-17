@@ -14,7 +14,7 @@ async function getNewsById(id) {
     return news;
   }
 const BlogsDetailPage = async ({params}) => {
-    const post = await getNewsById(params.slug)
+    const post = await getNewsById(params.slug) 
     const news = await getNews();
     return (
         <>
