@@ -26,7 +26,7 @@ export async function POST(req) {
     const body = await req.json();
 
     // اعتبارسنجی داده‌ها
-    const { title, category, image, text } = body;
+    const { title, category, image, text,paragraph } = body;
 
     if (!title || !category || !image || !text) {
       return NextResponse.json(
@@ -41,6 +41,7 @@ export async function POST(req) {
       category,
       image,
       text,
+      paragraph
     });
 
     // ذخیره خبر در دیتابیس

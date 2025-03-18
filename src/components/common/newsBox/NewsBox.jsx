@@ -2,13 +2,17 @@ import pic from "@/assets/images/bannercourse.png";
 import { textToObjectBlogs } from "@/core/utils/blogsAoiConvertor";
 import Image from "next/image";
 import Link from "next/link";
-import nodejsVdjango from "@/assets/images/nodejs-django.png"
+import nodejsVdjango from "@/assets/images/nodejs-django.png";
 import { CiCalendar } from "react-icons/ci";
 import LinkCp from "../LinkCp";
 
-const NewsBox = ({ image, title, _id, text,createdAt }) => {
-
-  const date = createdAt.split("T")[0].split('-').join("/")
+const NewsBox = ({ image, title, _id, text, createdAt }) => {
+  const date = new Date(createdAt).toLocaleDateString("en-US", {
+    month: "numeric",
+    day: "numeric",
+    year: "numeric",
+  });
+  // const date = createdAt.split("T")[0].split('-').reverse().join("/")
   return (
     <div
       className="hover:translate-y-[-10px] cursor-pointer transition-all duration-500 md:h-[445px] sm:h-[490px] flex flex-col justify-between shadow-modeShadow bg-box-color  rounded-lg 
@@ -26,7 +30,6 @@ const NewsBox = ({ image, title, _id, text,createdAt }) => {
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div className="flex-1">
           <h5 className="mb-2 font-semibold text-[18px] tracking-tight  text-mode-color ">
-          
             {title}
           </h5>
         </div>
@@ -34,18 +37,17 @@ const NewsBox = ({ image, title, _id, text,createdAt }) => {
           {text}
         </p>
 
-          <div className=" flex justify-between flex-row-reverse ">
-            <div className="flex items-center text-color-gray">
-              <CiCalendar className="text-[16px] mr-2 text-color-orange" />
-              <span className="text-[10px] pt-1">{date}</span>
-            </div>
-            <LinkCp
-              href={"/blogs/" + _id}
-              className="inline-flex text-primary group hover:underline hover:underline-offset-1 items-center text-sm font-medium text-center text-[12px] rounded-[4px]    ">
-              more details
-            </LinkCp>
+        <div className=" flex justify-between flex-row-reverse ">
+          <div className="flex items-center text-color-gray">
+            <CiCalendar className="text-[16px] mr-2 text-color-orange" />
+            <span className="text-[10px] pt-1">{date}</span>
           </div>
-
+          <LinkCp
+            href={"/blogs/" + _id}
+            className="inline-flex text-primary group hover:underline hover:underline-offset-1 items-center text-sm font-medium text-center text-[12px] rounded-[4px]    ">
+            more details
+          </LinkCp>
+        </div>
       </div>
     </div>
   );

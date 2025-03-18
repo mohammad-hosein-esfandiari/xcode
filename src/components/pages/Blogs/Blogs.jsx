@@ -16,7 +16,7 @@ const Blogs = ({ news ,lastCourses}) => {
 
     if (category !== "all") {
       copyArray = copyArray.filter(
-        (item) => item.title.split("|")[1] == category
+        (item) => item.category == category
       );
     }
     setFirstArray(copyArray);
