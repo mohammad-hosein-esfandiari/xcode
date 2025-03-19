@@ -28,7 +28,7 @@ const BlogsDetail = ({post,news}) => {
         <TitleRow title={post.title} />
         <div className="w-full md:px-40  overflow-hidden">
         <Image alt="news" priority={true} className="w-full rounded-[4px] h-full " width={500} height={500} src={post.image} />
-
+ 
         </div>
         <div className="md:px-24 ">
           <div className="pb-24 ">

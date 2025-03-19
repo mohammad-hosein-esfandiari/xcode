@@ -6,7 +6,7 @@ async function getNewsById(id) {
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"news/"+id,{cache:'no-store'});
     const post = await res.json();
     return post;
-  }
+  } 
   async function getNews() {
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"news",{cache:'no-store'});
     const news = await res.json();
