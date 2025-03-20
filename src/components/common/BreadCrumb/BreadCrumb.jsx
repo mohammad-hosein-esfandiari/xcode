@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useUrlArray } from "@/hooks/useUrlArray";
 const BreadCrumb = () => {
   const { pathname } = useUrlArray();
+  console.log("pathname ===>", pathname);
 
   return (
     <div className=" flex items-center">

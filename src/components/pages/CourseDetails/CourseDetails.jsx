@@ -6,7 +6,7 @@ import SliderHolder from "./mainSection/SliderHolder";
 const CourseDetails = ({courseDetail,allComments,posts}) => {
     return (
         <>
-            <Hero title="جزئیات دوره"/>
+            <Hero title="Course Details"/>
             <section className=" xl:container w-full mt-4 lg:px-[100px] pb-8 sm:px-6 px-4">
                 <CourseDetailsMainSection allComments={allComments} courseDetail={courseDetail}/>
             </section>

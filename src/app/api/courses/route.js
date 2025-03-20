@@ -6,9 +6,9 @@ export async function GET() {
   await dbConnect();
   try {
     // دریافت تمام دوره‌ها از دیتابیس
-    const courses = await Course.find({})
+    const courses = await Course.find({});
     // const courses = await Course.find({}).populate('students teacher'); // populate برای دریافت اطلاعات کامل کاربران
-    return NextResponse.json(courses,{status:200});
+    return NextResponse.json(courses, { status: 200 });
   } catch (error) {
     console.error("Error fetching courses:", error);
     return NextResponse.json(
@@ -18,7 +18,7 @@ export async function GET() {
   }
 }
 
-export async function POST(req: Request) {
+export async function POST(req) {
   await dbConnect();
   try {
     const body = await req.json();
