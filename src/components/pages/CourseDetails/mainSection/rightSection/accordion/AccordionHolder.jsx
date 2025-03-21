@@ -23,7 +23,7 @@ const AccordionHolder =  ({  students,lessonId }) => {
   return (
     <div>
           {!user.studentModel.isActive && isInStudents && (
-            <InActiveCp text="شما از سمت مدیر سایت غیرفعال شدید وقادر به دیدن ویدیو ها نیستید برای بررسی با پشتیبانی سایت تماس بگیرید" />
+            <InActiveCp text="You have been disabled by the site administrator and are unable to view the videos. Contact site support to check." />
             )}
       {headline.map((item, index) => (
         <Accordion

@@ -2,12 +2,17 @@ import AnimTrue from "@/components/common/AnimTrue";
 import ToastBox from "@/components/common/Toast/ToastBox";
 import CourseDetails from "@/components/pages/CourseDetails/CourseDetails";
 import { notFound } from "next/navigation";
-const URL = "https://api.xcode.sepehracademy.ir/api"
 async function getCourseById(slug) {
   const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"courses/"+slug,{cache:'no-store'});
   if (!res.ok) return undefined;
   const courseDetail = await res.json();
   return courseDetail;
+}
+async function getTeacherById(teacherId) {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"teachers/"+teacherId,{cache:'no-store'});
+  if (!res.ok) return undefined;
+  const teacher = await res.json();
+  return teacher;
 }
 // async function getAllComments() {
 //   const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"comments",{cache:'no-store'});
@@ -21,6 +26,7 @@ async function getPosts() {
 }
 const CourseDetailPage = async ({params}) => {
   const courseDetail = await getCourseById(params.slug)
+  const teacher = await getTeacherById(courseDetail.teacher)
   if(!courseDetail) notFound()
   // const allComments = await getAllComments()
   const allComments = ["sssbsb","sdbsdbsb","sdbsdbdsb"]
@@ -30,7 +36,7 @@ const CourseDetailPage = async ({params}) => {
   return (
     <main>
       <AnimTrue/>
-      <CourseDetails posts={posts} allComments={allComments}  courseDetail={courseDetail}/>
+      <CourseDetails posts={posts} allComments={allComments} teacher={teacher}  courseDetail={courseDetail}/>
     </main>
   );
 };

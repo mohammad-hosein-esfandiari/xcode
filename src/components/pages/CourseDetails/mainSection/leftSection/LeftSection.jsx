@@ -8,13 +8,13 @@ const BuyButton = dynamic(() => import('./BuyButton'), {
   ssr: false,
 });
 const LeftSection = ({courseDetail}) => {
-  const { lesson,cost,students,startDate,endDate,title,_id} = courseDetail
+  const { lessons,cost,students,startDate,endDate,title,_id,image} = courseDetail
  
   return (
     <ul className="md:w-[38%] w-[98.2%] mx-auto  h-fit md:mt-[-80px] rounded-md bg-box-color p-5 shadow-modeShadow ">
       <li>
         <Image
-          src={lesson.image}
+          src={image}
           alt=""
           width={200}
           height={200}
@@ -27,7 +27,7 @@ const LeftSection = ({courseDetail}) => {
           <Price  cost={cost}/>
           <div className="md:block hidden">
 
-          <BuyButton image={lesson.image} courseId={_id}  title={title} users={students} cost={cost} />
+          <BuyButton image={image} courseId={_id}  title={title} users={students} cost={cost} />
           </div>
         </ul>
       </li>

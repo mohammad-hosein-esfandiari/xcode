@@ -13,7 +13,7 @@ const TeacherDetail = ({teacher}) => {
         <Image src={teacher.profile === "image.png" ? teacher1 : teacher.profile}  width={50} height={50} alt="ostad" className="ss:w-[60px] rounded-full ss:h-[60px] w-[48px] h-[48px]" />
         <div className="pr-4 flex flex-col text-mode-color">
           <div className="mb-2 ss:text-[16px] text-[14px]">
-          <span>استاد </span>
+          <span>Proferssor </span>
           <span>{teacher.fullName}</span>
 
           </div>

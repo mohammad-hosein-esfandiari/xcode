@@ -9,8 +9,8 @@ import AnimWrapper from "./AnimWrapper";
 import { useUserInfo } from "@/context/userInfoStore";
 import InActiveCp from "@/components/common/InActiveCp";
 
-const RightSection = ({ courseDetail, allComments }) => {
-  const { teacher, title, lesson, _id, students } = courseDetail;
+const RightSection = ({ courseDetail, allComments,teacher }) => {
+  const { title, lesson, _id, students,description } = courseDetail;
   const userInfo = useUserInfo.getState().userInfo;
 
   return (
@@ -22,18 +22,18 @@ const RightSection = ({ courseDetail, allComments }) => {
         swipeClass="bg-[#a1a1a124] grid-cols-3"
         spanColor="bg-primary">
         <AnimWrapper>
-          <Summery desc={lesson.description} />
+          <Summery desc={description} />
         </AnimWrapper>
         <AnimWrapper>
       
-            <AccordionHolder
+            {/* <AccordionHolder
               students={students}
               lessonId={lesson._id}
               headlines={lesson.topics}
-            />
+            /> */}
         </AnimWrapper>
         <AnimWrapper>
-          <CommentBox allComments={allComments} courseId={_id} />
+          {/* <CommentBox allComments={allComments} courseId={_id} /> */}
         </AnimWrapper>
       </SwipeBox>
     </ul>

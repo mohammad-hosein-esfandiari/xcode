@@ -4,7 +4,7 @@ const Summery = ({desc}) => {
     <div>
       <div>
         <h2 className="xs:text-[25px] ss:text-[30px] text-[18px] text-mode-color">
-          شرح دوره
+        Course description
         </h2>
         <p className=" md:py-[40px] py-[20px] text-[14px] leading-[35px] text-mode-color">
        {desc}
