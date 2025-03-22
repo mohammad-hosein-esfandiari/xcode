@@ -10,7 +10,7 @@ import { useUserInfo } from "@/context/userInfoStore";
 import InActiveCp from "@/components/common/InActiveCp";
 
 const RightSection = ({ courseDetail, allComments,teacher }) => {
-  const { title, lesson, _id, students,description } = courseDetail;
+  const { title, lessons, _id, students,description } = courseDetail;
   const userInfo = useUserInfo.getState().userInfo;
 
   return (
@@ -26,11 +26,12 @@ const RightSection = ({ courseDetail, allComments,teacher }) => {
         </AnimWrapper>
         <AnimWrapper>
       
-            {/* <AccordionHolder
+            <AccordionHolder
               students={students}
-              lessonId={lesson._id}
-              headlines={lesson.topics}
-            /> */}
+              lessonId={lessons._id}
+              lessons={lessons}
+              headlines={lessons.title}
+            />
         </AnimWrapper>
         <AnimWrapper>
           {/* <CommentBox allComments={allComments} courseId={_id} /> */}

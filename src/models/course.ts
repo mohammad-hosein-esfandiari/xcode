@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const lessonSchema = new mongoose.Schema({
   title: { type: String, required: true }, // عنوان درس
-  link: { type: String, required: true }, // لینک درس
+  details: [{ title: { type: String }, link: { type: String, required: true } }], // لینک درس
 });
 
 const courseSchema = new mongoose.Schema({
@@ -17,8 +17,12 @@ const courseSchema = new mongoose.Schema({
   cost: { type: Number, required: true }, // هزینه دوره
   image: { type: String, required: true }, // تصویر دوره
   description: { type: String, required: true }, // توضیحات دوره
-  duration : {type : Number , required:true},
-  category:{type:String,required:true,enum:["frontend","backend","python","miscellaneous"]},
+  duration: { type: Number, required: true },
+  category: {
+    type: String,
+    required: true,
+    enum: ["frontend", "backend", "python", "miscellaneous"],
+  },
   level: {
     type: String,
     required: true,

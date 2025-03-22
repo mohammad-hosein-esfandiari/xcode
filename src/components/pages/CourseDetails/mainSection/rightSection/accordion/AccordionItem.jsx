@@ -27,7 +27,7 @@ const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,head
 
       <div className="flex itemx-center text-[14px]">
         <div className="border-[1px] border-[#d4d4d482] rounded-full w-[28px] h-[28px] flex items-center justify-center ml-2">
-          {(index + 1).toLocaleString('fa-IR')}
+          {(index + 1)}
         </div>
         <div className="flex items-center">
           <MdSlowMotionVideo className="text-[17px] text-[#e05858]" />
