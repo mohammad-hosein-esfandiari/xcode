@@ -7,7 +7,7 @@ import { useGetLeesonById } from "@/core/services/react-query/useGetLesson";
 import { BarLoader } from "react-spinners";
 import InActiveCp from "@/components/common/InActiveCp";
 
-const AccordionHolder =  ({  students,lessonId,lessons }) => {
+const AccordionHolder =  ({  students,lessons }) => {
   const user = useUserInfo(state => state.userInfo);
   // const { data, isLoading, isError, error,isSuccess, refetch } = useGetLeesonById(lessonId);
   // if (isLoading)
@@ -29,7 +29,7 @@ const AccordionHolder =  ({  students,lessonId,lessons }) => {
         <Accordion
         isInStudents={isInStudents}
           key={index}
-          // lessonId={lessonId}
+          lessonId={item._id}
           name="courseDetail"
           type="radio"
           details={item.details}

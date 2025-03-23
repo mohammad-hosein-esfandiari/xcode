@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const lessonSchema = new mongoose.Schema({
+  _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
   title: { type: String, required: true }, // عنوان درس
   details: [{ title: { type: String }, link: { type: String, required: true } }], // لینک درس
 });

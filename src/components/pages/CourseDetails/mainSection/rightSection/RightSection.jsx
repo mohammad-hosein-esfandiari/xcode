@@ -28,7 +28,6 @@ const RightSection = ({ courseDetail, allComments,teacher }) => {
       
             <AccordionHolder
               students={students}
-              lessonId={lessons._id}
               lessons={lessons}
               headlines={lessons.title}
             />
