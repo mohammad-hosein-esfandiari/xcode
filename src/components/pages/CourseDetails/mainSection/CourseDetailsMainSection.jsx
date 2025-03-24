@@ -1,6 +1,6 @@
 import BigImg from "./BigImg";
 import LeftSection from "./leftSection/LeftSection";
-import FixedBtn from "./leftSection/FixedBtn";
+import FixedBtn from "./leftSection/FixedBtn"; 
 import RightSection from "./rightSection/RightSection";
 import ReactQueryProvider from "@/components/common/ReactQueryProvider";
 

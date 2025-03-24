@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import Price from "./Price";
 import LeftBoxDetails from "./LeftBoxDetails";
-const BuyButton = dynamic(() => import('./BuyButton'), {
+const BuyButton = dynamic(() => import('./BuyButton'), { 
   ssr: false,
 });
 const LeftSection = ({courseDetail}) => {

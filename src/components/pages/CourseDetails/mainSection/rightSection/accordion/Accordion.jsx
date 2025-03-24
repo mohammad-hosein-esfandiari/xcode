@@ -24,7 +24,7 @@ const Accordion = ({ id, name, type, title, details, isInStudents,lessonId ,inde
             <AccordionItem
             lessonId={lessonId}
               isInStudents={isInStudents}
-              length={details.length - 1}
+              length={details.length - 1} 
               headlineIndex={index}
               index={num}
               {...item}

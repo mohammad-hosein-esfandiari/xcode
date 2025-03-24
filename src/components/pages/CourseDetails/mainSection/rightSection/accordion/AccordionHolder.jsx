@@ -27,7 +27,7 @@ const AccordionHolder =  ({  students,lessons }) => {
             )}
       {lessons.map((item, index) => (
         <Accordion
-        isInStudents={isInStudents}
+        isInStudents={isInStudents} 
           key={index}
           lessonId={item._id}
           name="courseDetail"

@@ -10,7 +10,7 @@ const courseSchema = new mongoose.Schema({
   title: { type: String, required: true }, // عنوان دوره
   likedCount: { type: Number, default: 0 }, // تعداد لایک‌ها
   disLikedCount: { type: Number, default: 0 }, // تعداد دیس‌لایک‌ها
-  students: [
+  students: [ 
     {
       type: String, // یا type: mongoose.Schema.Types.ObjectId برای ارجاع به کاربران
     },

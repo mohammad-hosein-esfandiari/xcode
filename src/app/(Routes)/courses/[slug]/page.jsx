@@ -29,7 +29,7 @@ const CourseDetailPage = async ({params}) => {
   const teacher = await getTeacherById(courseDetail.teacher)
   if(!courseDetail) notFound()
   // const allComments = await getAllComments()
-  const allComments = ["sssbsb","sdbsdbsb","sdbsdbdsb"]
+  const allComments = ["sssbsb","sdbsdbsb","sdbsdbdsb"] 
   const posts = await getPosts();
 
 

@@ -1,7 +1,7 @@
 
 import Hero from "@/components/common/hero/Hero";
 import CourseDetailsMainSection from "./mainSection/CourseDetailsMainSection";
-import SliderHolder from "./mainSection/SliderHolder";
+import SliderHolder from "./mainSection/SliderHolder"; 
 
 const CourseDetails = ({courseDetail,allComments,posts,teacher}) => {
     return (
