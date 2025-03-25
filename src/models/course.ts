@@ -29,8 +29,10 @@ const courseSchema = new mongoose.Schema({
     required: true,
     enum: ["preliminary", "intermediate", "advanced"], // فقط یکی از این سه مقدار مجاز است
   }, // سطح دوره
-  teacher: {
-    type: String, // یا type: mongoose.Schema.Types.ObjectId برای ارجاع به کاربران
+  teacher: { 
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }, // استاد دوره
   lessons: [lessonSchema], // لیست درس‌های دوره
 });
