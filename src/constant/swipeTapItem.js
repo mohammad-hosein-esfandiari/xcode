@@ -1,25 +1,25 @@
 export const swipeTab = [
     {
         id:1,
-        title:'بررسی اجمالی'
+        title:'Overview'
     },
     {
         id:2,
-        title:'سر فصل ها'
+        title:'Headlines'
     },
     {
         id:3,
-        title:'نظرات'
+        title:'Comments'
     },
 ]
 export const swipeTabStudentPanel = [
     {
         id:1,
-        title:'اطلاعات کاربری'
+        title:'User information'
     },
     {
         id:2,
-        title:'تغییر رمز عبور'
+        title:'Password Change'
     },
 
 ]

@@ -8,12 +8,6 @@ async function getCourseById(slug) {
   const courseDetail = await res.json();
   return courseDetail;
 }
-async function getTeacherById(teacherId) {
-  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"teachers/"+teacherId,{cache:'no-store'});
-  if (!res.ok) return undefined;
-  const teacher = await res.json();
-  return teacher;
-}
 // async function getAllComments() {
 //   const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"comments",{cache:'no-store'});
 //   const allComments = await res.json();
@@ -26,7 +20,6 @@ async function getPosts() {
 }
 const CourseDetailPage = async ({params}) => {
   const courseDetail = await getCourseById(params.slug)
-  const teacher = await getTeacherById(courseDetail.teacher)
   if(!courseDetail) notFound()
   // const allComments = await getAllComments()
   const allComments = ["sssbsb","sdbsdbsb","sdbsdbdsb"] 
@@ -36,7 +29,7 @@ const CourseDetailPage = async ({params}) => {
   return (
     <main>
       <AnimTrue/>
-      <CourseDetails posts={posts} allComments={allComments} teacher={teacher}  courseDetail={courseDetail}/>
+      <CourseDetails posts={posts} allComments={allComments} teacher={courseDetail.teacher}  courseDetail={courseDetail}/>
     </main>
   );
 };

@@ -5,19 +5,18 @@ import { AiOutlineHeart, AiOutlineLike, AiTwotoneLike } from "react-icons/ai";
 
 const TeacherDetail = ({teacher}) => {
 
-
     return (
         <li className="flex items-center justify-between">
           <div className="flex items-center ">
 
-        <Image src={teacher.profile === "js_project.png" ? teacher1 : teacher.profile}  width={50} height={50} alt="ostad" className="ss:w-[60px] rounded-full ss:h-[60px] w-[48px] h-[48px]" />
-        <div className="pr-4 flex flex-col text-mode-color">
+        <Image src={teacher.profile === "image.png" ? teacher1 : teacher.profile}  width={50} height={50} alt="ostad" className="ss:w-[60px] rounded-full ss:h-[60px] w-[48px] h-[48px]" />
+        <div className="pl-4 flex flex-col text-mode-color">
           <div className="mb-2 ss:text-[16px] text-[14px]">
           <span>Proferssor </span>
           <span>{teacher.fullName}</span>
 
           </div>
-        <div  dir="ltr" className="flex flex-row-reverse">
+        <div  dir="ltr" className="flex">
           <Rating rate={4}/>
         </div>
         </div>
