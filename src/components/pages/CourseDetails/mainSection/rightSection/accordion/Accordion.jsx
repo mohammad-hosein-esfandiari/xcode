@@ -15,7 +15,7 @@ const Accordion = ({ id, name, type, title, details, isInStudents,lessonId ,inde
         />
         <label
           htmlFor={id}
-          className="pr-4 w-full border-[1px] top-0 right-0 absolute bg-[#ebebeb7c]  rounded-[4px]  border-[#d4d4d482] py-2 text-mode-color cursor-pointer peer-checked/input:border-b-0 peer-checked/input:rounded-b-none transition-all duration-300  peer-checked/input:bg-[#ebebeb7c] ">
+          className="pl-4 w-full border-[1px] top-0 right-0 absolute bg-[#ebebeb7c]  rounded-[4px]  border-[#d4d4d482] py-2 text-mode-color cursor-pointer peer-checked/input:border-b-0 peer-checked/input:rounded-b-none transition-all duration-300  peer-checked/input:bg-[#ebebeb7c] ">
           {title}
         </label>
 
@@ -32,10 +32,10 @@ const Accordion = ({ id, name, type, title, details, isInStudents,lessonId ,inde
    
           ))}
         </div>
-        <span className="peer-checked/input:block hidden text-mode-color absolute left-4 top-3 ">
+        <span className="peer-checked/input:block hidden text-mode-color absolute right-4 top-3 ">
           <BiMinus />
         </span>
-        <span className="peer-checked/input:hidden text-mode-color block absolute left-4 top-3">
+        <span className="peer-checked/input:hidden text-mode-color block absolute right-4 top-3">
           <BiPlus />
         </span>
       </div>

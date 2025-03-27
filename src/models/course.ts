@@ -2,23 +2,37 @@ import mongoose from "mongoose";
 
 const lessonSchema = new mongoose.Schema({
   _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
-  title: { type: String, required: true }, // عنوان درس
-  details: [{ title: { type: String }, link: { type: String, required: true } }], // لینک درس
+  title: { type: String, required: true },
+  details: [{ title: { type: String }, link: { type: String, required: true } }],
 });
 
 const courseSchema = new mongoose.Schema({
-  title: { type: String, required: true }, // عنوان دوره
-  likedCount: { type: Number, default: 0 }, // تعداد لایک‌ها
-  disLikedCount: { type: Number, default: 0 }, // تعداد دیس‌لایک‌ها
-  students: [ 
-    {
-      type: String, // یا type: mongoose.Schema.Types.ObjectId برای ارجاع به کاربران
-    },
-  ], // لیست کاربران ثبت‌نام‌کرده در دوره
-  cost: { type: Number, required: true }, // هزینه دوره
-  image: { type: String, required: true }, // تصویر دوره
-  description: { type: String, required: true }, // توضیحات دوره
-  duration: { type: Number, required: true },
+  title: { type: String, required: true },
+  likedCount: { type: Number, default: 0 },
+  disLikedCount: { type: Number, default: 0 },
+  students: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  cost: { type: Number, required: true },
+  image: { type: String, required: true },
+  description: { type: String, required: true },
+  duration: { type: Number, required: true }, // مدت زمان به ساعت
+  startDate: { 
+    type: Date, 
+    required: true,
+    validate: {
+      validator: function(value) {
+        // تاریخ شروع نباید از تاریخ پایان بزرگتر باشد
+        return !this.endDate || value <= this.endDate;
+      },
+      message: 'Start date must be before or equal to end date'
+    }
+  },
+  endDate: { 
+    type: Date,
+    required: true 
+  },
   category: {
     type: String,
     required: true,
@@ -27,14 +41,16 @@ const courseSchema = new mongoose.Schema({
   level: {
     type: String,
     required: true,
-    enum: ["preliminary", "intermediate", "advanced"], // فقط یکی از این سه مقدار مجاز است
-  }, // سطح دوره
+    enum: ["preliminary", "intermediate", "advanced"],
+  },
   teacher: { 
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
-  }, // استاد دوره
-  lessons: [lessonSchema], // لیست درس‌های دوره
+  },
+  lessons: [lessonSchema],
+}, {
+  timestamps: true // اضافه کردن createdAt و updatedDate
 });
 
 const Course = mongoose.models.Course || mongoose.model("Course", courseSchema);

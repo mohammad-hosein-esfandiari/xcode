@@ -31,7 +31,7 @@ const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,head
         </div>
         <div className="flex items-center">
           <MdSlowMotionVideo className="text-[17px] text-[#e05858]" />
-          <span className="mr-1 text-[13px]">{title}</span>
+          <span className="ml-1 text-[13px]">{title}</span>
         </div>
       </div>
       <div>{!isInStudents && <RxLockClosed className="text-[#e05858]" />}</div>

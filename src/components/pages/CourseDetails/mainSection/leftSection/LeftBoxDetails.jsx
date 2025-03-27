@@ -31,7 +31,7 @@ const LeftBoxDetails = ({ studentsCount, endDate, startDate }) => {
     },
     {
       id: 1,
-      title: "ُStart Date",
+      title: "Start Date",
       desc: startText,
       icon: <BsCalendar2Week />,
     },
