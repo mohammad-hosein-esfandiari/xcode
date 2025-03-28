@@ -16,7 +16,7 @@ const UserCmInfo = ({ userInfo }) => {
           className="object-cover w-full h-full object-center"
         />
       </div>
-      <div className="flex flex-col pr-4 py-[6px] justify-between ">
+      <div className="flex flex-col pl-4 py-[6px] justify-between ">
         <span className=" text-mode-color">{studentModel.fullName}</span>
         <span className=" ss:text-[14px] text-[12px]  text-color-gray">
           {studentModel.email}

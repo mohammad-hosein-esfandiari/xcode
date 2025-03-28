@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import dbConnect from "@/lib/dbConnect";
-import User from "@/models/user";
+import User from "@/models/User";
 import jwt from "jsonwebtoken"; // برای تولید توکن
 
 export async function POST(request) {
