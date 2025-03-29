@@ -1,4 +1,3 @@
-// app/api/comments/route.js
 import { NextResponse } from "next/server";
 import Comments from "@/models/Comments.ts";
 import User from "@/models/User";
