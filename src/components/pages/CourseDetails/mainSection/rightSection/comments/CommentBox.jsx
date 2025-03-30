@@ -26,7 +26,7 @@ const CommentBox = ({ courseId, allComments }) => {
               </h2>
             </li>
             <CommentsHolder
-              userRole={user}
+              userRole={user} 
               allComments={allComments}
               courseId={courseId}
             />

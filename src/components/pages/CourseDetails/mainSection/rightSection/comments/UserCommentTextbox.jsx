@@ -8,7 +8,7 @@ const UserCommentTextbox = ({ userInfo, courseId,userId }) => {
   const [text, setText] = useState("");
   const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false); 
 
   const clickHandler = () => {
     if (!text) {

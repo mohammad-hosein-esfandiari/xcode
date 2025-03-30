@@ -6,7 +6,7 @@ import dbConnect from "@/lib/dbConnect";
 export async function GET(request) {
   await dbConnect();
 
-  try {
+  try { 
     const { searchParams } = new URL(request.url);
     const postId = searchParams.get("postId");
 

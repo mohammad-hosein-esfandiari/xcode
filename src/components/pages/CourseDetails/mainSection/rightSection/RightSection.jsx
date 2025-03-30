@@ -22,7 +22,7 @@ const RightSection = ({ courseDetail, allComments,teacher }) => {
         swipeClass="bg-[#a1a1a124] grid-cols-3"
         spanColor="bg-primary">
         <AnimWrapper> 
-          <Summery desc={description} />
+          <Summery desc={description} /> 
         </AnimWrapper>
         <AnimWrapper>
       
