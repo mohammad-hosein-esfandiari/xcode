@@ -16,7 +16,7 @@ const CommentsHolder = ({ courseId, allComments, userRole }) => {
     setVerifyCm(verfiedComments.map(item => item._id))
     setAllComment(comments)
   },[])
-  console.log(verfiedCm)
+  console.log("verifiedCm ====>",verfiedCm)
   return (
     <li className="mt-8">
       <AdminAnswerBox commentId={id} setAllComment={setAllComment} allComment={allComment} setIsShowModal={setModal} showModal={modal}/>
@@ -32,8 +32,8 @@ const CommentsHolder = ({ courseId, allComments, userRole }) => {
           ) : (
             <div className="flex bg-[#a1a1a124] shadow-md border-r-[4px] border-red-500 p-6  rounded-[4px] justify-center items-center">
               <TfiComments className="text-primary text-[40px]" />
-              <div className="text-[#e05858] mr-8 ">
-                نظری برای نمایش وجود ندارد
+              <div className="text-[#e05858] ml-8 ">
+              There are no comments to display.
               </div>
             </div>
           )}
@@ -49,14 +49,15 @@ const CommentsHolder = ({ courseId, allComments, userRole }) => {
           ) : (
             <div className="flex bg-[#a1a1a124] shadow-md border-r-[4px] border-red-500 p-6  rounded-[4px] justify-center items-center">
               <TfiComments className="text-primary text-[40px]" />
-              <div className="text-[#e05858] mr-8 ">
-                نظری برای نمایش وجود ندارد
+              <div className="text-[#e05858] ml-8 ">
+              There are no comments to display.
               </div>
             </div>
           )}
         </>
       )}
     </li>
+
   );
 };
 

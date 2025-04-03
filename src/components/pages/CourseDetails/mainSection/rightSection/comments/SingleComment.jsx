@@ -37,7 +37,7 @@ const SingleComment = ({
       console.log(res);
       setVerifyCm([...verfiedCm, _id]);
     } catch (error) {
-      toast.error("در تایید کامنت خطایی رخ داده است");
+      toast.error("An error occurred while verifying the comment");
     }
   };
   console.log(userRole)
@@ -57,7 +57,7 @@ const SingleComment = ({
               className={`${
                 !isVerified ? "bg-red-400" : " bg-color-green"
               } px-2 py-[2px] rounded-[4px]`}>
-              {isVerified ? "تایید شده" : "در انتظار تایید"}
+              {isVerified ? "Confirmed" : "Awaiting approval"}
             </span>
           </div>
         ): null}

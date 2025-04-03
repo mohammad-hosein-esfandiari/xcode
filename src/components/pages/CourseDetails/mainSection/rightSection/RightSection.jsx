@@ -33,7 +33,7 @@ const RightSection = ({ courseDetail, allComments,teacher }) => {
             />
         </AnimWrapper>
         <AnimWrapper>
-          {/* <CommentBox allComments={allComments} courseId={_id} /> */}
+          <CommentBox allComments={allComments} courseId={_id} />
         </AnimWrapper>
       </SwipeBox>
     </ul>

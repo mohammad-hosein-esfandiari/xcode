@@ -11,9 +11,10 @@ export async function GET(request) {
     const postId = searchParams.get("postId");
 
     if (!postId) {
+      const comments = await Comments.find({ })
       return NextResponse.json(
-        { error: "postId parameter is required" },
-        { status: 400 }
+         comments ,
+        { status: 200 }
       );
     }
 
@@ -55,6 +56,7 @@ export async function POST(request) {
     const newComment = new Comments({
       postId,
       user: userId,
+      verified:false,
       content
     });
 

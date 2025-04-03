@@ -8,11 +8,11 @@ async function getCourseById(slug) {
   const courseDetail = await res.json();
   return courseDetail;
 }
-// async function getAllComments() {
-//   const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"comments",{cache:'no-store'});
-//   const allComments = await res.json();
-//   return allComments;
-// }
+async function getAllComments() {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"comments",{cache:'no-store'});
+  const allComments = await res.json();
+  return allComments;
+}
 async function getPosts() {
   const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"courses",{cache:'no-store'});
   const posts = await res.json();
@@ -21,10 +21,8 @@ async function getPosts() {
 const CourseDetailPage = async ({params}) => {
   const courseDetail = await getCourseById(params.slug)
   if(!courseDetail) notFound()
-  // const allComments = await getAllComments()
-  const allComments = ["sssbsb","sdbsdbsb","sdbsdbdsb"] 
+  const allComments = await getAllComments()
   const posts = await getPosts();
-
 
   return (
     <main>
