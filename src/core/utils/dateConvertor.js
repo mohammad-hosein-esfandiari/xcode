@@ -4,7 +4,7 @@ export const dateToString = (date) => {
     .split("T")[0]
     .split("-")
     .map((item) => Number(item));
-  firstDate[0] = firstDate[0].split("٬").join("");
+  // firstDate[0] = firstDate[0].split("٬").join("");
   text = firstDate.join('/')
   return text
 };

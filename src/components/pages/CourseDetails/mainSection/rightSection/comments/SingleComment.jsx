@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import AdminAnswerBox from "./AdminAnswerBox";
 import { motion } from "framer-motion";
 const SingleComment = ({
-  createDate,
+  createdAt,
   comment,
   email,
   answer,
@@ -25,15 +25,15 @@ const SingleComment = ({
   setId,
   setModal
 }) => {
-  const date = dateToString(createDate);
-  const time = timeToString(createDate);
+  const date = dateToString(createdAt);
+  const time = timeToString(createdAt);
 
   const isVerified = verfiedCm.some((item) => item == _id);
-  console.log(verfiedCm)
+  console.log("verifiedCm ======>",verfiedCm)
 
   const verifiedCommentHandler = async () => {
     try {
-      const res = await api.post("/comments/verify", { id: _id });
+      const res = await api.post(process.env.NEXT_PUBLIC_BASE_URL+"comments/verify", { id: _id });
       console.log(res);
       setVerifyCm([...verfiedCm, _id]);
     } catch (error) {

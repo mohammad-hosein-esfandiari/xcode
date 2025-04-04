@@ -16,7 +16,7 @@ const CommentsHolder = ({ courseId, allComments, userRole }) => {
     setVerifyCm(verfiedComments.map(item => item._id))
     setAllComment(comments)
   },[])
-  console.log("verifiedCm ====>",verfiedCm)
+  console.log("verifiedCm ====>",verfiedComments)
   return (
     <li className="mt-8">
       <AdminAnswerBox commentId={id} setAllComment={setAllComment} allComment={allComment} setIsShowModal={setModal} showModal={modal}/>
@@ -26,6 +26,7 @@ const CommentsHolder = ({ courseId, allComments, userRole }) => {
           {comments.length > 0 ? (
             <>
               {allComment.map((item) => (
+              
                 <SingleComment setModal={setModal} setId={setId} allComment={allComment} setAllComment={setAllComment} userRole={userRole.studentModel.role} setVerifyCm={setVerifyCm} verfiedCm={verfiedCm} key={item._id} {...item} />
               ))}
             </>
