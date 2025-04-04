@@ -9,7 +9,7 @@ const MainSection = ({ posts }) => {
         <CourseBoxWrapper>
           <FIrstCourseBox posts={posts}></FIrstCourseBox>
         </CourseBoxWrapper>
-      </section>
+      </section>  
       {posts && <PaginationHolder />}
     </>
   );

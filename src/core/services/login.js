@@ -9,25 +9,25 @@ export const loginFunc = async (info) => {
   };
   let isSuccess;
   try {
-    const response = await api.post("/auth/login", obj2);
-    console.log(response)
+    const response = await api.post("auth/login", obj2);
+    console.log("response => ",response)
 
-    if (response.data.success && response.status === 200) {
+    if (response.status === 200) {
       const obj = {
-        token: response.data.result.jwtToken,
-        id: response.data.result.studentModel._id,
+        token: response.data.token,
+        id: response.data.user._id,
       };
-    
+      console.log("res =======>",response)
+      console.log("obj ====>",obj)
         if (info.remember) {
           setCookie("UoXa-I", obj, 7);
         } else {
           setCookie("UoXa-I", obj);
         }
-     
+       
 
-      useUserInfo.getState().setUserInfo(response.data.result.jwtToken,response.data.result.studentModel);
+      useUserInfo.getState().setUserInfo(response.data.token,response.data.user);
       useUserInfo.getState().setUserLogin();
-      console.log(response);
       isSuccess = true;
     }
     

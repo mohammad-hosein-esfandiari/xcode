@@ -25,10 +25,10 @@ const LoginForm = () => {
   };
   const onSubmit = async (value, actions) => {
 
-  console.log(value)
+  console.log("value :",value)
     setLoading(true);
      
-    const {  isSuccess } = await loginFunc(value);
+    const { isSuccess } = await loginFunc(value);
     if (isSuccess) {
       setLoading(false);
       toast.success("Login successful");

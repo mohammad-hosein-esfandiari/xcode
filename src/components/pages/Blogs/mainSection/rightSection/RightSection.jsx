@@ -10,19 +10,19 @@ import LastPosts from "./LastPosts";
 const RightSection = ({news,lastCourses}) => {
 
   return (
-    <div className="sm:pl-5">
+    <div className="sm:pr-5">
       {/* <Title title="بگرد و پیدا کن" />
       <SearchInput /> */}
-      <Title title="دسته بندی" />
+      <Title title="Category" />
       <CategoryItems news={news} />
-      <Title title="دوره های اخیر" />
+      <Title title="Recent Course" />
       <LastPosts lastCourses={lastCourses}/>
       <Image
         src={blogRightImg}
-        alt="اخبار و مقالات"
+        alt="news & articles"
         className="rounded-md sm:block hidden mx-auto"
       />
-      <Title title="محبوب ترین موضوعات" />
+      <Title title="Most Popular Topics" />
       <PopularSubjects />
     </div>
   );

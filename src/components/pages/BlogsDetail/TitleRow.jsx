@@ -10,31 +10,31 @@ const TitleRow = ({title}) => {
       <ul className="w-full flex-wrap flex justify-evenly">
         <li className="flex mt-2 text-[#919191] text-[20px] items-center ">
           <TbClock className=" opacity-80" />
-          <span className=" text-[#919191] text-[15px] flex pr-2  items-center ">
-            ۴ دقیقه خواندن
+          <span className=" text-[#919191] text-[15px] flex pl-2  items-center ">
+            4 Minutes reading 
           </span>
         </li>
         <li className="flex mt-2 text-[#919191] text-[18px] items-center ">
           <BiCommentDetail className=" opacity-80" />
-          <span className=" text-[#919191] text-[15px] flex pr-2  items-center ">
-            ۲ کامنت
+          <span className=" text-[#919191] text-[15px] flex pl-2  items-center ">
+            2 Comments
           </span>
         </li>
         <li className="flex mt-2 text-[#919191] text-[20px] items-center ">
           <AiOutlineCalendar className=" opacity-80" />
-          <span className=" text-[#919191] text-[15px] flex pr-2  items-center ">
-            ۲۹,۱۴۰۱ مهر
+          <span className=" text-[#919191] text-[15px] flex pl-2  items-center ">
+            29 September 2024
           </span>
         </li>
         <li className="flex mt-2 text-[#919191] text-[20px] items-center ">
-          {/* <div className="w-[25px] h-[25px] rounded-full overflow-hidden">
+          <div className="w-[25px] h-[25px] rounded-full overflow-hidden">
             <Image
               src={instructor}
               className="w-full h-full object-cover object-center"
             />
-          </div> */}
-          <span className=" text-[#919191] text-[15px] flex pr-2  items-center ">
-            استاد محسن اسفندیاری
+          </div>
+          <span className=" text-[#919191] text-[15px] flex pl-2  items-center ">
+          Professor Shalil Shalili  
           </span>
         </li>
       </ul>

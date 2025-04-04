@@ -12,7 +12,7 @@ const LeftFilter = () => {
   const setGridShow = useCoursesGridShow((state) => state.setGridShow);
   const gridShow = useCoursesGridShow((state) => state.grid);
   const [pageToggle, setPageToggle] = useState(false);
-  const [pageShow, setPageShow] = useState(Number(limit).toLocaleString('fa-IR'));
+  const [pageShow, setPageShow] = useState(Number(limit));
   return (
     <div className=" flex items-center">
       {/* <ul className="flex flex-row-reverse ml-2">

@@ -16,7 +16,7 @@ const Login = () => {
         <div className="  h-[550px] flex  mx-auto sm:shadow-modeShadow rounded-lg   sm:bg-registerbg">
             <RightStep/>
             <LeftStep/>
-        </div>
+        </div> 
     </div>
   </div>
     </>

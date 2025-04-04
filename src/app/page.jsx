@@ -18,7 +18,7 @@ async function getAllCourses() {
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
       cache: "no-store",
     });
- 
+
     // Check if the response is OK (status code 200-299)
     if (!res.ok) {
       throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
@@ -33,7 +33,7 @@ async function getAllCourses() {
 
 async function getAllNews() {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "blogs", {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "news", {
       cache: "no-store",
     });
 
@@ -56,7 +56,9 @@ async function getTeachers() {
 
     // Check if the response is OK (status code 200-299)
     if (!res.ok) {
-      throw new Error(`Failed to fetch teachers: ${res.status} ${res.statusText}`);
+      throw new Error(
+        `Failed to fetch teachers: ${res.status} ${res.statusText}`
+      );
     }
     const data = await res.json();
     return data;
@@ -70,7 +72,7 @@ export default async function Home() {
   const courses = await getAllCourses();
   const news = await getAllNews();
   const teachers = await getTeachers();
-  
+
   return (
     <>
       <AnimTrue />

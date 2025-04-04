@@ -4,8 +4,8 @@ export const blackDiv = {
       exit:{opacity:0}
 }
 export const filterBox ={
-  initial:{opacity:0 ,x:200},
+  initial:{opacity:0 ,x:-200},
   animate:{opacity:1,x:0},
-  exit:{opacity:0,x:200},
-  transition:{delay:0.3,duration:0.3},
+  exit:{opacity:0},
+  transition:{delay:0.1,duration:0.3},
 }

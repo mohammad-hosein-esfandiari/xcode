@@ -1,14 +1,14 @@
 import dbConnect from "@/lib/dbConnect";
-import Course from "@/models/course";
+import Course from "@/models/Course";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   await dbConnect();
   try {
     // دریافت تمام دوره‌ها از دیتابیس
-    const courses = await Course.find({})
+    const courses = await Course.find({});
     // const courses = await Course.find({}).populate('students teacher'); // populate برای دریافت اطلاعات کامل کاربران
-    return NextResponse.json(courses);
+    return NextResponse.json(courses, { status: 200 });
   } catch (error) {
     console.error("Error fetching courses:", error);
     return NextResponse.json(
@@ -18,7 +18,7 @@ export async function GET() {
   }
 }
 
-export async function POST(req: Request) {
+export async function POST(req) {
   await dbConnect();
   try {
     const body = await req.json();
@@ -32,7 +32,9 @@ export async function POST(req: Request) {
       cost,
       image,
       description,
+      category,
       level,
+      duration,
       teacher,
       lessons,
     } = body;
@@ -56,6 +58,9 @@ export async function POST(req: Request) {
       disLikedCount: disLikedCount || 0,
       cost,
       image,
+      category,
+      level,
+      duration,
       description,
       teacher, // انتظار می‌رود teacher به عنوان ObjectId ارسال شود
       lessons, // انتظار می‌رود lessons به شکل [{ title: "...", link: "..." }] ارسال شود

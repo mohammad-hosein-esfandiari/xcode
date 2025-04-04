@@ -26,7 +26,6 @@ const CounterBox = (props) => {
   const [odometerValue, setOdometerValue] = useState(0);
 
   useEffect(() => {
-    console.log(isInView)
     if(isInView){
       setTimeout(()=>{
         if(props.index === 0){

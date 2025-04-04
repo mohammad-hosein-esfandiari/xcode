@@ -1,5 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
-import User from "@/models/user";
+import User from "@/models/User";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -58,6 +58,11 @@ export async function POST(req) {
       nationalId,
       email,
       role:"student",
+      isActive:true,
+      courses:[],
+      resetPasswordToken:"",
+      resetPasswordExpires:"",
+      registerDate:Date.now(),
       teacherFields: role === "teacher" ? teacherFields : undefined,
       adminFields: role === "admin" ? adminFields : undefined,
     });

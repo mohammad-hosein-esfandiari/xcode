@@ -10,7 +10,7 @@ import { dateForCourseCondition } from "@/core/utils/dateForCourseCondition";
 
 const LeftBoxDetails = ({ studentsCount, endDate, startDate }) => {
   const studentNum = studentsCount + 247;
-  const student = studentNum.toLocaleString("fa-IR");
+  const student = studentNum;
   const { text, startText, endText } = dateForCourseCondition(
     startDate,
     endDate
@@ -19,25 +19,25 @@ const LeftBoxDetails = ({ studentsCount, endDate, startDate }) => {
   const courseDetailsSalesBoxItems = [
     {
       id: 2,
-      title: "تعداد دانشجو",
+      title: "Students",
       desc: student,
       icon: <TbSchool />,
     },
     {
       id: 3,
-      title: "وضعیت دوره",
+      title: "Course Status",
       desc: text,
       icon: <BsPlayCircle />,
     },
     {
       id: 1,
-      title: "شروع دوره",
+      title: "Start Date",
       desc: startText,
       icon: <BsCalendar2Week />,
     },
     {
       id: 4,
-      title: "پایان دوره",
+      title: "End Date",
       desc: endText,
       icon: <BsCalendar2Check />,
     },
@@ -55,7 +55,7 @@ const LeftBoxDetails = ({ studentsCount, endDate, startDate }) => {
           <div className="flex items-center">
             <i className="text-primary text-[20px]">{item.icon}</i>
 
-            <span className="sss:text-[14px] text-[10px] pr-2 text-color-black">
+            <span className="sss:text-[14px] text-[10px] pl-2 text-color-black">
               {item.title}
             </span>
           </div>

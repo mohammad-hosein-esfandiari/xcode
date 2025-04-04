@@ -14,7 +14,7 @@ const CommentBox = ({ courseId, allComments }) => {
   const IsUserLoggedIn = useUserInfo((state) => state.login);
 
   return (
-    <div className="w-full h-full " dir="rtl">
+    <div className="w-full h-full">
       {!IsUserLoggedIn && <LoginComment />}
 
       <ul className="py-4">
@@ -22,11 +22,11 @@ const CommentBox = ({ courseId, allComments }) => {
           <ul className="flex flex-col">
             <li>
               <h2 className="xs:text-[25px] ss:text-[40px] text-mode-color text-[18px]">
-                نظرات
+                Comments
               </h2>
             </li>
             <CommentsHolder
-              userRole={user}
+              userRole={user} 
               allComments={allComments}
               courseId={courseId}
             />
@@ -39,13 +39,14 @@ const CommentBox = ({ courseId, allComments }) => {
                     <UserCommentTextbox
                       courseId={courseId}
                       userInfo={user.studentModel}
+                      userId={user._id}
                     />
                   </>
                 )}
               </>
             )}
             {IsUserLoggedIn && !user.studentModel.isActive && (
-              <InActiveCp text="شما از سمت مدیر سایت غیرفعال شدید وقادر به گذاشتن کامنت نیستید برای بررسی با پشتیبانی سایت تماس بگیرید" />
+              <InActiveCp text="You have been disabled by the site administrator and are unable to post comments. Contact site support to review." />
             )}
           </ul>
         </li>

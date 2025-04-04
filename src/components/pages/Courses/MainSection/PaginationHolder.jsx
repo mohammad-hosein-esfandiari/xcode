@@ -15,7 +15,7 @@ const PaginationHolder = () => {
     <div className=" relative mt-4">
       <PaginationSI/>
       <Pagination2 href="courses" posts={data} setArray={setFilteredData} />
-    </div>
+    </div> 
   );
 };
 

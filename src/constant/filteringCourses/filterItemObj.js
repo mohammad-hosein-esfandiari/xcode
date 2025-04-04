@@ -5,8 +5,8 @@ export const filterItemObj = [
   "miscellaneous",
 ];
 export const levelItem = [
-  "beginner",
-  "medium",
+  "preliminary",
+  "intermediate",
   "advanced"
 ]
 export const bugFilter = [
@@ -17,8 +17,8 @@ export const bugFilter = [
   "cheapest",
   "expensive",
   "discounted",
-  "beginner",
-  "medium",
+  "preliminary",
+  "intermediate",
   "advanced",
   "newest",
   "popular",
@@ -30,7 +30,7 @@ export const allCheckboxItem = [
   "backend",
   "python",
   "miscellaneous",
-  "beginner",
-  "medium",
+  "preliminary",
+  "intermediate",
   "advanced"
 ]

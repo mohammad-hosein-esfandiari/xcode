@@ -27,7 +27,7 @@ const PageToggle = ({
     setPageToggle(false);
   };
   useEffect(() => {
-    setPageShow(Number(limit).toLocaleString("fa-IR"));
+    setPageShow(Number(limit));
     window.addEventListener("click", closeHandler);
     return () => window.removeEventListener("click", closeHandler);
   }, []);
@@ -57,8 +57,8 @@ const PageToggle = ({
         <MdKeyboardArrowDown className="text-white" />
       )}
 
-      <span className="ml-2 text-white">
-        {pageShow.toLocaleString("fa-IR")}
+      <span className="mr-1 text-white">
+        {pageShow}
       </span>
       {pageToggle && (
         <li className="absolute z-20 shadow-boxShadow w-full left-0 top-10 rounded-md bg-white p-2">
@@ -66,29 +66,29 @@ const PageToggle = ({
             <li
               onClick={() => toggleHandler(show1)}
               className={`px-3 ${
-                pageShow == show1.toLocaleString("fa-IR") || pageShow == show1
+                pageShow == show1 || pageShow == show1
                   ? "bg-primary text-white"
                   : "hover:bg-indigo-500 hover:text-white"
               }  rounded-t-md border-b-[1px] text-center`}>
-              {show1.toLocaleString("fa-IR")}
+              {show1}
             </li>
             <li
               onClick={() => toggleHandler(show2)}
               className={`px-3 ${
-                pageShow == show2.toLocaleString("fa-IR") || pageShow == show2
+                pageShow == show2 || pageShow == show2
                   ? "bg-primary text-white"
                   : "hover:bg-indigo-500 hover:text-white"
               }  border-b-[1px] text-center`}>
-              {show2.toLocaleString("fa-IR")}
+              {show2}
             </li>
             <li
               onClick={() => toggleHandler(show3)}
               className={`px-3 ${
-                pageShow == show3.toLocaleString("fa-IR") || pageShow == show3
+                pageShow == show3 || pageShow == show3
                   ? "bg-primary text-white"
                   : "hover:bg-indigo-500 hover:text-white"
               }  rounded-b-md  text-center`}>
-              {show3.toLocaleString("fa-IR")}
+              {show3}
             </li>
           </ul>
         </li>

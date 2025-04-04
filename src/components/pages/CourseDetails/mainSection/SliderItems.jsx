@@ -8,7 +8,7 @@ import "swiper/swiper-bundle.min.css";
 import CourseBox from "@/components/common/courseBox/CourseBox";
 
 const SliderItems = ({ courses,courseDetail }) => {
-  const arr = courses.filter(item => item.title.split('|')[1] === courseDetail.title.split('|')[1])
+  const arr = courses.filter(item => item.title === courseDetail.title)
   const filteredArray = arr.filter(item => item._id !== courseDetail._id)
 
   return (

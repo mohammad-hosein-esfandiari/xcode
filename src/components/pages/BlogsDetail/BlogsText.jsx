@@ -72,7 +72,7 @@ const BlogsText = ({ id, title, category, details }) => {
           <ul className="pr-4 text-mode-color my-4 ">
             {details.numberList.map((item, index) => (
               <li key={index} className="mt-2">
-                <span>{(index + 1).toLocaleString("fa-IR")}.</span>{item}
+                <span>{(index + 1)}.</span>{item}
               </li>
             ))}
           </ul>

@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useUrlArray } from "@/hooks/useUrlArray";
 const BreadCrumb = () => {
   const { pathname } = useUrlArray();
+  console.log("pathname ===>", pathname);
 
   return (
     <div className=" flex items-center">
@@ -18,7 +19,7 @@ const BreadCrumb = () => {
             <Link
               href="/"
               className="hover:underline hover:text-primary hover:underline-offset-2 xs:text-[16px] text-[14px] text-[#919191]">
-              خانه
+              Home
             </Link>
             <div className="px-3">
               <BiChevronLeft className="text-[#919191]" />

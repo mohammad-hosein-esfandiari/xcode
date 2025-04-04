@@ -16,7 +16,7 @@ const Blogs = ({ news ,lastCourses}) => {
 
     if (category !== "all") {
       copyArray = copyArray.filter(
-        (item) => item.title.split("|")[1] == category
+        (item) => item.category == category
       );
     }
     setFirstArray(copyArray);
@@ -26,7 +26,7 @@ const Blogs = ({ news ,lastCourses}) => {
 
   return (
     <>
-      <Hero title="اخبار و مقالات" />
+      <Hero title="News & Articles" />
       <section className="xl:container lg:px-[100px] px-5 mt-[70px] pb-6">
         <BlogsMainSection lastCourses={lastCourses} firstArray={firstArray} newsArray={newsArray} news={news} />
       </section>
