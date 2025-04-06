@@ -29,14 +29,14 @@ const SubmitBasketBtn = () => {
     //   }
         
     } else {
-      toast.warning("برای خرید لطفا وارد شوید");
+      toast.warning("to buy something you should login first");
     }
   };
   return (
     <button
       onClick={submitHandler}
       className="hover:scale-[1.03] hover:shadow-modeShadow transition-all duration-300 bg-primary px-8 py-2 rounded-[4px] text-white">
-      خرید
+      Buy
     </button>
   );
 };

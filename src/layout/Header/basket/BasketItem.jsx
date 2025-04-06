@@ -28,7 +28,7 @@ const BasketItem = ({image,title,price,id}) => {
               <span className="text-[16px] ml-2 font-bold text-[#e05858]">
                 {price}
               </span>
-              <span className="text-[8px] relative text-gray-400">
+              <span className="text-[14px] ml-1 relative text-gray-400">
               $
                
               </span>

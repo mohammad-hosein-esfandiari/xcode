@@ -24,7 +24,7 @@ const ItemHolder = () => {
         <BasketItem key={item.id} {...item} />
       ))}</>): (<div className=" w-full h-full flex flex-col items-center justify-center">
         <FiShoppingCart className="text-[60px] text-primary"/>
-        <div className="text-[#e05858] mt-4">سبد خرید خالی است</div>
+        <div className="text-[#e05858] mt-4">Shopping cart is empty</div>
       </div>)}
     
     </div>
