@@ -21,7 +21,7 @@ const BasketItem = ({image,title,price,id}) => {
       <li className="flex-1 flex flex-col justify-between px-3 text-[18px] text-mode-color">
         <div>
         <h2 className="pl-2 py-1 text-[14px]">{title}</h2>
-        </div>
+        </div> 
         <div className="mt-2 flex justify-between">
            {
             price ? (  <div>

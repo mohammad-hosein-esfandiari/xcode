@@ -19,7 +19,7 @@ export default async function RootLayout({ children }) {
       <ToastBox/>
       <GetUserInfo/>
         {children}
-        <ThemeSwitcher />
+        <ThemeSwitcher /> 
       </body>
     </html>
   );
