@@ -12,7 +12,7 @@ import "swiper/swiper-bundle.min.css";
 
 export default function Slider({posts}) {
   return (
-    <div  className=" overflow-hidden pr-2 pb-6 border-[#b3b3b347] border-b-[1px] -mr-2">
+    <div  className=" overflow-hidden pl-2 pb-6 border-[#b3b3b347] border-b-[1px] -ml-2">
       <Swiper
       style={{width: '100%',height: '100%',paddingBottom: '10px',paddingTop: '10px',overflow:'visible'}}
       breakpoints={{

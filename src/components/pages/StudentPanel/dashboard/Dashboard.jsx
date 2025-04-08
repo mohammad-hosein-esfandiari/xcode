@@ -5,7 +5,7 @@ import Slider from "./slider/Slider";
 const Dashboard = ({posts}) => {
     return (
         <div className="ss:px-8 px-4 pb-3 w-full h-full overflow-y-scroll scrollbar-hide">
-            <PanelHeading title='داشبورد'/>
+            <PanelHeading title='Dashboard'/>
             <Slider posts={posts.slice(0,8)}/>
             <ContentHolder posts={posts}/>
         </div>

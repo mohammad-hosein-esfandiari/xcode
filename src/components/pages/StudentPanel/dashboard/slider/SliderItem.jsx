@@ -17,7 +17,7 @@ const SliderItem = ({
   const newArray = array.flatMap((item) => {
     return item.details;
   });
-  const lessonCount = newArray.length.toLocaleString("fa-IR");
+  const lessonCount = newArray.length;
 
   const { text, startText, endText } = dateForCourseCondition(
     startDate,
