@@ -6,10 +6,10 @@ const Schedule = () => {
         <>
         <ul className=" grid grid-cols-7">
           {days.map((item,index)=>(
-            <li key={index} className="pr-2 text-mode-color">{item}</li>
+            <li key={index} className="pl-2 text-mode-color">{item}</li>
           ))}
         </ul>
-        <div className="border-t-[1px] grid grid-cols-7 grid-rows-3 border-mode-color flex-1 border-r-[1px]">
+        <div className="border-t-[1px] grid grid-cols-7 grid-rows-3 border-mode-color flex-1 border-l-[1px]">
          {Array(21).fill().map((item,index)=>(
 
           <Cel key={index} day={index} />

@@ -33,8 +33,8 @@ const RightTabs = () => {
         ))}
       </li>
       <button onClick={logOutHnadler} className=" hover:text-red-700 text-pl-white justify-center ss:mb-4 ss:py-2 flex items-center">
-        <MdOutlineLogout className="lg:text-[20px] ss:block hidden text-[25px] ml-2" />
-        <span  className="text-[14px] hidden lg:block">خروج از حساب کاربری</span>
+        <MdOutlineLogout className="lg:text-[20px] ss:block hidden text-[25px] mr-2" />
+        <span  className="text-[14px] hidden lg:block">Logout</span>
       </button>
     </ul>
   );
