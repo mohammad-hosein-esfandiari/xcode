@@ -17,19 +17,20 @@ const InfoHolder = ({ user }) => {
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <h1>{error.message}</h1>;
   const { fullName, email, phoneNumber, birthDate, nationalId } =
-    data?.data.result;
+    data?.data;
 
-  const infoValidations = {
-    fullName: Yup.string().required("وارد کردن نام و نام خانوادگی الزامی است"),
-    email: Yup.string()
-      .required("وارد کردن پست الکترونیک الزامی است")
-      .email("پست الکترونیک وارد شده اشتباه است"),
-    phoneNumber: Yup.string()
-      .required("وارد کردن شماره تماس الزامی است")
-      .min(14, "شماره تماس باید حداقل ۱۰ کاراکتر باشد"),
-    nationalId: Yup.string(),
-    birthDate: Yup.string().required("وارد کردن تاریخ تولد الزامی است"),
-  };
+    const infoValidations = {
+      fullName: Yup.string().required("Full name is required"),
+      email: Yup.string()
+        .required("Email is required")
+        .email("Invalid email address"),
+      phoneNumber: Yup.string()
+        .required("Phone number is required")
+        .min(12, "Phone number must be at least 12 characters"),
+      nationalId: Yup.string(),
+      birthDate: Yup.string().required("Birth date is required"),
+    };
+    
 
   const infoInitialValues = {
     fullName,
@@ -56,10 +57,10 @@ const InfoHolder = ({ user }) => {
       useUserInfo.getState().setUserItemObj(obj)
       setCookie('UoXa-I',res.data.result,30)
       setLoading(false)
-      toast.success("تغییرات با موفقیت انجام شد")
+      toast.success("Changes made successfully")
     } catch (error) {
       console.log(error)
-      toast.error('خطایی رخ داده است')
+      toast.error("An error occured")
       setLoading(false)
     }
   };
@@ -74,7 +75,7 @@ const InfoHolder = ({ user }) => {
         }}>
         {() => (
           <Form>
-            <InputHolder loading={loading} setLoading={setLoading} data={data?.data?.result} />
+            <InputHolder loading={loading} setLoading={setLoading} data={data?.data} />
           </Form>
         )}
       </Formik>

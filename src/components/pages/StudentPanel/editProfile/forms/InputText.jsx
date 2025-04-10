@@ -33,9 +33,9 @@ const InputText = ({ size, ...props }) => {
       ) : props.type === 'select' ? (
         <select {...field}
         {...props} className="w-full h-[40px] focus:shadow-lg rounded-lg focus:scale-[1.01]  bg-transparent border-primary border-[1px] transition-transform duration-500 outline-none text-[14px] px-[8px] text-mode-color py-[5px]">
-          <option value="man">مرد</option>
-          <option value="woman">زن</option>
-          <option value="other">سایر</option>
+          <option value="man">male</option>
+          <option value="woman">female</option>
+          <option value="other">other</option>
         </select>
       ): (
         <div className="h-[52px] relative">
@@ -54,7 +54,7 @@ const InputText = ({ size, ...props }) => {
               {props.type === "password" && (
         <motion.span
           whileTap={{ scale: 1.05 }}
-          className={`absolute  cursor-pointer left-2 top-[9.8px] text-[18px]  ${
+          className={`absolute  cursor-pointer right-2 top-[9.8px] text-[18px]  ${
             isShowPass ? "text-gray-500" : "text-gray-400 "
           } `}
           onClick={clickHandler}>
@@ -62,7 +62,7 @@ const InputText = ({ size, ...props }) => {
         </motion.span>
       )}
         {meta.error && meta.touched && (
-          <p className="ss:text-[10px] text-[9px] text-red-400 mt-1 pr-2">{meta.error}</p>
+          <p className="ss:text-[10px] text-[9px] text-red-400 mt-1 pl-2">{meta.error}</p>
         )}
 
         </div>

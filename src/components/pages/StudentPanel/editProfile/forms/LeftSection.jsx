@@ -10,13 +10,13 @@ const LeftSection = ({ loading, setloading }) => {
       <div className="">
         <PhoneNumPicker
           name="phoneNumber"
-          label="شماره تماس خود را وارد کنید"
+          label="Enter your phoneNumber"
           type="number"
         />
         <BirthDatePicker
           name="birthDate"
           size="mt-2"
-          label="تاریخ تولد"
+          label="Birthday"
           type="text"
         />
       </div>
@@ -30,7 +30,7 @@ const LeftSection = ({ loading, setloading }) => {
               <BeatLoader color="white" size={6} />
             </>
           ) : (
-            "ذخیره"
+            "Save"
           )}
         </button>
       </div>

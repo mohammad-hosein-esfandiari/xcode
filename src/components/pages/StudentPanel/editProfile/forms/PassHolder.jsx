@@ -9,15 +9,15 @@ const PassHolder = ({user}) => {
   const [loading,setLoading] = useState(false)
   const changePassValidations = {
     password: Yup.string()
-      .required("وارد کردن رمز عبور الزامی است")
-      .min(8, "رمز عبور باید حداقل ۸ کاراکتر داشته باشد"),
+      .required("Password is required")
+      .min(8, "Password must contain a least 8 character"),
       // .matches(
       //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/,
       //   "رمز عبور باید ترکیبی از حروف لاتین بزرگ و کوچک و سمبل و اعداد باشد"
       // ),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref("password"), null], "رمز عبور مطابقت ندارد")
-      .required("وارد کردن تایید رمز الزامی است"),
+      .oneOf([Yup.ref("password"), null], "Password doesn't match")
+      .required("Confirm password is required"),
   };
   const passInitialValues = {
     password: "",
@@ -44,22 +44,22 @@ const PassHolder = ({user}) => {
                 size=" mt-2"
                 name="password"
                 type="password"
-                label="رمز عبور جدید"
-                placeholder="رمز عبور جدید خود را وارد کنید"
+                label="New Password"
+                placeholder="Enter your new password"
               />
               <InputText
                 size="mt-2"
                 name="confirmPassword"
                 type="password"
-                label="تکرار رمز عبور جدید"
-                placeholder="تکرار رمز عبور جدید خود را وارد کنید"
+                label="Rewrite new password"
+                placeholder="Enter your new password again"
               />
               <div className="flex md:mt-0 mt-8 md:justify-start justify-center flex-row-reverse">
                 <button
                 disabled={loading}
                   type="submit"
                   className="bg-primary h-[40px] mt-4 flex items-center justify-center hover:scale-[1.02] transition-all duration-300 hover:shadow-boxShadow text-white rounded-lg w-fit py-2 px-8 sss:px-24 md:px-8">
-                   {!loading ? "تغییر رمز" : <BeatLoader size={8} color="white"/>}
+                   {!loading ? "Change password" : <BeatLoader size={8} color="white"/>}
                 </button>
               </div>
             </div>

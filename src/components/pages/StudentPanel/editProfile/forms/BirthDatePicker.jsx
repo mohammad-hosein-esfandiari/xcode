@@ -33,7 +33,7 @@ const BirthDatePicker = ({ name, size, ...props }) => {
                 <label
                   className="text-mode-color mb-2 block pr-2 text-[14px]"
                   htmlFor={field.name}>
-                  تاریخ تولد:
+                  Birthday:
                 </label>
               <div className="h-[52px]">
                 <input
@@ -45,7 +45,7 @@ const BirthDatePicker = ({ name, size, ...props }) => {
                     showDate && "shadow-lg scale-[1.01]"
                   }  `}
                   readOnly
-                  placeholder="تاریخ تولد خود را وارد کنید"
+                  placeholder="Enter your birthday"
                   {...field}
                 />
                 {meta.error && meta.touched && (
