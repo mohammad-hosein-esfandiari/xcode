@@ -15,7 +15,7 @@ const LeftStep = () => {
             </div>
           </div>
           <span className="mt-4 text-white drop-shadow-text">
-            نگران نباشید ما دستورعمل های بازنشانی را برای شما ارسال خواهیم کرد..
+          Don't worry, we will send you reset instructions.
           </span>
         </div>
       </div>

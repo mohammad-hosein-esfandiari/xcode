@@ -31,7 +31,7 @@ const PassHolder = ({user}) => {
         onSubmit={async (values,actions) => {
           console.log(values);
           setLoading(true)
-         await changePass(user.studentModel._id,user.studentModel.email,user.studentModel.resetPasswordToken,values.password)
+         await changePass(user.studentModel._id,values.password,values.currentPassword)
            setLoading(false) 
            actions.resetForm()
            console.log(user)
@@ -40,6 +40,13 @@ const PassHolder = ({user}) => {
           <Form>
             <div className="hlg:px-48 lg:px-0 sm:px-16 pb-2 flex flex-col">
 
+              <InputText
+                size=" mt-2"
+                name="currentPassword"
+                type="password"
+                label="Current Password"
+                placeholder="Enter your current password"
+              />
               <InputText
                 size=" mt-2"
                 name="password"

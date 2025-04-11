@@ -96,7 +96,7 @@ export default function ForgetPassForm({ children }) {
         <MdLogin className="" />
 
         <div className=" bg-[#33333395] group-hover:opacity-100 opacity-0 group-hover:visible invisible text-center group-hover:right-10 transition-all duration-300   absolute top-[2px] right-8 text-[13px] px-6 py-1 rounded-md">
-          ورود
+          Login
         </div>
       </Link>
     </div>

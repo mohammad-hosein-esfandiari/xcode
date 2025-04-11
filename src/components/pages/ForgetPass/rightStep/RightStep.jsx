@@ -18,14 +18,14 @@ const RightStep = () => {
      {...stepAnimate}
       validationschema={Yup.object({
         email: Yup.string()
-        .required("وارد کردن ایمیل الزامی می باشد")
-        .email("ایمیل را به درستی وارد کنید")
+        .required("Email is required")
+        .email("Invalid email address")
         ,
       })}
      >
      <TextInput
           name="email"
-          label="پست الکترونیک"
+          label="Email"
           color="white"
           type="email"
         />
@@ -33,8 +33,8 @@ const RightStep = () => {
       <CodePhone
         validationschema={Yup.object({
           codephone: Yup.string()
-            .required("کد وارد شده اشتباه است")
-            .matches(randomCode, "کد وارد شده اشتباه است"),
+            .required("Invalid code")
+            .matches(randomCode, "Code is incorrect"),
         })}
         name="codephone"
         color="white"
@@ -44,25 +44,25 @@ const RightStep = () => {
         className="mt-[-10px]"
         validationschema={Yup.object({
           password: Yup.string()
-          .required("!وارد کردن رمز عبور الزامی است")
-          .min(8, "رمز عبور باید حداقل ۸ کاراکتر داشته باشد")
+          .required("Password is required")
+          .min(8, "Password must contain at least 8 characters")
           .matches(
             /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
-            "رمز عبور باید ترکیبی از حروف لاتین بزرگ و کوچک و سمبل و اعداد باشد"
+            "The password must be a combination of uppercase and lowercase\nLatin letters, symbols, and numbers."
             ),
           confirmpassword: Yup.string()
-            .oneOf([Yup.ref("password"), null], "رمز عبور مطابقت ندارد")
-            .required("وارد کردن تایید رمز الزامی است"),
+            .oneOf([Yup.ref("password"), null], "Password does not match")
+            .required("confirm pass is required"),
         })}>
         <TextInput
           name="password"
-          label="رمز عبور"
+          label="Password"
           color="white"
           type="password"
         />
         <TextInput
           name="confirmpassword"
-          label="تکرار رمز عبور"
+          label="Confirm Password"
           type="password"
           color="white"
         />
