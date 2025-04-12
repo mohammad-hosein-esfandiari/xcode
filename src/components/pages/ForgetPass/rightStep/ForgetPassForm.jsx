@@ -21,6 +21,7 @@ export default function ForgetPassForm({ children }) {
   const setStepZero = useStepperStore((state) => state.setStepZero);
   const setStepPrev = useStepperStore((state) => state.setStepPrev);
   const setRandomCode = useStepperStore((state) => state.setRandomCode);
+  const randomCode = useStepperStore((state) => state.randomCode);
   const userInfo = useUserInfo((state) => state.userInfo);
 
   useEffect(() => {
@@ -51,6 +52,11 @@ export default function ForgetPassForm({ children }) {
         handleNext();
         actions.setTouched({});
         actions.setSubmitting(false);
+        if(step === 2){
+          if(values.phone == randomCode){
+            console.log("code matches")
+          }
+        }
         if (step === 0) {
           setRandomCode();
         }

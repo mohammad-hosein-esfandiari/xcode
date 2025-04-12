@@ -56,7 +56,7 @@ const ModalAccept = ({ submitHandler }) => {
                 setSuccess={setSuccess}
                 setIsShowModal={setIsShowModal}
                 setLoading={setLoading}
-                successText={"عملیات با موفقیت انجام شد"}
+                successText={"Operation successful"}
               />
             ) : (
               <ModalDetails

@@ -56,7 +56,7 @@ export function CodePhone({ name, color }) {
                   onChange={handleCHange}
                   type="numeric"
                   inputMode="number"
-                  style={{ padding: "10px" }}
+                  style={{margin:"0 auto",width:"fit-content" }}
                   inputStyle={{
                     borderColor: `${
                       meta.error ? "#f87171" : "var(--primary-color)"

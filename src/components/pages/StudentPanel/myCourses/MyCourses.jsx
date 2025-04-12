@@ -34,7 +34,7 @@ const MyCourses = () => {
     setFilterArray(paginatedArray);
   }, [page, limit, array]);
   const onSuccess = (data) => {
-    const studentCourses = data?.data.result.filter((item) =>
+    const studentCourses = data?.data.filter((item) =>
       item.students.some((el) => el._id === user.studentModel._id)
     );
     setArray(studentCourses);
@@ -60,7 +60,7 @@ const MyCourses = () => {
       setLoading(false);
       setArray(array.filter((item) => item._id !== info));
     } catch (error) {
-      toast.error("خطایی رخ داده است");
+      toast.error("An error occured");
       console.log(error);
     }
   };
@@ -68,7 +68,7 @@ const MyCourses = () => {
   return (
     <div className=" pb-2 overflow-y-scroll scrollbar-hide pt-2 w-full flex-col flex h-full ">
       <div className="ss:px-8 px-4">
-        <PanelHeading title="دوره های من" />
+        <PanelHeading title="My Courses" />
       </div>
 
       <>

@@ -36,7 +36,7 @@ const userSchema = new mongoose.Schema({
 
   // ✅ فیلدهای مربوط به ریست پسورد
   resetPasswordToken: { type: String, default: "" },
-  resetPasswordExpires: { type: String, default: "" },
+  resetPasswordExpires: { type: Date, default: null },
 });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

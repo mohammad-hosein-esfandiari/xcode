@@ -11,7 +11,7 @@ export const changePass = async (
 
   isSuccess = true;
   try {
-    await api.patch("resetPassword/" + userId, {
+    await api.patch("users/" + userId, {
       newPassword:password,
       currentPassword
     });

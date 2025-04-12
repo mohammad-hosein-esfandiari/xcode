@@ -25,7 +25,7 @@ const RightStep = () => {
      >
      <TextInput
           name="email"
-          label="Email"
+          label="Enter your email"
           color="white"
           type="email"
         />
