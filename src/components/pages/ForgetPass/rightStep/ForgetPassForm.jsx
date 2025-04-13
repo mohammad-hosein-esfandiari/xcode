@@ -47,16 +47,12 @@ export default function ForgetPassForm({ children }) {
     if (!isLoading) {
       if (step === children.length - 1) {
           console.log(values)
-        console.log(userInfo.studentModel._id)
+        console.log(userInfo.studentModel._id) 
       } else {
         handleNext();
         actions.setTouched({});
         actions.setSubmitting(false);
-        if(step === 2){
-          if(values.phone == randomCode){
-            console.log("code matches")
-          }
-        }
+
         if (step === 0) {
           setRandomCode();
         }

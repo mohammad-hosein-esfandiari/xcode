@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { stepAnimate } from "@/constant/stepperInputAnimation";
 
 import PinInput from "react-pin-input";
-
+ 
 export function CodePhone({ name, color }) {
   const [bgColor, setBgColor] = useState("");
   const [fontColor, setFontColor] = useState("");

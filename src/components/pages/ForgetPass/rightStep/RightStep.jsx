@@ -37,7 +37,7 @@ const RightStep = () => {
             .matches(randomCode, "Code is incorrect"),
         })}
         name="codephone"
-        color="white"
+        color="white" 
       />
       <motion.div
         {...stepAnimate}
