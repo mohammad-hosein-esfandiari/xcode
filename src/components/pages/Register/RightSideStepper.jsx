@@ -17,7 +17,7 @@ const RightSideStepper = ({steps,currentStep}) => {
       ];
 
     return (
-        <div className="bg-linear3 hidden  rounded-r-[6px] md:w-[40%] relative py-2 sm:flex items-center">
+        <div className="bg-linear3 hidden  rounded-l-[6px] md:w-[40%] relative py-2 sm:flex items-center">
 
 <div className="p-6 overflow-hidden  flex flex-col justify-center">
       {steps.map((step, index) => (

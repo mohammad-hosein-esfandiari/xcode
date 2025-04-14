@@ -3,7 +3,7 @@ import login from "@/assets/images/login.jpg";
 const LeftStep = () => {
   return (
     <div className=" md:flex justify-between relative bg-transparent overflow-hidden hidden flex-col flex-1">
-      <div className="flex-1 overflow-hidden mr-[-5px] bg-no-repeat bg-cover object-cover object-center sm:relative rounded-l-[6px] flex flex-col ">
+      <div className="flex-1 overflow-hidden mr-[-5px] bg-no-repeat bg-cover object-cover object-center sm:relative rounded-r-[6px] flex flex-col ">
         <Image
         alt="login"
         priority={true}
