@@ -49,8 +49,6 @@ export default function ForgetPassForm({ children }) {
   const onSubmit = async (values, actions) => {
     if (!isLoading) {
       if (step === children.length - 1) {
-          console.log(values)
-        console.log(userInfo.studentModel._id) 
         const res = await api.post(process.env.NEXT_PUBLIC_BASE_URL+"resetPassword/"+token,{password:values.password})
         if(res.status === 200){
           toast.success("Password changed successfully")
@@ -64,7 +62,6 @@ export default function ForgetPassForm({ children }) {
           setRandomCode();
         }
         if (step === 1) {
-          console.log("step 1");
           const res = await api.post(process.env.NEXT_PUBLIC_BASE_URL+"forgetPassword",{email:values.email})
           setToken(res.data.token)
         }

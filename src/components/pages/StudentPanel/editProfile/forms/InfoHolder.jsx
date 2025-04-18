@@ -17,7 +17,7 @@ const InfoHolder = ({ user }) => {
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <h1>{error.message}</h1>;
   const { fullName, email, phoneNumber, birthDate, nationalId } =
-    data?.data;
+    data?.data.user;
 
     const infoValidations = {
       fullName: Yup.string().required("Full name is required"),
@@ -39,6 +39,7 @@ const InfoHolder = ({ user }) => {
     birthDate,
     nationalId,
   };
+
 
   const submitHandler = async (values) => {
     const { fullName, email, phoneNumber, birthDate, nationalId } = values;
