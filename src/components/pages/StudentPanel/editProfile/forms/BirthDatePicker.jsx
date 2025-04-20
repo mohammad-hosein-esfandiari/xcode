@@ -62,7 +62,7 @@ const BirthDatePicker = ({ name, size, ...props }) => {
                   onClick={(event) => event.stopPropagation()}
                   className="w-fit rounded-[6px] overflow-hidden scale-[0.7] top-[-180px] shadow-boxShadow right-0 absolute z-20">
                   <JCalendar
-                    locale={"fa"}
+                    locale={"en"}
                     color={"var(--primary-color)"}
                     size={30}
                     onClick={clickHandler}

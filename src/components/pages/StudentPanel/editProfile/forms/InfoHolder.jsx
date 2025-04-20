@@ -30,13 +30,18 @@ const InfoHolder = ({ user }) => {
       nationalId: Yup.string(),
       birthDate: Yup.string().required("Birth date is required"),
     };
-    
-
+    const date = new Date(birthDate);
+    const birthDay = date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    console.log(birthDay)
   const infoInitialValues = {
     fullName,
     email,
     phoneNumber: "  " + phoneNumber,
-    birthDate,
+    birthDate:birthDay,
     nationalId,
   };
 
