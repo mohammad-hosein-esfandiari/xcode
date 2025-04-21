@@ -7,19 +7,18 @@ const LastRow = ({ cost, students }) => {
       <li className=" text-gray-400 group-hover:text-white flex text-[12px] justify-between items-center">
         <div className="flex items-center">
           <SlUser />
-          <span className="pt-[2px] mr-2">{stu.toLocaleString("fa-IR")}</span>
-          <span className="pt-[2px] mr-1">دانش آموز</span>
+          <span className="pt-[2px] ml-2">{stu}</span>
+          <span className="pt-[2px] ml-1">Student</span>
         </div>
         {cost ? (
           <>
             {" "}
             <div>
-              <span className="text-[22px] ml-4 font-bold text-[#e05858]">
-                {cost.toLocaleString("fa-IR")}
+              <span className="text-[22px] mr-4 font-bold text-[#e05858]">
+                {cost}
               </span>
-              <span className="text-[12px] relative group-hover:text-white text-gray-400">
-                توما
-                <span className="absolute left-0 top-[-12px]">ن</span>
+              <span className="text-[22px] relative group-hover:text-white text-gray-400">
+                $
               </span>
             </div>
           </>
@@ -112,11 +111,11 @@ const LastRow = ({ cost, students }) => {
                         </g>
                         <text
                           fill="#fff"
-                          fontFamily="IRANSans"
+                          fontFamily="Poppins"
                           fontSize="34"
                           transform="translate(69.551 43.03)">
                           <tspan x="80" y="0">
-                            رایگان
+                            Free
                           </tspan>
                         </text>
                       </g>

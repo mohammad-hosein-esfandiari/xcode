@@ -53,7 +53,7 @@ const MyCourses = () => {
     setLoading(true);
     try {
       const res = await api.post(
-        "/course/removeStudentFromCourse/" + user.studentModel._id,
+        "courses/removeStudentFromCourse/" + user.studentModel._id,
         { courseId: info }
       );
       setSuccess(true);
