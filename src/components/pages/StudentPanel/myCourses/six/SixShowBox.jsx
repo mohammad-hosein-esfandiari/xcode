@@ -33,7 +33,7 @@ const SixShowBox = ({
       className="py-2 shadow-boxShadow hover:scale-[1.005] transition-all duration-300 hover:bg-primary rounded-lg flex justify-between  bg-[#fbfbfbae] px-2"
       href={`/courses/${_id}`}>
       <ul
-        className={`w-full h-full grid  hover:text-white  cursor-pointer sm:grid-cols-6 grid-cols-3  [&>li]:items-center [&>li]:justify-center   text-[14px]  [&>li]:text-center  `}>
+        className={`w-full h-full grid  hover:text-white  cursor-pointer sm:grid-cols-6 grid-cols-3  [&>li]:items-center [&>li]:justify-center   text-[14px]  [&>li]:text-center ${path.includes("courses-list") ? "sm:grid-cols-5" : null } `}>
         <li className="flex">{title}</li>
         <li className="flex">{teacher.fullName}</li>
         <li className="sm:flex hidden">{startDateNum}</li>

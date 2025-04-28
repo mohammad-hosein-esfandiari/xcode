@@ -11,7 +11,7 @@ const TwoShowBox = ({lessons, title, _id, likedCount, students, cost ,teacher,en
   const {path} = useUrlArray()
   const grid = useGridStudentPanel((state) => state.grid);
   return (
-    <Link href={`/courses/${_id}`} className="bg-linear5 text-mode-color relative transition-all duration-300 cursor-pointer hover:scale-[1.03] shadow-modeShadow rounded-lg md:p-6 p-4 flex flex-col justify-between  ">
+    <Link href={`/courses/${_id}`} className="bg-linear5 text-mode-color relative transition-all duration-300 cursor-pointer hover:scale-[1.01] shadow-modeShadow rounded-lg md:p-6 p-4 flex flex-col justify-between  ">
       {grid == 6 && path.includes("my-courses")  && (
         <div  className="text-red-500 absolute lg:right-3 lg:top-3 right-5 top-5 lg:bg-transparent bg-white rounded-full hover:scale-[1.1] transition-all duration-300 text-[20px] cursor-pointer flex justify-center items-center">
           <IoCloseCircleOutline className="hover:scale-[1.5] transition-all duration-300" />

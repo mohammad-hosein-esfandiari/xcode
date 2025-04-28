@@ -8,7 +8,7 @@ const TableHead = () => {
   const grid = useGridStudentPanel((state) => state.grid);
   console.log(grid)
   return (
-    <ul className={`grid  sm:grid-cols-6  grid-cols-3 px-2 [&>li]:text-center bg-[#bbbbbb87] py-3 mt-3 rounded-lg shadow-boxShadow text-mode-color`}>
+    <ul className={`grid ${path.includes("courses-list") ? "sm:grid-cols-5" : "sm:grid-cols-6" } grid-cols-3 px-2 [&>li]:text-center bg-[#bbbbbb87] py-3 mt-3 rounded-lg shadow-boxShadow text-mode-color`}>
       <li>Course</li>
       <li>Teacher</li>
       <li className="sm:block hidden">Start Date</li>

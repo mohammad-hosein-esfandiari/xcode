@@ -42,7 +42,7 @@ const CourseList = ({ posts }) => {
   return (
     <div className=" pb-2 overflow-y-scroll scrollbar-hide pt-2 w-full flex-col flex h-full ">
       <div className="ss:px-8 px-4">
-        <PanelHeading title="لیست دوره ها" />
+        <PanelHeading title="Courses list" />
       </div>
       <div className="flex-1  pt-2 flex-col flex justify-between">
         <div className="flex-1 flex pb-1  flex-col">
