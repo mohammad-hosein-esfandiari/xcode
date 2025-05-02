@@ -11,7 +11,7 @@ const CourseDetails = ({courseDetail,allComments,posts,teacher}) => {
                 <CourseDetailsMainSection allComments={allComments} teacher={teacher} courseDetail={courseDetail}/>
             </section>
             <SliderHolder posts={posts} courseDetail={courseDetail}/>
-        </>
+        </> 
     );
 }
 

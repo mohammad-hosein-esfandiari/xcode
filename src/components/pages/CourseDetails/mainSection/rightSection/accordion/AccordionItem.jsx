@@ -24,7 +24,7 @@ const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,head
       {isInStudents && userInfo.isActive && (
         <LinkCp href={`/video/${lessonId}?video=${videoLink}&season=${headlineIndex}`} className=" absolute  w-full h-full"></LinkCp>
       )}
-
+ 
       <div className="flex itemx-center text-[14px]">
         <div className="border-[1px] border-[#d4d4d482] rounded-full w-[28px] h-[28px] flex items-center justify-center ml-2">
           {(index + 1)}

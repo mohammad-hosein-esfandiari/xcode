@@ -21,7 +21,7 @@ const AccordionHolder =  ({  students,lessons }) => {
   const isInStudents = students.some(item => item._id === user?.studentModel._id)
   // const headline = convertTopicToObj(data.data.result.topics);
   return (
-    <div>
+    <div> 
           {!user.studentModel.isActive && isInStudents && (
             <InActiveCp text="You have been disabled by the site administrator and are unable to view the videos. Contact site support to check." />
             )}

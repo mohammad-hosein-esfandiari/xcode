@@ -29,7 +29,7 @@ const RightSection = ({ courseDetail, allComments,teacher }) => {
             <AccordionHolder
               students={students}
               lessons={lessons}
-              headlines={lessons.title}
+              headlines={lessons.title} 
             />
         </AnimWrapper>
         <AnimWrapper>
