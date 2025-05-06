@@ -7,8 +7,8 @@ import { MdSlowMotionVideo } from "react-icons/md";
 import { RxLockClosed, RxLockOpen2 } from "react-icons/rx";
 
 const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,headlineIndex}) => {
-  const lastIndex = video.lastIndexOf("/")
-  const videoLink = video.substring(lastIndex+1)
+  // const lastIndex = video.lastIndexOf("/")
+  // const videoLink = video.substring(lastIndex+1)
   const userInfo = useUserInfo.getState().userInfo.studentModel
   return (
     <button
@@ -22,7 +22,7 @@ const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,head
           : " opacity-50 cursor-default"
       }  transition-all relative duration-300 px-4 flex items-center text-mode-color justify-between py-2 `}>
       {isInStudents && userInfo.isActive && (
-        <LinkCp href={`/video/${lessonId}?video=${videoLink}&season=${headlineIndex}`} className=" absolute  w-full h-full"></LinkCp>
+        <LinkCp href={`/video/${lessonId}?video=${video}&season=${headlineIndex}`} className=" absolute  w-full h-full"></LinkCp>
       )}
  
       <div className="flex itemx-center text-[14px]">
