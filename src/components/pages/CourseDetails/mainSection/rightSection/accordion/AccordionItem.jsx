@@ -8,7 +8,7 @@ import { RxLockClosed, RxLockOpen2 } from "react-icons/rx";
 
 const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,headlineIndex}) => {
   // const lastIndex = video.lastIndexOf("/")
-  // const videoLink = video.substring(lastIndex+1)
+  // const videoLink = video.substring(lastIndex+1) 
   const userInfo = useUserInfo.getState().userInfo.studentModel
   return (
     <button

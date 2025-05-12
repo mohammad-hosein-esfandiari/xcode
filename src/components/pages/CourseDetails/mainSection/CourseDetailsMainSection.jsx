@@ -16,7 +16,7 @@ const CourseDetailsMainSection = ({courseDetail,allComments,teacher}) => {
         <LeftSection courseDetail={courseDetail} />
         <FixedBtn courseDetail={courseDetail}/>
       </div>
-    </div>
+    </div> 
   );
 };
 

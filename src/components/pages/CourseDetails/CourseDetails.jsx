@@ -12,7 +12,7 @@ const CourseDetails = ({courseDetail,allComments,posts,teacher}) => {
             </section>
             <SliderHolder posts={posts} courseDetail={courseDetail}/>
         </> 
-    );
+    ); 
 }
 
 export default CourseDetails;

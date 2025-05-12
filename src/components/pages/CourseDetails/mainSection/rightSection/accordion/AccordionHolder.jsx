@@ -24,7 +24,7 @@ const AccordionHolder =  ({  students,lessons }) => {
     <div> 
           {!user.studentModel.isActive && isInStudents && (
             <InActiveCp text="You have been disabled by the site administrator and are unable to view the videos. Contact site support to check." />
-            )}
+            )} 
       {lessons.map((item, index) => (
         <Accordion
         isInStudents={isInStudents} 
