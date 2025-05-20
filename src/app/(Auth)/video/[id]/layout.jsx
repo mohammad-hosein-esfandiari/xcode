@@ -2,14 +2,14 @@ import VideoRightTabs from "@/components/pages/Video/VideoRightTasb";
 import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
 import Link from "next/link";
 import { AiOutlineHome } from "react-icons/ai";
-const URL = "https://api.xcode.sepehracademy.ir/api"
 async function getLessons(id) {
-  const res = await fetch(URL+"/lesson/"+id,{cache:'no-store'});
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"/lessons/"+id,{cache:'no-store'});
   const lessons = await res.json();
   return lessons;
 }
 const layout = async ({ children ,searchParams,params}) => {
   const lessons = await getLessons(params.id)
+  const lesson = lessons.filter((item)=>item._id === params.id)
   const headline = convertTopicToObj(lessons.result.topics);
     console.log(lessons.result.courses[0])
   return (
@@ -21,7 +21,7 @@ const layout = async ({ children ,searchParams,params}) => {
         </Link>
       <section className="xl:container  lg:px-[150px] ">
         <div className="ss:pl-[7px]  relative hlg:h-[650px] lg:h-[580px] h-[100vh]  flex ss:flex-row flex-col-reverse items-center justify-between ss:bg-linear4 bg-linear3 mx-auto sm:shadow-modeShadow lg:rounded-lg ">
-          <VideoRightTabs lessonName={lessons.result.lessonName} lessonId={params.id} headline={headline} />
+          <VideoRightTabs lessonName={lesson.title} lessonId={params.id} headline={headline} />
           <div className="w-full h-full pl-8 py-8 ">
             <div className="bg-linear5 shadow-modeShadow h-full rounded-md overflow-hidden">
               {children}
