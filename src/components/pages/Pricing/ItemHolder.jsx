@@ -19,7 +19,7 @@ const ItemHolder = () => {
     getBasket()
   }, [arrayBasket]);
   return (
-    <div className={`py-4 border-[2px] h-full overflow-y-auto rounded-[4px] ${basket.length ? "border-[#9494945d]" : "border-[#880b0ba3]"} `}>
+    <div className={`py-5 border-[2px] h-full overflow-y-auto rounded-[4px] ${basket.length ? "border-[#9494945d]" : "border-[#880b0ba3]"} `}>
         {basket.length ? (<>  {basket.map((item) => (
         <BasketItem key={item.id} {...item} />
       ))}</>): (<div className=" w-full h-full flex flex-col items-center justify-center">

@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const lessonSchema = new mongoose.Schema({
   _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
   title: { type: String, required: true },
-  details: [{ title: { type: String }, link: { type: String, required: true } }],
+  details: [{ title: { type: String }, video: { type: String, required: true } }],
 });
 
 const courseSchema = new mongoose.Schema({
