@@ -1,7 +1,7 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import VideoItem from "./VideoItem";
-
+ 
 const VideoRightTabs = ({ headline,lessonId,lesson }) => {
   const season = useSearchParams().get("season");
   const videoId = useSearchParams().get("video");

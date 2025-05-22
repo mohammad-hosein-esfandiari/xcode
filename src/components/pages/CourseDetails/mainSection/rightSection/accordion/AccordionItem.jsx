@@ -13,7 +13,7 @@ const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,head
   return (
     <button
     
-      disabled={!isInStudents}
+      disabled={!isInStudents} 
       className={`${
         index !== length && "border-b-[1px]"
       } border-[#d4d4d482]  w-full ${

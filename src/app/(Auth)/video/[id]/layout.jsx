@@ -7,7 +7,7 @@ async function getLessons(id) {
   const lessons = await res.json();
   return lessons;
 }
-const layout = async ({ children ,searchParams,params}) => {
+const layout = async ({ children ,searchParams,params}) => { 
   const lessons = await getLessons(params.id)
   const lesson = lessons.filter((item)=>item._id === params.id)
   const headline = convertTopicToObj(lessons.result.topics);

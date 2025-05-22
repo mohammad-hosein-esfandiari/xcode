@@ -10,7 +10,7 @@ export async function POST(req, { params }) {
   try {
     await dbConnect();
 
-    const course = await Course.findById(id);
+    const course = await Course.findById(id);  
     const user = await User.findById(userId);
     if (!course || !user) {
       return NextResponse.json({ message: "User or Course not found" }, { status: 404 });
