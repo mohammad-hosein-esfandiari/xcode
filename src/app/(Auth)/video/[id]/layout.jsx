@@ -2,16 +2,16 @@ import VideoRightTabs from "@/components/pages/Video/VideoRightTasb";
 import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
 import Link from "next/link";
 import { AiOutlineHome } from "react-icons/ai";
-async function getLessons(id) {
-  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"/lessons/"+id,{cache:'no-store'});
-  const lessons = await res.json();
-  return lessons;
+
+async function getCourseByLesson(id) {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL+"lessons/"+id,{cache:'no-store'});
+  const course = await res.json();
+  return course;
 }
+
 const layout = async ({ children ,searchParams,params}) => { 
-  const lessons = await getLessons(params.id)
-  const lesson = lessons.filter((item)=>item._id === params.id)
-  const headline = convertTopicToObj(lessons.result.topics);
-    console.log(lessons.result.courses[0])
+  const course = await getCourseByLesson(params.id)
+  const lesson = course.lessons.filter((item)=>item._id === params.id)
   return (
     <main className="flex flex-col bg-linear1 justify-center relative w-full min-h-[100vh]">
             <Link
@@ -21,7 +21,7 @@ const layout = async ({ children ,searchParams,params}) => {
         </Link>
       <section className="xl:container  lg:px-[150px] ">
         <div className="ss:pl-[7px]  relative hlg:h-[650px] lg:h-[580px] h-[100vh]  flex ss:flex-row flex-col-reverse items-center justify-between ss:bg-linear4 bg-linear3 mx-auto sm:shadow-modeShadow lg:rounded-lg ">
-          <VideoRightTabs lesson={lesson} lessonId={params.id} headline={headline} />
+          <VideoRightTabs lesson={lesson} lessonId={params.id} />
           <div className="w-full h-full pl-8 py-8 ">
             <div className="bg-linear5 shadow-modeShadow h-full rounded-md overflow-hidden">
               {children}

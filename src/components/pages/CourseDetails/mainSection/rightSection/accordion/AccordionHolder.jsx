@@ -18,7 +18,7 @@ const AccordionHolder =  ({  students,lessons }) => {
   //   );
   // if (isError) return <h1>{error.message}</h1>;
 
-  const isInStudents = students.some(item => item._id === user?.studentModel._id)
+  const isInStudents = students.some(item => item === user?.studentModel._id)
   // const headline = convertTopicToObj(data.data.result.topics);
   return (
     <div> 

@@ -2,23 +2,16 @@ import AnimTrue from "@/components/common/AnimTrue";
 import InfoEmployee from "@/components/pages/Video/InfoEmployee";
 import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
 
-const URL = "https://api.xcode.sepehracademy.ir/api";
-async function getLessons(id) {
-  const res = await fetch(URL + "/lesson/" + id, { cache: "no-store" });
-  const lessons = await res.json();
-  return lessons;
-}
 
-async function getCourse(id) {
-  const res = await fetch(URL + "/course/" + id, { cache: "no-store" });
+async function getCourseByLesson(id) {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "lessons/" + id, { cache: "no-store" });
   const course = await res.json();
   return course;
 }
 
 const VideoPage = async ({ searchParams, params }) => {
-  const lessons = await getLessons(params.id);
-  const course = await getCourse(lessons.result.courses[0]._id);
-  const headline = convertTopicToObj(lessons.result.topics);
+  const course = await getCourseByLesson(params.id);
+  // const headline = convertTopicToObj(lessons.topics);
   const season = searchParams.season;
   const video = searchParams.video;
   const text = headline[season].details.find((item) =>
@@ -39,7 +32,7 @@ const VideoPage = async ({ searchParams, params }) => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
       </div>
       <div className="w-full text-mode-color font-bold h-full  flex items-center ">
-        <InfoEmployee headlineText={headlineText} text={text.title} title={course.result.title} lessonName={course.result.lesson?.lessonName} teacherEmail={course.result.teacher.email} teacherProfile={course.result.teacher.profile} teacherName={course.result.teacher.fullName} />
+        <InfoEmployee headlineText={headlineText} text={text.title} title={course.title} lessonName={course.lesson?.lessonName} teacherEmail={course.teacher.email} teacherProfile={course.teacher.profile} teacherName={course.teacher.fullName} />
         
       </div>
     </div>
