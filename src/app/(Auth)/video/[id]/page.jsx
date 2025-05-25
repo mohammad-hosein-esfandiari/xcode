@@ -17,7 +17,7 @@ const VideoPage = async ({ searchParams, params }) => {
   const text = headline[season].details.find((item) =>
     item.video.includes(video)
   );
-
+ 
   const headlineText = headline[season].headline
 
   return (

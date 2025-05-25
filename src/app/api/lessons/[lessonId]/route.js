@@ -17,7 +17,7 @@ export async function GET(req, { params }) {
 
     // فقط لیست دروس را برمی‌گردانیم
     return NextResponse.json(
-      course
+      course 
     , { status: 200 });
 
   } catch (error) {

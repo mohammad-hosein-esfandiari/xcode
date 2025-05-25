@@ -9,7 +9,7 @@ async function getCourseByLesson(id) {
   return course;
 }
 
-const layout = async ({ children ,searchParams,params}) => { 
+const layout = async ({ children ,searchParams,params}) => {  
   const course = await getCourseByLesson(params.id)
   const lesson = course.lessons.filter((item)=>item._id === params.id)
   return (
