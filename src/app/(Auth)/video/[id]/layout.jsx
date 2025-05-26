@@ -21,12 +21,12 @@ const layout = async ({ children ,searchParams,params}) => {
         </Link>
       <section className="xl:container  lg:px-[150px] ">
         <div className="ss:pl-[7px]  relative hlg:h-[650px] lg:h-[580px] h-[100vh]  flex ss:flex-row flex-col-reverse items-center justify-between ss:bg-linear4 bg-linear3 mx-auto sm:shadow-modeShadow lg:rounded-lg ">
-          <VideoRightTabs lesson={lesson} lessonId={params.id} />
           <div className="w-full h-full pl-8 py-8 ">
             <div className="bg-linear5 shadow-modeShadow h-full rounded-md overflow-hidden">
               {children}
-            </div>
+            </div> 
           </div>
+          <VideoRightTabs lesson={lesson[0]} lessonId={params.id} />
         </div>
       </section>
     </main>
