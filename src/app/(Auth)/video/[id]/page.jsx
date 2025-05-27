@@ -1,24 +1,11 @@
 import AnimTrue from "@/components/common/AnimTrue";
 import InfoEmployee from "@/components/pages/Video/InfoEmployee";
-import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
-
-
-async function getCourseByLesson(id) {
-  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "lessons/" + id, { cache: "no-store" });
-  const course = await res.json();
-  return course;
-}
+import { getCourseAndLesson } from "./actions";
 
 const VideoPage = async ({ searchParams, params }) => {
-  const course = await getCourseByLesson(params.id);
-  // const headline = convertTopicToObj(lessons.topics);
+  const { course, lesson } = await getCourseAndLesson(params.id);
   const season = searchParams.season;
   const video = searchParams.video;
-  // const text = headline[season].details.find((item) =>
-  //   item.video.includes(video)
-  // );
- 
-  // const headlineText = headline[season].headline
 
   return (
     <div className="flex flex-col justify-between h-full"> 
@@ -31,10 +18,15 @@ const VideoPage = async ({ searchParams, params }) => {
           allowFullScreen={true}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
       </div>
-      {/* <div className="w-full text-mode-color font-bold h-full  flex items-center ">
-        <InfoEmployee headlineText={headlineText} text={text.title} title={course.title} lessonName={course.lesson?.lessonName} teacherEmail={course.teacher.email} teacherProfile={course.teacher.profile} teacherName={course.teacher.fullName} />
-        
-      </div> */}
+      <div className="w-full text-mode-color font-bold h-full  flex items-center ">
+        <InfoEmployee 
+          title={course.title} 
+          lessonName={lesson.title} 
+          teacherExpertise={course.teacher.teacherFields.expertise}
+          teacherProfile={course.teacher.profile} 
+          teacherName={course.teacher.fullName} 
+        />
+      </div>
     </div>
   );
 };

@@ -5,16 +5,15 @@ import VideoItem from "./VideoItem";
 const VideoRightTabs = ({ lessonId,lesson }) => {
   const season = useSearchParams().get("season");
   const videoId = useSearchParams().get("video");
-  console.log("lesson",lesson)
   return (
     <div className="pr-8 pl-2 py-8 w-[400px]  h-full">
       <div className="overflow-y-auto bg-linear5 shadow-modeShadow scrollbar-hide rounded-md h-full ">
         <div className="p-4 text-center text-primary border-b-[1px] mb-1  border-[#b6b6b663] font-bold  "> 
-            Lesson other videos
+            Lesson videos
         </div> 
-        {/* {lesson.details.map((item) => (
+        {lesson.details.map((item) => (
           <VideoItem videoId={videoId} season={season} lessonId={lessonId} key={item.title + item.id} {...item} />
-        ))} */}
+        ))}
       </div>
     </div>
   );
