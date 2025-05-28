@@ -4,7 +4,7 @@ const InfoEmployee = ({
   title,
   teacherName,
   teacherExpertise,
-  teacherProfile,
+  teacherProfile,  
   lessonName,
 }) => {
   return (

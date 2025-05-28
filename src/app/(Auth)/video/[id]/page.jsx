@@ -26,7 +26,7 @@ const VideoPage = async ({ searchParams, params }) => {
           teacherProfile={course.teacher.profile} 
           teacherName={course.teacher.fullName} 
         />
-      </div>
+      </div> 
     </div>
   );
 };

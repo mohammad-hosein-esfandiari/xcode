@@ -13,7 +13,7 @@ export async function GET(req, { params }) {
 
     if (!course) {
       return NextResponse.json({ message: "Course with this lesson not found" }, { status: 404 });
-    }
+    } 
 
     // فقط لیست دروس را برمی‌گردانیم
     return NextResponse.json(

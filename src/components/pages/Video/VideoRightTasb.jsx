@@ -16,7 +16,7 @@ const VideoRightTabs = ({ lessonId,lesson }) => {
         ))}
       </div>
     </div>
-  );
+  ); 
 };
 
 export default VideoRightTabs;

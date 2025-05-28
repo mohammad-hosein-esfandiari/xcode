@@ -23,6 +23,6 @@ const VideoItem = ({video,title,lessonId,season,videoId}) => {
       </div>
     </Link>
   );
-};
+}; 
 
 export default VideoItem;
