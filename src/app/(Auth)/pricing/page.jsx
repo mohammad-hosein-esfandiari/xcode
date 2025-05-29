@@ -1,12 +1,8 @@
-
 import BackBtn from "@/components/pages/Pricing/BackBtn";
 import ItemHolder from "@/components/pages/Pricing/ItemHolder";
 import SubmitPricing from "@/components/pages/Pricing/SubmitPricing";
 
-
 const Pricing = () => {
-
-
 
   return (
     <div className="bg-linear1">

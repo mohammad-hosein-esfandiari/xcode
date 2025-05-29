@@ -1,11 +1,11 @@
-'use client'
+"use client";
 import { useSearchParamsInUrl } from "@/hooks/useSearchParamsInUrl";
 import { useRouter } from "next/navigation";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import ReactPaginate from "react-paginate";
 
-const Pagination2 = ({ posts, bgNone,href }) => {
-  const { category ,queryArray, limit, page } = useSearchParamsInUrl();
+const Pagination2 = ({ posts, bgNone, href }) => {
+  const { category, queryArray, limit, page } = useSearchParamsInUrl();
   const router = useRouter();
   const handlePageClick = (event) => {
     if (queryArray) {
@@ -13,11 +13,14 @@ const Pagination2 = ({ posts, bgNone,href }) => {
         `/${href}?limit=${limit}&page=${
           event.selected + 1
         }&filter=${queryArray.join("_")}`
-      ); 
-    } else if(category) {
-      router.push(`/${href}?limit=${limit}&page=${event.selected + 1}&category=${category}`);
-    } else{
-
+      );
+    } else if (category) {
+      router.push(
+        `/${href}?limit=${limit}&page=${
+          event.selected + 1
+        }&category=${category}`
+      );
+    } else {
       router.push(`/${href}?limit=${limit}&page=${event.selected + 1}`);
     }
     window.scrollTo(0, 0);

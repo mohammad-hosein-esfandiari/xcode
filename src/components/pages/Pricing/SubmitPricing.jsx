@@ -1,7 +1,5 @@
 "use client";
-
 import axios from "axios";
-import { getCookie } from "@/core/utils/cookies.storage";
 import api from "@/core/interceptors/apiInterceptor";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
@@ -51,11 +49,6 @@ const SubmitPricing = () => {
         setLoading(false);
         console.log(error);
         setBasketEmpty();
-        // if (error.response) {
-        //   error.data.message.forEach((item) =>
-        //     toast.error(item.message)
-        //   );
-        // }
       }
     } else {
       toast.error("Basket is empty!");

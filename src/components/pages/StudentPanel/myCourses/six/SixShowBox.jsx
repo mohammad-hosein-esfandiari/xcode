@@ -6,14 +6,7 @@ import { useModalAccept } from "@/context/modalBox";
 import Link from "next/link";
 import { useUrlArray } from "@/hooks/useUrlArray";
 
-const SixShowBox = ({
-  title,
-  teacher,
-  startDate,
-  endDate,
-  cost,
-  _id,
-}) => {
+const SixShowBox = ({ title, teacher, startDate, endDate, cost, _id }) => {
   const { path } = useUrlArray();
   const setInfo = useModalAccept((state) => state.setInfo);
   const setIsShowModal = useModalAccept((state) => state.setIsShowModal);
@@ -33,26 +26,27 @@ const SixShowBox = ({
       className="py-2 shadow-boxShadow hover:scale-[1.005] transition-all duration-300 hover:bg-primary rounded-lg flex justify-between  bg-[#fbfbfbae] px-2"
       href={`/courses/${_id}`}>
       <ul
-        className={`w-full h-full grid  hover:text-white  cursor-pointer sm:grid-cols-6 grid-cols-3  [&>li]:items-center [&>li]:justify-center   text-[14px]  [&>li]:text-center ${path.includes("courses-list") ? "sm:grid-cols-5" : null } `}>
+        className={`w-full h-full grid  hover:text-white  cursor-pointer sm:grid-cols-6 grid-cols-3  [&>li]:items-center [&>li]:justify-center   text-[14px]  [&>li]:text-center ${
+          path.includes("courses-list") ? "sm:grid-cols-5" : null
+        } `}>
         <li className="flex">{title}</li>
         <li className="flex">{teacher.fullName}</li>
         <li className="sm:flex hidden">{startDateNum}</li>
         <li className="sm:flex hidden">{endDateNum}</li>
-    
-          <>
-            <li className={` ${grid === 6 ? "flex" : "sm:flex hidden"} `}>
-              {cost ? (
-                <>
-                  {cost}{" "}
-                  <span className="ml-1">$</span>
-                </>
-              ) : (
-                <span className="text-red-500">Free</span>
-              )}
-            </li>
-          </>
-     
-      {path.includes("my-courses") && (
+
+        <>
+          <li className={` ${grid === 6 ? "flex" : "sm:flex hidden"} `}>
+            {cost ? (
+              <>
+                {cost} <span className="ml-1">$</span>
+              </>
+            ) : (
+              <span className="text-red-500">Free</span>
+            )}
+          </li>
+        </>
+
+        {path.includes("my-courses") && (
           <li className="text-red-500  flex justify-center items-center">
             <IoCloseCircleOutline
               className="hover:scale-[1.5] transition-all duration-300 text-[20px] cursor-pointer"
@@ -60,7 +54,6 @@ const SixShowBox = ({
             />
           </li>
         )}
-
       </ul>
     </Link>
   );
