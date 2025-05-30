@@ -11,10 +11,9 @@ const LeftSection = ({ posts }) => {
           .reverse()
           .slice(0, 8)
           .map((item, index) => (
-            
             <RelatedBox
-            key={item._id}
-            {...item}
+              key={item._id}
+              {...item}
               bg={index % 2 == 0 ? "bg-[#525fe1]" : "bg-color-orange"}
             />
           ))}

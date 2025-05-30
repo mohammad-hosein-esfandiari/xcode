@@ -2,19 +2,19 @@ import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/models/User";
-import jwt from "jsonwebtoken"; // برای تولید توکن
+import jwt from "jsonwebtoken"; // For token generation
 
 export async function POST(request) {
   const { email, password } = await request.json();
 
-  try {
-    // اتصال به دیتابیس
+  try { 
+    // Connect to database
     await dbConnect();
 
-    // جست‌وجو برای کاربر با ایمیل وارد شده
+    // Find user by email
     const user = await User.findOne({ email });
 
-    // اگر کاربر وجود نداشت، خطا برگردان
+    // If user not found, return error
     if (!user) {
       return NextResponse.json(
         { message: "No user found with this email." },
@@ -22,10 +22,10 @@ export async function POST(request) {
       );
     }
 
-    // مقایسه پسورد وارد شده با پسورد هش شده در دیتابیس
+    // Compare provided password with hashed password in database
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
-    // اگر پسورد نامعتبر بود، خطا برگردان
+    // If password is invalid, return error
     if (!isPasswordValid) {
       return NextResponse.json(
         { message: "Invalid password." },
@@ -33,19 +33,18 @@ export async function POST(request) {
       );
     }
 
-    // تولید توکن JWT
+    // Generate JWT token
     const token = jwt.sign(
       { userId: user._id, email: user.email }, // payload
-      process.env.NEXT_PUBLIC_JWT_SECRET, // کلید مخفی
-      { expiresIn: "1h" } // زمان انقضای توکن
+      process.env.NEXT_PUBLIC_JWT_SECRET, // secret key
+      { expiresIn: "1h" } // token expiration time
     );
 
-    // برگرداندن اطلاعات کاربر و توکن در پاسخ
-    const { password: _, ...userWithoutPassword } = user.toObject(); // حذف پسورد از اطلاعات کاربر
-    console.log("userwithout ==========================================>",userWithoutPassword)
+    // Return user info and token in response
+    const { password: _, ...userWithoutPassword } = user.toObject(); // Remove password from user data
     return NextResponse.json({
       user: userWithoutPassword,
-      token, // توکن در پاسخ برگردانده می‌شود
+      token, // Include token in response
     });
   } catch (error) {
     console.error("Login error:", error);
