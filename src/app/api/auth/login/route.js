@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken"; // For token generation
 export async function POST(request) {
   const { email, password } = await request.json();
 
-  try { 
+  try {
     // Connect to database
     await dbConnect();
 
