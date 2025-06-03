@@ -4,15 +4,14 @@ import PanelHeading from "../PanelHeading";
 import PageToggle from "@/components/common/PageToggle/PageToggle";
 import Content from "./Content";
 import AcceptingModal from "@/components/common/Modal/AcceptingModal";
-import { toast } from "react-toastify";
+import NoCourses from "@/components/common/NoCourses";
+import Pagination2 from "@/components/common/Pagination/Pagination2";
 import api from "@/core/interceptors/apiInterceptor";
+import { toast } from "react-toastify";
 import { BarLoader } from "react-spinners";
 import { useFetchAllCourses } from "@/core/services/react-query/useGetAllCourses";
 import { useModalAccept } from "@/context/modalBox";
 import { useUserInfo } from "@/context/userInfoStore";
-import NoCourses from "@/components/common/NoCourses";
-import PaginationBox from "@/components/common/Pagination/PaginationBox";
-import Pagination2 from "@/components/common/Pagination/Pagination2";
 import { paginationFunc } from "@/core/utils/pagination";
 import { useSearchParamsInUrl } from "@/hooks/useSearchParamsInUrl";
 
@@ -88,7 +87,7 @@ const MyCourses = () => {
                 />
               </div>
               <Content
-              setFilteredData={setFilterArray}
+                setFilteredData={setFilterArray}
                 myCourses={true}
                 studentCourses={filterArray}
                 limit={pageShow}

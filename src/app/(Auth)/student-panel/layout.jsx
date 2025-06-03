@@ -1,4 +1,3 @@
-
 import AnimTrue from "@/components/common/AnimTrue";
 import ReactQueryProvider from "@/components/common/ReactQueryProvider";
 import ToastBox from "@/components/common/Toast/ToastBox";
@@ -7,8 +6,8 @@ import RightTabs from "@/components/pages/StudentPanel/layout/RightTabs";
 const StudentPanelLayout = ({ children }) => {
   return (
     <ReactQueryProvider>
-      <AnimTrue/>
-      <ToastBox/>
+      <AnimTrue />
+      <ToastBox />
       <main className="flex flex-col bg-linear1 justify-center relative w-full min-h-[100vh]">
         <section className="xl:container  lg:px-[100px]">
           <div className="ss:pr-[7px] relative hlg:h-[710px] lg:h-[580px] h-[100vh]  flex ss:flex-row flex-col-reverse items-center justify-between ss:bg-linear4 bg-linear3 mx-auto sm:shadow-modeShadow lg:rounded-lg ">
