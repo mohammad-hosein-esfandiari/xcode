@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AiOutlineHome } from "react-icons/ai";
 import { getCourseAndLesson } from "./actions";
 
-const layout = async ({ children, params }) => {  
+const layout = async ({ children, params }) => {
   const { course, lesson } = await getCourseAndLesson(params.id);
 
   return (
@@ -18,7 +18,7 @@ const layout = async ({ children, params }) => {
           <div className="w-full h-full pl-8 py-8 ">
             <div className="bg-linear5 shadow-modeShadow h-full rounded-md overflow-hidden">
               {children}
-            </div> 
+            </div>
           </div>
           <VideoRightTabs lesson={lesson} lessonId={params.id} />
         </div>
