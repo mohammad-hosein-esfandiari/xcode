@@ -1,7 +1,6 @@
 import AnimTrue from "@/components/common/AnimTrue";
 import Blogs from "@/components/pages/Blogs/Blogs";
 
-
 async function getNews() {
   const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "news", {
     cache: "no-store",
@@ -22,10 +21,7 @@ const BlogsPage = async () => {
   return (
     <main>
       <AnimTrue />
-      <Blogs
-        lastCourses={posts.reverse().slice(0, 3)}
-        news={news}
-      />
+      <Blogs lastCourses={posts.reverse().slice(0, 3)} news={news} />
     </main>
   );
 };

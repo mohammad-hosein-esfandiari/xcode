@@ -4,14 +4,14 @@ import { BiCommentDetail } from "react-icons/bi";
 
 import { TbClock } from "react-icons/tb";
 import instructor from "@/assets/images/instructor2.png";
-const TitleRow = ({title}) => {
+const TitleRow = ({ title }) => {
   return (
     <div className="py-8 md:mt-32 sm:mt-16 mt-8">
       <ul className="w-full flex-wrap flex justify-evenly">
         <li className="flex mt-2 text-[#919191] text-[20px] items-center ">
           <TbClock className=" opacity-80" />
           <span className=" text-[#919191] text-[15px] flex pl-2  items-center ">
-            4 Minutes reading 
+            4 Minutes reading
           </span>
         </li>
         <li className="flex mt-2 text-[#919191] text-[18px] items-center ">
@@ -34,11 +34,13 @@ const TitleRow = ({title}) => {
             />
           </div>
           <span className=" text-[#919191] text-[15px] flex pl-2  items-center ">
-          Professor Shalil Shalili  
+            Professor Shalil Shalili
           </span>
         </li>
       </ul>
-      <h1 className="w-full font-bold md:px-32 sm:px-24 px-2 pt-8 md:text-[50px] sm:text-[40px] text-[25px] text-mode-color text-center">{title}</h1>
+      <h1 className="w-full font-bold md:px-32 sm:px-24 px-2 pt-8 md:text-[50px] sm:text-[40px] text-[25px] text-mode-color text-center">
+        {title}
+      </h1>
     </div>
   );
 };

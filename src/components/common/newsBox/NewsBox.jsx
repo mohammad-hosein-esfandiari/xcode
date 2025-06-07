@@ -1,7 +1,4 @@
-import pic from "@/assets/images/bannercourse.png";
-import { textToObjectBlogs } from "@/core/utils/blogsAoiConvertor";
 import Image from "next/image";
-import Link from "next/link";
 import nodejsVdjango from "@/assets/images/nodejs-django.png";
 import { CiCalendar } from "react-icons/ci";
 import LinkCp from "../LinkCp";
@@ -12,7 +9,6 @@ const NewsBox = ({ image, title, _id, text, createdAt }) => {
     day: "numeric",
     year: "numeric",
   });
-  // const date = createdAt.split("T")[0].split('-').reverse().join("/")
   return (
     <div
       className="hover:translate-y-[-10px] cursor-pointer transition-all duration-500 md:h-[445px] sm:h-[490px] flex flex-col justify-between shadow-modeShadow bg-box-color  rounded-lg 
