@@ -15,14 +15,14 @@ const UserBtn = ({ icon, userRole ,text }) => {
         {userRole == "student" && (
           <>
             <li className="border-b-[1px] text-center cursor-pointer px-4 py-4 text-primary md:text-[16px] text-[14px] hover:bg-primary hover:text-white transition-all duration-300  border-[#a6a6a67d]">
-              <LinkCp href="/student-panel/dashboard">پنل دانشجو</LinkCp>
+              <LinkCp href="/student-panel/dashboard">Student Panel</LinkCp>
             </li>
           </>
         )}
         <li
           onClick={logOutHandler}
           className="text-center cursor-pointer text-red-500 px-4 py-4 md:text-[16px] text-[14px] hover:bg-red-500 hover:text-white transition-all duration-300 ">
-          <button>خروج از حساب کاربری</button>
+          <button>Logout</button>
         </li>
       </ul>
     </div>

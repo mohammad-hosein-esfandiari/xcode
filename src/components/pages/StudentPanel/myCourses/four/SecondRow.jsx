@@ -11,11 +11,11 @@ const SecondRow = ({likeCount}) => {
 
         <li className="flex text-gray-400 items-center  mb-4 xs:mb-4">
           <AiOutlineHeart />
-          <span className="text-[12px] pt-[2px] mr-2">{like.toLocaleString('fa-IR')}</span>
+          <span className="text-[12px] pt-[2px] ml-2">{like}</span>
         </li>
-        <li className="flex text-gray-400 items-center mr-3 pt-[2px] mb-4 xs:mb-4">
+        <li className="flex text-gray-400 items-center ml-3 pt-[2px] mb-4 xs:mb-4">
           <GoComment />
-          <span className="text-[12px]  mr-2">48</span>
+          <span className="text-[12px]  ml-2">48</span>
         </li>
       </ul>
     );

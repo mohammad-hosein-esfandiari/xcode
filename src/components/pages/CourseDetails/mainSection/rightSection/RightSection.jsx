@@ -25,11 +25,11 @@ const RightSection = ({ courseDetail, allComments,teacher }) => {
           <Summery desc={description} /> 
         </AnimWrapper>
         <AnimWrapper>
-      
+       
             <AccordionHolder
               students={students}
               lessons={lessons}
-              headlines={lessons.title}
+              headlines={lessons.title} 
             />
         </AnimWrapper>
         <AnimWrapper>

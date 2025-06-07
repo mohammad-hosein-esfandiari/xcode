@@ -3,7 +3,7 @@ import bannercourse from "@/assets/images/bannercourse.png";
 import { SlNotebook } from "react-icons/sl";
 import { TbClock } from "react-icons/tb";
 import FirstRowText from "./FirstRowText";
-const FirstRow = ({image,lesson,endDate,startDate}) => {
+const FirstRow = ({image,lessons,endDate,startDate,duration}) => {
     return (
         <ul className="flex lg:flex-row flex-col lg:mb-4">
         <li className="lg:w-1/2 rounded-lg lg:h-[150px] ss:h-[300px] h-[200px] overflow-hidden">
@@ -15,7 +15,7 @@ const FirstRow = ({image,lesson,endDate,startDate}) => {
             src={image}
           />
         </li>
-        <FirstRowText endDate={endDate} startDate={startDate} lesson={lesson} />
+        <FirstRowText endDate={endDate} duration={duration} startDate={startDate} lessons={lessons} />
     
       </ul>
     );

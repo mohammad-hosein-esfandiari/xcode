@@ -76,7 +76,7 @@ export default async function Home() {
   return (
     <>
       <AnimTrue />
-      <ScrollBug />
+      <ScrollBug /> 
       <ProgressBar />
       <Header />
       <Landing posts={courses} teachers={teachers} news={news} />

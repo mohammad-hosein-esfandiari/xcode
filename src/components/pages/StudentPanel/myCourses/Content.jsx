@@ -2,15 +2,9 @@ import { useSearchParamsInUrl } from "@/hooks/useSearchParamsInUrl";
 import FourShowHolder from "./four/FourShowHolder";
 import SixShowHolder from "./six/SixShowHolder";
 import TwoShowHolder from "./two/TwoShowHolder";
-import { useEffect, useState } from "react";
-import { paginationFunc } from "@/core/utils/pagination";
 
-const Content = ({ studentCourses, myCourses, setFilteredData }) => {
-  const { limit, page } = useSearchParamsInUrl();
-
-  // useEffect(() => {
-  //   return () => setFilteredData([]);
-  // }, []);
+const Content = ({ studentCourses }) => {
+  const { limit } = useSearchParamsInUrl();
 
   return (
     <>

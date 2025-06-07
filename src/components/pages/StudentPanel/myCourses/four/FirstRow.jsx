@@ -1,42 +1,44 @@
+import formatDuration from "@/core/utils/timeFormat";
 import { convertTopicToObj } from "@/core/utils/topicApiConvertor";
 import { SlNotebook } from "react-icons/sl";
 import { TbClock } from "react-icons/tb";
 
-const FirstRow = ({lesson,title}) => {
-  const array = convertTopicToObj(lesson.topics)
-  const newArray = array.flatMap(item=>{
-    return item.details
-  })
-  const lessonCount = newArray.length.toLocaleString('fa-IR')
+const FirstRow = ({lessons,title,duration}) => {
+  // const array = convertTopicToObj(lesson.topics)
+  // const newArray = array.flatMap(item=>{
+  //   return item.details
+  // })
+  const time = formatDuration(duration)
+  const lessonCount = lessons.length
   return (
     <>
-      <ul className="flex items-center pt-2 justify-between">
+      <ul className="flex items-center pt-4 justify-between">
         <li className="">
           {" "}
-          <ul className=" flex items-center pt-4">
-            <li className="flex ml-[8px] items-center">
+          <ul className=" flex items-center">
+            <li className="flex items-center">
               <SlNotebook
                 className="text-color-orange2 opacity-80 text-[11px]
            xs:text-[16px]
     "
               />
               <span
-                className="text-[11px] group-hover:text-white text-gray-400 pr-2 flex items-center
+                className="text-[11px] group-hover:text-white text-gray-400 pl-2 flex items-center
             xs:text-[12px]
     ">
-                {lessonCount} درس
+                {lessonCount} Lesson
               </span>
             </li>
-            <li className="flex items-center ">
+            <li className="flex items-center ml-2 ">
               <TbClock
                 className="text-color-orange2 opacity-80 text-[10px]
               xs:text-[18px]"
               />
               <span
-                className="text-[11px] group-hover:text-white text-gray-400 flex pr-2  items-center 
+                className="text-[11px] group-hover:text-white text-gray-400 flex pl-2  items-center 
             xs:text-[12px]
     ">
-                ۱۰ ساعت و ۳۴ دقیقه
+              {time}
               </span>
             </li>
             <li></li>
@@ -47,7 +49,7 @@ const FirstRow = ({lesson,title}) => {
         </li>
       </ul>
       <h2 className="py-4 text-mode-color sm:text-[18px] ">
-        {title.split('|')[0]}
+        {title}
       </h2>
     </>
   );

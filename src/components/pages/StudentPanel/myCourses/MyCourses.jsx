@@ -4,15 +4,14 @@ import PanelHeading from "../PanelHeading";
 import PageToggle from "@/components/common/PageToggle/PageToggle";
 import Content from "./Content";
 import AcceptingModal from "@/components/common/Modal/AcceptingModal";
-import { toast } from "react-toastify";
+import NoCourses from "@/components/common/NoCourses";
+import Pagination2 from "@/components/common/Pagination/Pagination2";
 import api from "@/core/interceptors/apiInterceptor";
+import { toast } from "react-toastify";
 import { BarLoader } from "react-spinners";
 import { useFetchAllCourses } from "@/core/services/react-query/useGetAllCourses";
 import { useModalAccept } from "@/context/modalBox";
 import { useUserInfo } from "@/context/userInfoStore";
-import NoCourses from "@/components/common/NoCourses";
-import PaginationBox from "@/components/common/Pagination/PaginationBox";
-import Pagination2 from "@/components/common/Pagination/Pagination2";
 import { paginationFunc } from "@/core/utils/pagination";
 import { useSearchParamsInUrl } from "@/hooks/useSearchParamsInUrl";
 
@@ -34,7 +33,7 @@ const MyCourses = () => {
     setFilterArray(paginatedArray);
   }, [page, limit, array]);
   const onSuccess = (data) => {
-    const studentCourses = data?.data.result.filter((item) =>
+    const studentCourses = data?.data.filter((item) =>
       item.students.some((el) => el._id === user.studentModel._id)
     );
     setArray(studentCourses);
@@ -53,14 +52,14 @@ const MyCourses = () => {
     setLoading(true);
     try {
       const res = await api.post(
-        "/course/removeStudentFromCourse/" + user.studentModel._id,
+        "courses/removeStudentFromCourse/" + user.studentModel._id,
         { courseId: info }
       );
       setSuccess(true);
       setLoading(false);
       setArray(array.filter((item) => item._id !== info));
     } catch (error) {
-      toast.error("خطایی رخ داده است");
+      toast.error("An error occured");
       console.log(error);
     }
   };
@@ -68,7 +67,7 @@ const MyCourses = () => {
   return (
     <div className=" pb-2 overflow-y-scroll scrollbar-hide pt-2 w-full flex-col flex h-full ">
       <div className="ss:px-8 px-4">
-        <PanelHeading title="دوره های من" />
+        <PanelHeading title="My Courses" />
       </div>
 
       <>
@@ -88,7 +87,7 @@ const MyCourses = () => {
                 />
               </div>
               <Content
-              setFilteredData={setFilterArray}
+                setFilteredData={setFilterArray}
                 myCourses={true}
                 studentCourses={filterArray}
                 limit={pageShow}

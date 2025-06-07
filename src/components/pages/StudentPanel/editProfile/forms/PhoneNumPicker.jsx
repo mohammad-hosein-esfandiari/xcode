@@ -35,10 +35,9 @@ const PhoneNumPicker = ({ name, color, ...props }) => {
                 color === "white" ? "sm:bg-[#fff]" : "bg-transparent"
               }`}>
               <label
-                dir="rtl"
-                className="text-mode-color mb-2 block pr-2 text-[14px]"
+                className="text-mode-color mb-2 block text-[14px]"
                 htmlFor={field.name}>
-                شماره تماس:
+                PhoneNumber:
               </label>
               <div className="h-[52px]">
                 <PhoneInput
@@ -67,6 +66,7 @@ const PhoneNumPicker = ({ name, color, ...props }) => {
                     buttonStyle: {
                       paddingBottom: "19px",
                       paddingTop: "19px",
+                      padding : "19px 5px",
                       borderTopLeftRadius: "8px",
                       borderBottomLeftRadius: "8px",
                       border: `1px solid ${
@@ -77,16 +77,16 @@ const PhoneNumPicker = ({ name, color, ...props }) => {
                       backgroundColor: "transparent",
                     },
                   }}
-                  placeHolder="شماره تماس خود را وارد کنید"
+                  placeHolder="Enter your phoneNumber"
                   {...field}
                   {...meta}
                   initialCountry="ir"
-                  id="phoneumber"
+                  id="phoneNumber"
                   value={value}
                   onChange={(phone) => setFieldValue(name, phone)}
                 />
                 {meta.error && meta.touched && (
-                  <p dir="rtl" className="ss:text-[10px] text-[9px] text-red-400 mt-1 pr-2">
+                  <p className="ss:text-[10px] text-[9px] text-red-400 mt-1 pr-2">
                     {meta.error}
                   </p>
                 )}

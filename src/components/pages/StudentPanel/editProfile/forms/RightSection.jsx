@@ -6,24 +6,24 @@ const RightSection = () => {
     <div>
       <InputText
         name="fullName"
-        label="نام و نام خانوادگی"
+        label="FullName"
         type="text"
-        placeholder="نام و نام خانوادگی خود را وارد کنید"
+        placeholder="Enter your fullName"
       />
 
       <InputText
         name="email"
         size="mt-2"
         type="email"
-        label="پست الکترونیک"
-        placeholder="پست الکترونیک خود را وارد کنید"
+        label="Email"
+        placeholder="Enter your email"
       />
       <InputText
         name="nationalId"
         size="mt-2"
-        label="کدملی"
+        label="National Code"
         type="number"
-        placeholder=" کد ملی خود را وارد کنید"
+        placeholder="Enter your national ID"
       />
      
     </div>

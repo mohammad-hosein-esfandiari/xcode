@@ -5,7 +5,7 @@ const ForgetPassPage = () => {
     return (
         <>
         <AnimTrue/>
-            <ForgetPass/>
+            <ForgetPass/> 
         </>
     );
 }

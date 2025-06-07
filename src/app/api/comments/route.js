@@ -11,7 +11,7 @@ export async function GET(request) {
     const postId = searchParams.get("postId");
 
     if (!postId) {
-      const comments = await Comments.find({ })
+      const comments = await Comments.find({ }).populate("user","fullName")
       return NextResponse.json(
          comments ,
         { status: 200 }

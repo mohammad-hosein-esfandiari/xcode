@@ -11,10 +11,9 @@ import AdminAnswerBox from "./AdminAnswerBox";
 import { motion } from "framer-motion";
 const SingleComment = ({
   createdAt,
-  comment,
-  email,
+  content,
   answer,
-  username,
+  user,
   userRole,
   verified,
   _id,
@@ -29,7 +28,6 @@ const SingleComment = ({
   const time = timeToString(createdAt);
 
   const isVerified = verfiedCm.some((item) => item == _id);
-  console.log("verifiedCm ======>",verfiedCm)
 
   const verifiedCommentHandler = async () => {
     try {
@@ -70,35 +68,35 @@ const SingleComment = ({
             className="object-cover object-center object-fit"
           />
         </div> */}
-          <div className="flex flex-col pr-4  [&>span]:h-[48%]">
+          <div className="flex flex-col pl-4  [&>span]:h-[48%]">
             <span className="ss:text-[16px] text-[14px] text-mode-color">
-              {username}
+              {user.fullName}
             </span>
             <pre className="pt-[6px] ss:text-[14px] text-[12px] text-color-gray">
-              {date} {time} :
+              {date} - {time} :
             </pre>
           </div>
         </div>
-        <p className="w-[90%] pr-4 mt-4 text-mode-color leading-6 ss:text-[14px] text-[12px] mb-2">
-          {comment}
+        <p className="w-[90%] pl-4 mt-4 text-mode-color leading-6 ss:text-[14px] text-[12px] mb-2">
+          {content}
         </p>
-        {answer && (
-          <motion.div initial={{y:-20,opacity:0}} animate={{y:0,opacity:1}} className=" my-2  border-[#a8a8a86a] pl-2 overflow-hidden pr-6 relative py-5">
+        {answer && answer.map((item)=>(
+          <motion.div key={item._id} initial={{y:-20,opacity:0}} animate={{y:0,opacity:1}} className=" my-2  border-[#a8a8a86a] pl-2 overflow-hidden pr-6 relative py-5">
            <div className="bg-[#9a9a9a30] p-2 rounded-[4px] shadow-sm">
             <div className="flex w-full items-center ">
-              <div className="flex flex-col pr-4  [&>span]:h-[48%]">
+              <div className="flex flex-col pl-4  [&>span]:h-[48%]">
                 <span className="ss:text-[16px]  text-primary text-[14px] ">
-                  پاسخ
+                  Reply
                 </span>
               </div>
             </div>
-            <p className="w-[90%] mt-4 pr-2 text-mode-color leading-6 ss:text-[14px] text-[12px] ">
-              {answer}
+            <p className="w-[90%] mt-4 pl-2 text-mode-color leading-6 ss:text-[14px] text-[12px] ">
+              {item.content}
             </p>
   
            </div>
           </motion.div>
-        )}
+        ))}
         {userRole && (
           <>
             {userRole === "admin" && !answer && (

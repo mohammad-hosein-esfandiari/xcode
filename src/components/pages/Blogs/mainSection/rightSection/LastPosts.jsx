@@ -1,19 +1,17 @@
-
 import { IoCalendarNumberOutline } from "react-icons/io5";
-import { postItems } from "@/constant/blogsPostItems";
 import { dateForCourseCondition } from "@/core/utils/dateForCourseCondition";
 import Link from "next/link";
 
-const LastPosts = ({lastCourses}) => {
- 
-    return (
-        <>
-             {lastCourses.map((item, index) => (
-        <Link 
-        href={`/courses/${item._id}`}
+const LastPosts = ({ lastCourses }) => {
+  return (
+    <>
+      {lastCourses.map((item, index) => (
+        <Link
+          href={`/courses/${item._id}`}
           key={item._id}
           className={`${
-            index < lastCourses.length - 1 && "border-b-[1px] border-[#77777789]"
+            index < lastCourses.length - 1 &&
+            "border-b-[1px] border-[#77777789]"
           }  flex items-center mb-4 pb-4 cursor-pointer hover:pl-4 transition-all duration-500 hover:border-primary group`}>
           <div className=" h-[60px] w-[20%] rounded-md overflow-hidden object-cover object-center">
             <img
@@ -30,13 +28,13 @@ const LastPosts = ({lastCourses}) => {
               <span>{dateForCourseCondition(item.startDate).startText}</span>
             </div>
             <span className="text-mode-color group-hover:text-primary transition-all duration-500">
-              {item.title.split('|')[0]}
+              {item.title.split("|")[0]}
             </span>
           </div>
         </Link>
       ))}
-        </>
-    );
-}
+    </>
+  );
+};
 
 export default LastPosts;

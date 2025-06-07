@@ -10,13 +10,13 @@ const CourseDetailsMainSection = ({courseDetail,allComments,teacher}) => {
       <BigImg />
       <div className="lg:pl-[40px] flex md:justify-between md:flex-row flex-col items-center md:items-start">
         <ReactQueryProvider>
-
+ 
         <RightSection allComments={allComments} teacher={teacher} courseDetail={courseDetail} />
         </ReactQueryProvider>
         <LeftSection courseDetail={courseDetail} />
         <FixedBtn courseDetail={courseDetail}/>
       </div>
-    </div>
+    </div> 
   );
 };
 

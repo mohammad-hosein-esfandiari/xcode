@@ -1,18 +1,20 @@
 import Dashboard from "@/components/pages/StudentPanel/dashboard/Dashboard";
-const URL = "https://api.xcode.sepehracademy.ir/api"
+
 async function getPosts() {
-  const res = await fetch(URL+"/course/getall",{cache:'no-store'});
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
+    cache: "no-store",
+  });
   const posts = await res.json();
   return posts;
 }
 const StudentDashboardPage = async () => {
   const posts = await getPosts();
 
-    return (
-        <>
-            <Dashboard posts={posts.result}/>
-        </>
-    );
-}
+  return (
+    <>
+      <Dashboard posts={posts} />
+    </>
+  );
+};
 
 export default StudentDashboardPage;

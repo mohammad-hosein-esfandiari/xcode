@@ -3,16 +3,15 @@ import teacher1 from "@/assets/images/unknown.png";
 const InfoEmployee = ({
   title,
   teacherName,
-  teacherEmail,
-  text,
+  teacherExpertise,
   teacherProfile,
   lessonName,
-  headlineText
 }) => {
   return (
-    <ul className=" pr-4">
-      <li className="py-2 text-[18px] text-mode-color font-bold" >
-        <h1>{title.split('|')[0]+" | "+lessonName+" | "+headlineText+" | "+text}</h1>
+    <ul className=" pl-4">
+      <li className="py-2 text-[18px] text-mode-color font-bold">
+        {/* <h1>{title.split('|')[0]+" | "+lessonName+" | "+headlineText+" | "+text}</h1> */}
+        <h1>{title + " | " + lessonName}</h1>
       </li>
       <li className="flex items-center">
         <div>
@@ -24,9 +23,11 @@ const InfoEmployee = ({
             className="rounded-full w-[40px] h-[40px]"
           />
         </div>
-        <ul className="flex h-full flex-col justify-between py-1 pr-2">
-          <li className="text-[14px] text-mode-color">استاد {teacherName}</li>
-          <li className="text-mode-color opacity-50 text-[10px]" >{teacherEmail}</li>
+        <ul className="flex h-full flex-col justify-between py-1 pl-2">
+          <li className="text-[14px] text-mode-color">Master {teacherName}</li>
+          <li className="text-mode-color opacity-50 text-[10px]">
+            {teacherExpertise}
+          </li>
         </ul>
       </li>
     </ul>

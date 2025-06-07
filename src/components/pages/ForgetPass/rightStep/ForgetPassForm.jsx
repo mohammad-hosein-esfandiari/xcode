@@ -13,14 +13,18 @@ import SubmitBtn from "../../Register/btn/SubmitBtn";
 import ForgetPassHead from "./ForgetPassHead";
 import Link from "next/link";
 import { useUserInfo } from "@/context/userInfoStore";
+import api from "@/core/interceptors/apiInterceptor";
+import { toast } from "react-toastify";
 
 export default function ForgetPassForm({ children }) {
   const [isLoading, setIsLoading] = useState(false);
+  const [token, setToken] = useState("");
   const step = useStepperStore((state) => state.step);
   const setStepNext = useStepperStore((state) => state.setStepNext);
   const setStepZero = useStepperStore((state) => state.setStepZero);
   const setStepPrev = useStepperStore((state) => state.setStepPrev);
   const setRandomCode = useStepperStore((state) => state.setRandomCode);
+  const randomCode = useStepperStore((state) => state.randomCode);
   const userInfo = useUserInfo((state) => state.userInfo);
 
   useEffect(() => {
@@ -45,20 +49,28 @@ export default function ForgetPassForm({ children }) {
   const onSubmit = async (values, actions) => {
     if (!isLoading) {
       if (step === children.length - 1) {
-          console.log(values)
-        console.log(userInfo.studentModel._id)
+        const res = await api.post(process.env.NEXT_PUBLIC_BASE_URL+"resetPassword/"+token,{password:values.password})
+        if(res.status === 200){
+          toast.success("Password changed successfully")
+        }
       } else {
         handleNext();
         actions.setTouched({});
         actions.setSubmitting(false);
+        
         if (step === 0) {
           setRandomCode();
         }
+        if (step === 1) {
+          const res = await api.post(process.env.NEXT_PUBLIC_BASE_URL+"forgetPassword",{email:values.email})
+          setToken(res.data.token)
+        }
+
       }
     }
   };
   return (
-    <div className="sm:bg-linear3  w-full md:rounded-l-[0px] rounded-l-[6px] rounded-r-[6px] md:w-[40%]  flex flex-col items-center  justify-evenly sm:relative py-28 ">
+    <div className="sm:bg-linear3  w-full md:rounded-r-[0px] rounded-r-[6px] rounded-l-[6px] md:w-[40%]  flex flex-col items-center  justify-evenly sm:relative py-28 ">
       <ForgetPassHead />
       <div className=" sss:scale-[1.4] mt-[70px]">
         <Formik
@@ -96,7 +108,7 @@ export default function ForgetPassForm({ children }) {
         <MdLogin className="" />
 
         <div className=" bg-[#33333395] group-hover:opacity-100 opacity-0 group-hover:visible invisible text-center group-hover:right-10 transition-all duration-300   absolute top-[2px] right-8 text-[13px] px-6 py-1 rounded-md">
-          ورود
+          Login
         </div>
       </Link>
     </div>

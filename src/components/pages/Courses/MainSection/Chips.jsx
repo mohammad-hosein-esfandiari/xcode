@@ -4,17 +4,16 @@ import { IoMdClose } from "react-icons/io";
 import { filterName } from "@/constant/filterName";
 import { useRouter } from "next/navigation";
 import { useSearchParamsStore } from "@/context/courseFilter";
-import { filterNameArrange } from "@/constant/filteringCourses/arrangeAndPrice";
-const Chips = ({href}) => {
-  const setDeleteOther = useSearchParamsStore(state => state.setDeleteOther)
+const Chips = ({ href }) => {
+  const setDeleteOther = useSearchParamsStore((state) => state.setDeleteOther);
   const router = useRouter();
   const { queryArray, limit, page } = useSearchParamsInUrl();
-  const deleteHandler = (index,query) => {
-    setDeleteOther(query)
+  const deleteHandler = (index, query) => {
+    setDeleteOther(query);
     const filteredArray = queryArray.filter(
       (item) => item !== queryArray[index]
     );
-    
+
     router.push(
       `${href}?limit=${limit}&page=${page}&filter=${filteredArray.join("_")}`
     );
@@ -31,7 +30,7 @@ const Chips = ({href}) => {
           className="bg-[#9d9d9d7d] ml-2 sm:flex hidden items-center text-[13px] text-mode-color px-3 py-[6px] rounded-[4px]">
           {filterName[query]}
           <IoMdClose
-            onClick={() => deleteHandler(index,query)}
+            onClick={() => deleteHandler(index, query)}
             className="ml-3 cursor-pointer bg-[#3e3e3e76] hover:scale-[1.1] hover:text-red-400 hover:bg-white transition-all duration-300 rounded-full h-[20px] w-[20px] p-1 text-white"
           />
         </li>
@@ -39,25 +38,16 @@ const Chips = ({href}) => {
       {queryArray?.length > 3 && (
         <li className="rounded-[4px] shadow-lg sm:block hidden text-white bg-color-orange ml-2 py-1 px-2">
           <>
-            <span className="sm:hidden block">
-              +{queryArray.length}
-            </span>{" "}
-            <span className="sm:block hidden">
-              +{(queryArray.length - 3)}
-            </span>
+            <span className="sm:hidden block">+{queryArray.length}</span>{" "}
+            <span className="sm:block hidden">+{queryArray.length - 3}</span>
           </>
         </li>
       )}
-      {
-        queryArray && (
-
-      <li className="rounded-[4px] shadow-lg sm:hidden block text-white bg-color-orange mr-2 py-1 px-2">
-        <span className="sm:hidden block">
-          +{queryArray?.length}
-        </span>
-      </li>
-        )
-      }
+      {queryArray && (
+        <li className="rounded-[4px] shadow-lg sm:hidden block text-white bg-color-orange mr-2 py-1 px-2">
+          <span className="sm:hidden block">+{queryArray?.length}</span>
+        </li>
+      )}
     </ul>
   );
 };

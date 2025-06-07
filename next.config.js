@@ -8,9 +8,10 @@ const nextConfig = {
   experimental: {
     scrollRestoration:false,
     appDir: true,
+    serverActions: true,
   },
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ['localhost', 'res.cloudinary.com'],
     remotePatterns: [
       {
         protocol: 'http',
@@ -20,7 +21,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'img.youtube.com',
+        hostname: 'i.ytimg.com',
         port: '',
         pathname: '/vi/**',
       },

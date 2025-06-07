@@ -1,16 +1,13 @@
 "use client";
 
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { swipeTabStudentPanel } from "@/constant/swipeTapItem";
 
 import SwipeBox from "@/components/pages/CourseDetails/mainSection/rightSection/SwipeBox";
 import PassHolder from "./PassHolder";
 import InfoHolder from "./InfoHolder";
 
-
-const FormHolder = ({user}) => {
-
-
+const FormHolder = ({ user }) => {
   return (
     <div className="relative">
       <div className=" w-full ss:top-[-80px] top-[-40px] hlg:px-[75px]  md:px-[35px] z-0 mx-auto  absolute">
@@ -31,7 +28,7 @@ const FormHolder = ({user}) => {
               initial={{ opacity: 0, x: 400 }}
               exit={{ opacity: 0, x: 400 }}
               animate={{ x: 0, opacity: 1 }}>
-              <PassHolder  user={user}/>
+              <PassHolder user={user} />
             </motion.div>
           </SwipeBox>
         </div>

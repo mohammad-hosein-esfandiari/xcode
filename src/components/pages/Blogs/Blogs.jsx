@@ -7,7 +7,7 @@ import { useSearchParamsInUrl } from "@/hooks/useSearchParamsInUrl";
 import { useEffect, useState } from "react";
 import { paginationFunc } from "@/core/utils/pagination";
 
-const Blogs = ({ news ,lastCourses}) => {
+const Blogs = ({ news, lastCourses }) => {
   const { limit, page, category } = useSearchParamsInUrl();
   const [newsArray, setNewsArray] = useState([]);
   const [firstArray, setFirstArray] = useState([]);
@@ -15,9 +15,7 @@ const Blogs = ({ news ,lastCourses}) => {
     let copyArray = [...news];
 
     if (category !== "all") {
-      copyArray = copyArray.filter(
-        (item) => item.category == category
-      );
+      copyArray = copyArray.filter((item) => item.category == category);
     }
     setFirstArray(copyArray);
     const { paginatedArray } = paginationFunc(limit, page, copyArray);
@@ -28,7 +26,12 @@ const Blogs = ({ news ,lastCourses}) => {
     <>
       <Hero title="News & Articles" />
       <section className="xl:container lg:px-[100px] px-5 mt-[70px] pb-6">
-        <BlogsMainSection lastCourses={lastCourses} firstArray={firstArray} newsArray={newsArray} news={news} />
+        <BlogsMainSection
+          lastCourses={lastCourses}
+          firstArray={firstArray}
+          newsArray={newsArray}
+          news={news}
+        />
       </section>
       <div className="bg-linear1 h-[120px] ">
         <Pagination2 href="blogs" posts={firstArray} bgNone="py-10" />

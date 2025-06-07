@@ -2,10 +2,10 @@ import api from "@/core/interceptors/apiInterceptor";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
 const fetchAllCourse = () => {
-  return api(`/course/getall`);
+  return api(`courses/getAll`);
 };
 const deleteStudentFormCourse = (userId, info) => {
-  return api.post("/course/removeStudentFromCourse/" + userId, info);
+  return api.post("courses/removeStudentFromCourse/" + userId, info);
 };
 // export const useFetchAllCourses = ()=>{
 //     return useQuery(['courses'],async ()=> await fetchAllCourse())
@@ -14,11 +14,8 @@ export const useFetchAllCourses = (onSuccess) => {
   return useQuery({
     queryKey: ["courses"],
     queryFn: async () => await fetchAllCourse(),
-    refetchOnMount:true,
+    refetchOnMount: true,
     onSuccess,
-    
-    
-    
   });
 };
 export const useDeleteStudentFronmCourse = () => {

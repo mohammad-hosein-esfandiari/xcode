@@ -32,7 +32,7 @@ const HeroSmallerIcon = () => {
         viewport={{ once: true }}
         className="absolute w-[100px] h-[100px] left-[450px] bottom-[0px] md:block hidden">
         <Image
-        className="animate-spinning"
+          className="animate-spinning"
           src={image36}
           width="auto"
           height="auto"
@@ -57,7 +57,7 @@ const HeroSmallerIcon = () => {
       <motion.div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
-        transition={{ delay: 0.5,ease:"linear", duration: 0.8 }}
+        transition={{ delay: 0.5, ease: "linear", duration: 0.8 }}
         viewport={{ once: true }}
         className="absolute  w-[80px] h-[80px] right-[350px] bottom-[-30px] md:block hidden">
         <Image
@@ -68,7 +68,6 @@ const HeroSmallerIcon = () => {
           alt="pic"
         />
       </motion.div>
-
     </>
   );
 };

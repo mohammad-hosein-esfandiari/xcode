@@ -6,25 +6,25 @@ import { FaRegListAlt } from "react-icons/fa";
 export const studentTabLink =[
     {
         id:1,
-        text:'داشبورد',
+        text:'Dashboard',
         href:'dashboard',
         icon: <RxDashboard />
     },
     {
         id:2,
-        text:'ویرایش پروفایل',
+        text:'Profile',
         href:'edit-profile',
         icon: <RiUserSettingsLine />
     },
     {
         id:3,
-        text:'دوره های من',
+        text:'My courses',
         href:'my-courses?limit=6&page=1',
         icon: <MdOutlineBookmarks />
     },
     {
         id:4,
-        text:'لیست دوره ها',
+        text:'Courses List',
         href:'courses-list?limit=6&page=1&filter=newest',
         icon: <FaRegListAlt />
     },

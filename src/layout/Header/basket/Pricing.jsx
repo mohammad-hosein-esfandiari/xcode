@@ -13,7 +13,7 @@ const Pricing = () => {
           <>
             {" "}
             <div className="flex justify-between  w-full items-center ">
-              <h4 className="font-bold text-primary ml-2"> Total price : </h4>
+              <h4 className="font-bold text-primary ml-16"> Total price : </h4>
               <PriceCount price={basketPriceSum} />
              <SubmitBasketBtn basket={priceArray}/>
             </div>

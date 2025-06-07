@@ -7,13 +7,13 @@ import { MdSlowMotionVideo } from "react-icons/md";
 import { RxLockClosed, RxLockOpen2 } from "react-icons/rx";
 
 const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,headlineIndex}) => {
-  const lastIndex = video.lastIndexOf("/")
-  const videoLink = video.substring(lastIndex+1)
+  // const lastIndex = video.lastIndexOf("/")
+  // const videoLink = video.substring(lastIndex+1) 
   const userInfo = useUserInfo.getState().userInfo.studentModel
   return (
     <button
     
-      disabled={!isInStudents}
+      disabled={!isInStudents} 
       className={`${
         index !== length && "border-b-[1px]"
       } border-[#d4d4d482]  w-full ${
@@ -22,15 +22,15 @@ const AccordionItem = ({ title, index, length, isInStudents ,lessonId,video,head
           : " opacity-50 cursor-default"
       }  transition-all relative duration-300 px-4 flex items-center text-mode-color justify-between py-2 `}>
       {isInStudents && userInfo.isActive && (
-        <LinkCp href={`/video/${lessonId}?video=${videoLink}&season=${headlineIndex}`} className=" absolute  w-full h-full"></LinkCp>
+        <LinkCp href={`/video/${lessonId}?video=${video}&season=${headlineIndex}`} className=" absolute  w-full h-full"></LinkCp>
       )}
-
+ 
       <div className="flex itemx-center text-[14px]">
         <div className="border-[1px] border-[#d4d4d482] rounded-full w-[28px] h-[28px] flex items-center justify-center ml-2">
           {(index + 1)}
         </div>
         <div className="flex items-center">
-          <MdSlowMotionVideo className="text-[17px] text-[#e05858]" />
+          <MdSlowMotionVideo className="text-[17px] text-[#e05858] ml-1" />
           <span className="ml-1 text-[13px]">{title}</span>
         </div>
       </div>

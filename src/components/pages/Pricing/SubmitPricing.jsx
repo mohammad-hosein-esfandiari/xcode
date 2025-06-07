@@ -1,7 +1,5 @@
 "use client";
-
 import axios from "axios";
-import { getCookie } from "@/core/utils/cookies.storage";
 import api from "@/core/interceptors/apiInterceptor";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
@@ -36,13 +34,13 @@ const SubmitPricing = () => {
       try {
         const response = await axios.all(
           courseIdArray.map((item) =>
-            api.post("/course/addStudentToCourse/" + userId, { courseId: item })
+            api.post(`courses/${item}/register`, { userId: userId })
           )
         );
         setBasket([]);
         setBasketEmpty();
         setLoading(false);
-        toast.success("دوره با موفقیت اضافه شد");
+        toast.success("Purchase successfull");
         setTimeout(() => {
           navigate.push("/");
         }, 2000);
@@ -51,14 +49,9 @@ const SubmitPricing = () => {
         setLoading(false);
         console.log(error);
         setBasketEmpty();
-        if (error.response) {
-          error.response.data.message.forEach((item) =>
-            toast.error(item.message)
-          );
-        }
       }
     } else {
-      toast.error("سبد خرید خالی است");
+      toast.error("Basket is empty!");
     }
   };
   return (
@@ -69,7 +62,7 @@ const SubmitPricing = () => {
       {loading ? (
         <BeatLoader color="white" size={6} margin={0} />
       ) : (
-        "تکمیل فرآیند خرید"
+        "Confirm purchase"
       )}
     </button>
   );

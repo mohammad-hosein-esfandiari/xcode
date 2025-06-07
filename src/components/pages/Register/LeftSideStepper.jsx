@@ -13,7 +13,7 @@ const LeftSideStepper = () => {
 
     return (
         <div className=" flex justify-between flex-col flex-1">
-        <div className="flex-1 sm:relative rounded-l-[6px] flex flex-col sm:bg-registerbg">
+        <div className="flex-1 sm:relative rounded-r-[6px] flex flex-col sm:bg-registerbg">
         <Link
           href="/"
           className=" absolute text-[30px] z-10 text-primary hover:scale-[1.1] transition-all duration-500 top-3 left-3">
