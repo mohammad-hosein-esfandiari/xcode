@@ -55,11 +55,9 @@ const FIrstCourseBox = ({ posts }) => {
             ? "grid gap-y-10 gap-x-6  xl:gap-x-8 grid-cols-1 ss:grid-cols-2 md:grid-cols-3 hlg:grid-cols-4 xl:grid-cols-4"
             : "grid md:grid-cols-2 gap-y-10 gap-x-6  xl:gap-x-8"
         } `}>
-        {
-           filteredData.map((item, index) => (
-              <CourseBox key={item._id} delay={index} {...item} />
-            ))
-         }
+        {filteredData.map((item, index) => (
+          <CourseBox key={item._id} delay={index} {...item} />
+        ))}
       </motion.div>
     </div>
   );

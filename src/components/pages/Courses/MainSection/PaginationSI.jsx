@@ -11,9 +11,7 @@ import image18 from "@/assets/images/smallerIcon/18.png";
 const PaginationSI = () => {
   return (
     <>
-
       <motion.div
-      
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
@@ -28,7 +26,6 @@ const PaginationSI = () => {
         />
       </motion.div>
       <motion.div
-      
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
@@ -43,7 +40,6 @@ const PaginationSI = () => {
         />
       </motion.div>
       <motion.div
-      
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}

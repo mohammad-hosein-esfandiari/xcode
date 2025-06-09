@@ -5,7 +5,7 @@ import { filterBox } from "@/animations/filterBoxAnim";
 import HeadRow from "@/layout/Header/basket/HeadRow";
 import InputHolder from "./InputHolder";
 import FilterButton from "./FilterButton";
-const FilterBox = ({ show ,href}) => {
+const FilterBox = ({ show, href }) => {
   return (
     <motion.div
       {...filterBox}

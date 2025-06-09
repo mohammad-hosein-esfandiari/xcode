@@ -7,10 +7,9 @@ import SwipeBox from "./SwipeBox";
 import TeacherDetail from "./TeacherDetail";
 import AnimWrapper from "./AnimWrapper";
 import { useUserInfo } from "@/context/userInfoStore";
-import InActiveCp from "@/components/common/InActiveCp";
 
-const RightSection = ({ courseDetail, allComments,teacher }) => {
-  const { title, lessons, _id, students,description } = courseDetail;
+const RightSection = ({ courseDetail, allComments, teacher }) => {
+  const { title, lessons, _id, students, description } = courseDetail;
   const userInfo = useUserInfo.getState().userInfo;
 
   return (
@@ -21,16 +20,15 @@ const RightSection = ({ courseDetail, allComments,teacher }) => {
         swipeItem={swipeTab}
         swipeClass="bg-[#a1a1a124] grid-cols-3"
         spanColor="bg-primary">
-        <AnimWrapper> 
-          <Summery desc={description} /> 
+        <AnimWrapper>
+          <Summery desc={description} />
         </AnimWrapper>
         <AnimWrapper>
-       
-            <AccordionHolder
-              students={students}
-              lessons={lessons}
-              headlines={lessons.title} 
-            />
+          <AccordionHolder
+            students={students}
+            lessons={lessons}
+            headlines={lessons.title}
+          />
         </AnimWrapper>
         <AnimWrapper>
           <CommentBox allComments={allComments} courseId={_id} />

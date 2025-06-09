@@ -43,8 +43,10 @@ const PageToggle = ({
       } else {
         router.push(`${href}?limit=${num}&page=1&filter=newest`);
       }
-    }else if(pathname[2] === "courses-list"){
-      router.push(`/student-panel/courses-list?limit=${num}&page=1&filter=newest`);
+    } else if (pathname[2] === "courses-list") {
+      router.push(
+        `/student-panel/courses-list?limit=${num}&page=1&filter=newest`
+      );
     }
   };
   return (
@@ -57,9 +59,7 @@ const PageToggle = ({
         <MdKeyboardArrowDown className="text-white" />
       )}
 
-      <span className="mr-1 text-white">
-        {pageShow}
-      </span>
+      <span className="mr-1 text-white">{pageShow}</span>
       {pageToggle && (
         <li className="absolute z-20 shadow-boxShadow w-full left-0 top-10 rounded-md bg-white p-2">
           <ul className="rounded-md bg-indigo-200">

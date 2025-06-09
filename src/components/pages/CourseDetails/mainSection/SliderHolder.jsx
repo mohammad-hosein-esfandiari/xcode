@@ -1,8 +1,6 @@
-
 import SliderItems from "./SliderItems";
 
-const SliderHolder =  ({courseDetail,posts}) => {
-  
+const SliderHolder = ({ courseDetail, posts }) => {
   return (
     <div className="py-[60px] bg-linear2">
       <div className="xl:container lg:px-[100px] px-6">

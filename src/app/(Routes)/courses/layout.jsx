@@ -1,6 +1,3 @@
-
-
-
 export const metadata = {
   title: {
     default: "Courses",
@@ -8,13 +5,8 @@ export const metadata = {
   },
 };
 
-const CoursesLayout =  ({ children, params }) => {
-  
-  return (
-    <>
-      {children}
-    </>
-  );
+const CoursesLayout = ({ children, params }) => {
+  return <>{children}</>;
 };
 
 export default CoursesLayout;
