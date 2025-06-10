@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import LeftStep from "./LeftStep";
 import RightStep from "./rightStep/RightStep";
 
-
-
 const ForgetPass = () => {
   useEffect(() => {
     document.body.style.backgroundImage = "var(--linear-1)";

@@ -14,22 +14,20 @@ const RightStep = () => {
 
   return (
     <ForgetPassForm>
-     <motion.div
-     {...stepAnimate}
-      validationschema={Yup.object({
-        email: Yup.string()
-        .required("Email is required")
-        .email("Invalid email address")
-        ,
-      })}
-     >
-     <TextInput
+      <motion.div
+        {...stepAnimate}
+        validationschema={Yup.object({
+          email: Yup.string()
+            .required("Email is required")
+            .email("Invalid email address"),
+        })}>
+        <TextInput
           name="email"
           label="Enter your email"
           color="white"
           type="email"
         />
-     </motion.div>
+      </motion.div>
       <CodePhone
         validationschema={Yup.object({
           codephone: Yup.string()
@@ -37,18 +35,18 @@ const RightStep = () => {
             .matches(randomCode, "Code is incorrect"),
         })}
         name="codephone"
-        color="white" 
+        color="white"
       />
       <motion.div
         {...stepAnimate}
         className="mt-[-10px]"
         validationschema={Yup.object({
           password: Yup.string()
-          .required("Password is required")
-          .min(8, "Password must contain at least 8 characters")
-          .matches(
-            /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
-            "The password must be a combination of uppercase and lowercase\nLatin letters, symbols, and numbers."
+            .required("Password is required")
+            .min(8, "Password must contain at least 8 characters")
+            .matches(
+              /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
+              "The password must be a combination of uppercase and lowercase\nLatin letters, symbols, and numbers."
             ),
           confirmpassword: Yup.string()
             .oneOf([Yup.ref("password"), null], "Password does not match")
@@ -67,7 +65,6 @@ const RightStep = () => {
           color="white"
         />
       </motion.div>
-    
     </ForgetPassForm>
   );
 };

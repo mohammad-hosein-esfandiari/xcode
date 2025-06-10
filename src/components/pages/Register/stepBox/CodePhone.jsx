@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { stepAnimate } from "@/constant/stepperInputAnimation";
 
 import PinInput from "react-pin-input";
- 
+
 export function CodePhone({ name, color }) {
   const [bgColor, setBgColor] = useState("");
   const [fontColor, setFontColor] = useState("");
@@ -56,7 +56,7 @@ export function CodePhone({ name, color }) {
                   onChange={handleCHange}
                   type="numeric"
                   inputMode="number"
-                  style={{margin:"0 auto",width:"fit-content" }}
+                  style={{ margin: "0 auto", width: "fit-content" }}
                   inputStyle={{
                     borderColor: `${
                       meta.error ? "#f87171" : "var(--primary-color)"
@@ -79,9 +79,7 @@ export function CodePhone({ name, color }) {
                   regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
                 />
                 {meta.error && (
-                  <p className="text-[7px] text-red-400  pl-4 ">
-                    {meta.error}
-                  </p>
+                  <p className="text-[7px] text-red-400  pl-4 ">{meta.error}</p>
                 )}
               </>
             );
