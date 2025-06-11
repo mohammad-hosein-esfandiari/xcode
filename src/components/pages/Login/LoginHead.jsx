@@ -1,9 +1,9 @@
 import Link from "next/link";
-import {AiOutlineHome} from 'react-icons/ai'
+import { AiOutlineHome } from "react-icons/ai";
 const LoginHead = () => {
-    return (
-       <>
-             <Link
+  return (
+    <>
+      <Link
         href="/"
         className=" absolute text-[30px] group z-10 sm:text-white text-primary hover:scale-[1.1] transition-all duration-500 top-3 left-3">
         <AiOutlineHome />
@@ -14,8 +14,8 @@ const LoginHead = () => {
       <h1 className=" pt-16 pb-6 w-full text-center  text-primary sm:text-white text-[45px]  h-fit ">
         Login
       </h1>
-       </>
-    );
-}
+    </>
+  );
+};
 
 export default LoginHead;

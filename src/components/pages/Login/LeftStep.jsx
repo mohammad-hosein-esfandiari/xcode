@@ -5,19 +5,19 @@ const LeftStep = () => {
     <div className=" md:flex justify-between relative bg-transparent overflow-hidden hidden flex-col flex-1">
       <div className="flex-1 overflow-hidden mr-[-5px] bg-no-repeat bg-cover object-cover object-center sm:relative rounded-r-[6px] flex flex-col ">
         <Image
-        alt="login"
-        priority={true}
-          src={login} 
+          alt="login"
+          priority={true}
+          src={login}
           className="w-full h-full bg-cover object-cover object-center"
         />
         <div className="w-full h-full  absolute bg-[#131731c7]"></div>
       </div>
       <div className="absolute top-0 right-0 w-full h-full flex flex-col items-center justify-center">
         <h1 className="text-color-green drop-shadow-text text-[45px] font-bold">
-        Welcome to XCODE   
+          Welcome to XCODE
         </h1>
         <span className="mt-4 text-white drop-shadow-text">
-        Experience the best and easiest training method with us ...
+          Experience the best and easiest training method with us ...
         </span>
       </div>
     </div>
