@@ -1,5 +1,5 @@
-'use client'
-import{ useEffect } from "react";
+"use client";
+import { useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 
 import { TiTick } from "react-icons/ti";
@@ -19,8 +19,8 @@ function Final() {
   return (
     <motion.div
       transition={{ duration: 1 }}
-      animate={{ y: 0, opacity: 1,  }}
-      initial={{ y: 50, opacity: 0,  }}
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: 50, opacity: 0 }}
       className=" h-[400px] md:w-[70%] flex px-8  mx-auto shadow-boxShadow rounded-lg bg-color-green">
       <motion.div
         transition={{ duration: 1, delay: 1.2 }}
@@ -33,7 +33,7 @@ function Final() {
           </div>
           <span className="">Registration successful</span>
           <span className="font-bold text-center text-[20px]">
-             Dear {userData.name} Welcome to our website.
+            Dear {userData.name} Welcome to our website.
           </span>
         </div>
         <div className="flex items-center">

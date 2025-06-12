@@ -49,22 +49,22 @@ const LastStep = () => {
                 </div>
               ))}
               <div className=" text-primary mt-3 sm:text-[11px] text-[8px]">
-               Moving to the desired section
+                Moving to the desired section
               </div>
             </>
           ) : (
             <>
               <div className=" font-bold text-mode-color sm:text-[17px]">
-               Registration in progress
+                Registration in progress
               </div>
             </>
-          )} 
+          )}
           <div className="pt-6 text-primary ">
             <BarLoader
               color="var(--primary-color)"
               size={4}
               margin={1}
-              speedMultiplier={1} 
+              speedMultiplier={1}
             />
           </div>
         </>

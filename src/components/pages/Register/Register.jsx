@@ -12,7 +12,6 @@ const Register = () => {
   const setStepZero = useStepperStore((state) => state.setStepZero);
   const currentStep = useStepperStore((state) => state.step);
 
-
   useEffect(() => {
     document.body.style.backgroundImage = "var(--linear-1)";
     setStepZero(0);
