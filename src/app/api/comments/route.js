@@ -6,16 +6,13 @@ import dbConnect from "@/lib/dbConnect";
 export async function GET(request) {
   await dbConnect();
 
-  try { 
+  try {
     const { searchParams } = new URL(request.url);
     const postId = searchParams.get("postId");
 
     if (!postId) {
-      const comments = await Comments.find({ }).populate("user","fullName")
-      return NextResponse.json(
-         comments ,
-        { status: 200 }
-      );
+      const comments = await Comments.find({}).populate("user", "fullName");
+      return NextResponse.json(comments, { status: 200 });
     }
 
     const comments = await Comments.find({ postId })
@@ -47,28 +44,24 @@ export async function POST(request) {
 
     const userExists = await User.findById(userId);
     if (!userExists) {
-      return NextResponse.json(
-        { error: "User not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     const newComment = new Comments({
       postId,
       user: userId,
-      verified:false,
-      content
+      verified: false,
+      content,
     });
 
     await newComment.save();
 
-    const commentWithUser = await Comments.findById(newComment._id)
-      .populate("user", "username email");
-
-    return NextResponse.json(
-      { comment: commentWithUser },
-      { status: 201 }
+    const commentWithUser = await Comments.findById(newComment._id).populate(
+      "user",
+      "username email"
     );
+
+    return NextResponse.json({ comment: commentWithUser }, { status: 201 });
   } catch (error) {
     console.error("Error creating comment:", error);
     return NextResponse.json(
