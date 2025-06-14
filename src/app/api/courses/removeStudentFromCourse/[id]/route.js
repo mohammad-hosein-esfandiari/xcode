@@ -17,10 +17,7 @@ export async function POST(req, { params }) {
     );
 
     if (!userUpdate) {
-      return NextResponse.json(
-        { error: "User not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     // 2. حذف کاربر از لیست دانشجویان دوره
@@ -31,26 +28,19 @@ export async function POST(req, { params }) {
     ).populate("teacher");
 
     if (!courseUpdate) {
-      return NextResponse.json(
-        { error: "Course not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Course not found" }, { status: 404 });
     }
 
     return NextResponse.json(
-      { 
+      {
         message: "Successfully unenrolled",
         user: userUpdate,
-        course: courseUpdate 
-      }, 
+        course: courseUpdate,
+      },
       { status: 200 }
     );
-    
   } catch (error) {
     console.error("Error unenrolling:", error);
-    return NextResponse.json(
-      { error: "Failed to unenroll" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to unenroll" }, { status: 500 });
   }
 }
