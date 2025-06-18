@@ -12,27 +12,61 @@ import Transition from "@/components/common/Transition";
 import AnimTrue from "@/components/common/AnimTrue";
 import PopState from "@/components/common/PopState";
 import { toast } from "react-toastify";
-import dbConnect from "@/lib/dbConnect";
-import Course from "@/models/Course.ts";
-import News from "@/models/News.ts";
-import User from "@/models/User.ts";
+
 
 async function getAllCourses() {
-  await dbConnect();
-  const data = await Course.find({});
-  return JSON.parse(JSON.stringify(data));
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
+      cache: "no-store",
+    });
+
+    // Check if the response is OK (status code 200-299)
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to load data:", error.message);
+    throw error; // Re-throw the error to handle it in the calling function
+  }
 }
 
 async function getAllNews() {
-  await dbConnect();
-  const data = await News.find({});
-  return JSON.parse(JSON.stringify(data));
-}
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "news", {
+      cache: "no-store",
+    });
 
+    // Check if the response is OK (status code 200-299)
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to load data:", error.message);
+    throw error; // Re-throw the error to handle it in the calling function
+  }
+}
 async function getTeachers() {
-  await dbConnect();
-  const data = await User.find({ role: "teacher" });
-  return JSON.parse(JSON.stringify(data));
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "teachers", {
+      cache: "no-store",
+    });
+
+    // Check if the response is OK (status code 200-299)
+    if (!res.ok) {
+      throw new Error(
+        `Failed to fetch teachers: ${res.status} ${res.statusText}`
+      );
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to load data:", error.message);
+    throw error; // Re-throw the error to handle it in the calling function
+  }
 }
 
 export default async function Home() {

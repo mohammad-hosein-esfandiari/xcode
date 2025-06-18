@@ -1,5 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
-import User from "@/models/User.ts";
+import User from "../../../models/User.ts";
 import { NextResponse } from "next/server";
 
 // اتصال به دیتابیس
