@@ -1,6 +1,6 @@
 import Dashboard from "@/components/pages/StudentPanel/dashboard/Dashboard";
 import dbConnect from "@/lib/dbConnect";
-import Course from "@/models/Course";
+import Course from "@/models/Course.ts";
 
 async function getPosts() {
   await dbConnect();

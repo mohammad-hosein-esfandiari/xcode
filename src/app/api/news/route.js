@@ -1,5 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
-import News from "@/models/News";
+import News from "@/models/News.ts";
 import { NextResponse } from "next/server";
 
 // اتصال به دیتابیس

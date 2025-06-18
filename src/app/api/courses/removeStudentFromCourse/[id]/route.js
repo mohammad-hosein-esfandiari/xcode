@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
-import Course from "@/models/Course";
-import User from "@/models/User"; // فرض می‌کنیم مدل User را دارید
+import Course from "@/models/Course.ts";
+import User from "@/models/User.ts"; // فرض می‌کنیم مدل User را دارید
 import { NextResponse } from "next/server";
 
 export async function POST(req, { params }) {

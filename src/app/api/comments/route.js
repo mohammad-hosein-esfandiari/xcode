@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Comments from "@/models/Comments.ts";
-import User from "@/models/User";
+import User from "@/models/User.ts";
 import dbConnect from "@/lib/dbConnect";
 
 export async function GET(request) {
