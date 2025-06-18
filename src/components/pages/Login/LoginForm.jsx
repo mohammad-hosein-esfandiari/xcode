@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { stepAnimate } from "@/constant/stepperInputAnimation";
 import * as Yup from "yup";
 import TextInput from "../Register/stepBox/TextInput";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { BeatLoader } from "react-spinners";
@@ -21,23 +20,21 @@ const LoginForm = () => {
   const initialValues = {
     email: "",
     password: "",
-    remember:false
+    remember: false,
   };
   const onSubmit = async (value, actions) => {
-
-  console.log("value :",value)
+    console.log("value :", value);
     setLoading(true);
-     
+
     const { isSuccess } = await loginFunc(value);
     if (isSuccess) {
       setLoading(false);
       toast.success("Login successful");
-      setTimeout(()=>{
-
+      setTimeout(() => {
         toast.info("Moving to home page");
-      },500)
+      }, 500);
       actions.resetForm();
-     
+
       setTimeout(() => {
         navigate.push("/");
       }, 3000);
@@ -56,7 +53,7 @@ const LoginForm = () => {
     password: Yup.string()
       .required("Password is required")
       .min(8, "Password must be at least 8 character"),
-      remember:Yup.boolean()
+    remember: Yup.boolean(),
   };
   return (
     <div className="scale-[1.4] mt-5">
@@ -65,13 +62,8 @@ const LoginForm = () => {
         onSubmit={onSubmit}
         validationSchema={Yup.object(validationSchema)}>
         {() => (
-          <Form  className=" pt-8 text-white">
-            <TextInput
-              color="white"
-              name="email"
-              label="Email"
-              type="email"
-            />
+          <Form className=" pt-8 text-white">
+            <TextInput color="white" name="email" label="Email" type="email" />
             <TextInput
               color="white"
               name="password"
@@ -83,20 +75,19 @@ const LoginForm = () => {
               {...stepAnimate}
               className="flex mt-2 mr-2 w-full items-center justify-between">
               <div className="flex items-center">
-              <Field
-                          name='remember'
-                          render={({ field, form: { touched, errors } }) => (
-
-                            <input
-                            {...field}
-                              ref={input}
-                              id="checked_checkbox"
-                              type="checkbox"
-                              value=""
-                              className="w-3 h-3 text-blue-600 bg-gray-100 focus:outline-none rounded outline-none border-none dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                            />
-
-                          )}/>
+                <Field
+                  name="remember"
+                  render={({ field, form: { touched, errors } }) => (
+                    <input
+                      {...field}
+                      ref={input}
+                      id="checked_checkbox"
+                      type="checkbox"
+                      value=""
+                      className="w-3 h-3 text-blue-600 bg-gray-100 focus:outline-none rounded outline-none border-none dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                  )}
+                />
                 <label
                   htmlFor="checked_checkbox"
                   className="ml-2 text-[8px]  text-mode-color sm:text-white">
@@ -126,6 +117,6 @@ const LoginForm = () => {
       </Formik>
     </div>
   );
-                };
+};
 
 export default LoginForm;

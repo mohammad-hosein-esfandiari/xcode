@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 
 export async function POST(req, { params }) {
   try {
-    await dbConnect(); 
+    await dbConnect();
     const { password } = await req.json();
     const { token } = params;
 
@@ -15,7 +15,10 @@ export async function POST(req, { params }) {
     });
 
     if (!user) {
-      return NextResponse.json({ message: "Invalid or expired token" }, { status: 400 });
+      return NextResponse.json(
+        { message: "Invalid or expired token" },
+        { status: 400 }
+      );
     }
 
     // هش کردن رمز جدید
@@ -28,7 +31,10 @@ export async function POST(req, { params }) {
 
     await user.save();
 
-    return NextResponse.json({ message: "Password changed successfully" }, { status: 200 });
+    return NextResponse.json(
+      { message: "Password changed successfully" },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Reset password error:", error);
     return NextResponse.json({ message: "Server error" }, { status: 500 });

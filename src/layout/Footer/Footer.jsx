@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className=" bg-[#090930] ">
       <ul className="xl:container relative pt-16 md:px-[100px] sm:px-10 px-4">
         <li>
-          <FooterSmallerIcon/>
+          <FooterSmallerIcon />
         </li>
         <li className="">
           <ul className="grid lg:grid-cols-3 sm:grid-cols-2 gap-10">
@@ -51,7 +51,9 @@ const Footer = () => {
               </LinkCp>
               <ul>
                 <p className="text-white text-[13px] leading-6 mb-16">
-                It is a proven fact that the reader is distracted by the readable content of a page when looking at its layout. Tips for using Lorem Episum
+                  It is a proven fact that the reader is distracted by the
+                  readable content of a page when looking at its layout. Tips
+                  for using Lorem Episum
                 </p>
                 {icons.map((item) => (
                   <Link
@@ -87,7 +89,7 @@ const Footer = () => {
           </ul>
         </li>
         <li className="text-primary   text-center pb-4 pt-16">
-            Powered By XCODE 2023
+          Powered By XCODE 2023
         </li>
       </ul>
     </footer>

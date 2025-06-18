@@ -20,11 +20,17 @@ const userSchema = yup.object().shape({
   phoneNumber: yup.string().required("Phone number is required"),
   birthDate: yup.date().required("Birth date is required"),
   nationalId: yup.string().required("National ID is required"),
-  email: yup.string().email("Invalid email format").required("Email is required"),
-  role: yup.string().oneOf(["teacher", "student", "admin"], "Invalid role type"),
+  email: yup
+    .string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  role: yup
+    .string()
+    .oneOf(["teacher", "student", "admin"], "Invalid role type"),
   teacherFields: yup.mixed().when("role", {
     is: "teacher",
-    then: (schema) => schema.required("Teacher specific information is required"),
+    then: (schema) =>
+      schema.required("Teacher specific information is required"),
   }),
   adminFields: yup.mixed().when("role", {
     is: "admin",
@@ -58,10 +64,10 @@ export async function POST(req) {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return NextResponse.json(
-        { 
+        {
           success: false,
           message: "Registration failed",
-          error: "An account with this email already exists" 
+          error: "An account with this email already exists",
         },
         { status: 409 }
       );
@@ -94,27 +100,30 @@ export async function POST(req) {
 
     // Return success response
     return NextResponse.json(
-      { 
+      {
         success: true,
         message: "User registered successfully",
         user: {
           id: newUser._id,
           fullName: newUser.fullName,
           email: newUser.email,
-          role: newUser.role
-        }
-      }, 
+          role: newUser.role,
+        },
+      },
       { status: 201 }
     );
   } catch (error) {
     console.error("Error in user registration:", error);
     return NextResponse.json(
-      { 
+      {
         success: false,
         message: "Registration failed",
-        error: error.errors || error.message || "An error occurred during registration"
+        error:
+          error.errors ||
+          error.message ||
+          "An error occurred during registration",
       },
-      { status: error.name === 'ValidationError' ? 400 : 500 }
+      { status: error.name === "ValidationError" ? 400 : 500 }
     );
   }
 }

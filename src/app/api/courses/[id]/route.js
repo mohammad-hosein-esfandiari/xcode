@@ -10,7 +10,7 @@ export async function GET(req, { params }) {
     if (!course) {
       return NextResponse.json({ error: "Course not found" }, { status: 404 });
     }
-    console.log(course)
+    console.log(course);
     // بازگرداندن پاسخ موفقیت‌آمیز
     return NextResponse.json(course, { status: 200 });
   } catch (error) {

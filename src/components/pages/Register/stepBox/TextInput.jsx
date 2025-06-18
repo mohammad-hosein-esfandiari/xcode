@@ -11,7 +11,7 @@ export default function TextInput({ color, label, type, ...props }) {
   const step = useStepperStore((state) => state.step);
   const error = useStepperStore((state) => state.error);
   const [isShowPass, setIsShowPass] = useState(false);
-  const [field, meta,helpers] = useField(props);
+  const [field, meta, helpers] = useField(props);
   const keydown = (event) => {
     if (props.name == "nationalcode") {
       let k = event.which ? event.which : event.keyCode;
@@ -30,40 +30,41 @@ export default function TextInput({ color, label, type, ...props }) {
       key={step}
       {...stepAnimate}
       className=" w-fit h-[52px] flex flex-col  mx-auto ">
-        <div className="relative">
-
-      <input
-        type={isShowPass ? "text" : type}
-        onKeyDown={keydown}
-        placeholder={label}
-        className={`relative ${
-          color === "white" ? "sm:bg-white bg-transparent" : "bg-transparent"
-        }  border-[1px]  h-[34px]   ${
-          meta.error && meta.touched
-            ? "border-red-600 text-red-600 "
-            : `border-primary ${
-                color == "white"
-                  ? "sm:text-black text-mode-color"
-                  : "text-mode-color"
-              } `
-        } w-[200px] focus:shadow-lg relative focus:scale-[1.03] focus:border-[2px] transition-all duration-500 outline-none  py-[5px] px-[8px] text-[10px] rounded-[4px] `}
-        {...field}
-        {...props}
-        autoComplete="off"
-      />
-      {type === "password" && (
-        <motion.span
-          whileTap={{ scale: 1.05 }}
-          className={`absolute cursor-pointer right-2 top-[9.8px] text-[13px]  ${
-            isShowPass ? "text-gray-500" : "text-gray-400 "
-          } `}
-          onClick={clickHandler}>
-          {!isShowPass ? <AiFillEyeInvisible /> : <AiFillEye />}
-        </motion.span>
-      )}
-        </div>
+      <div className="relative">
+        <input
+          type={isShowPass ? "text" : type}
+          onKeyDown={keydown}
+          placeholder={label}
+          className={`relative ${
+            color === "white" ? "sm:bg-white bg-transparent" : "bg-transparent"
+          }  border-[1px]  h-[34px]   ${
+            meta.error && meta.touched
+              ? "border-red-600 text-red-600 "
+              : `border-primary ${
+                  color == "white"
+                    ? "sm:text-black text-mode-color"
+                    : "text-mode-color"
+                } `
+          } w-[200px] focus:shadow-lg relative focus:scale-[1.03] focus:border-[2px] transition-all duration-500 outline-none  py-[5px] px-[8px] text-[10px] rounded-[4px] `}
+          {...field}
+          {...props}
+          autoComplete="off"
+        />
+        {type === "password" && (
+          <motion.span
+            whileTap={{ scale: 1.05 }}
+            className={`absolute cursor-pointer right-2 top-[9.8px] text-[13px]  ${
+              isShowPass ? "text-gray-500" : "text-gray-400 "
+            } `}
+            onClick={clickHandler}>
+            {!isShowPass ? <AiFillEyeInvisible /> : <AiFillEye />}
+          </motion.span>
+        )}
+      </div>
       {meta.error && meta.touched && (
-        <p className="text-[7px] transition-all text-red-600  mt-1 pr-2">{meta.error}</p>
+        <p className="text-[7px] transition-all text-red-600  mt-1 pr-2">
+          {meta.error}
+        </p>
       )}
     </motion.div>
   );

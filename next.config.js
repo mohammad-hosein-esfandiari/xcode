@@ -7,7 +7,6 @@ const nextConfig = {
   },
   experimental: {
     scrollRestoration:false,
-    appDir: true,
     serverActions: true,
   },
   images: {

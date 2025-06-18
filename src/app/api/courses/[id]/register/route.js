@@ -10,10 +10,13 @@ export async function POST(req, { params }) {
   try {
     await dbConnect();
 
-    const course = await Course.findById(id);  
+    const course = await Course.findById(id);
     const user = await User.findById(userId);
     if (!course || !user) {
-      return NextResponse.json({ message: "User or Course not found" }, { status: 404 });
+      return NextResponse.json(
+        { message: "User or Course not found" },
+        { status: 404 }
+      );
     }
 
     // اگر کاربر قبلا ثبت‌نام کرده باشد، ثبت‌نام مجدد نکند
@@ -30,8 +33,10 @@ export async function POST(req, { params }) {
       await user.save();
     }
 
-    return NextResponse.json({ message: "User successfully enrolled in the course" }, { status: 200 });
-
+    return NextResponse.json(
+      { message: "User successfully enrolled in the course" },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Course registration error:", error);
     return NextResponse.json({ message: "Server error" }, { status: 500 });

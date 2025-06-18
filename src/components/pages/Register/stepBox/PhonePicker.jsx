@@ -81,8 +81,8 @@ export default function PhonePicker({ name, color }) {
   );
 }
 
-
-{/* <PhonePicker
+{
+  /* <PhonePicker
 validationschema={Yup.object({
   phonenumber: Yup.string()
     .required("وارد کردن شماره تماس الزامی است")
@@ -90,7 +90,5 @@ validationschema={Yup.object({
 })}
 name="phonenumber"
 type="number"
-/> */}
-
-
-
+/> */
+}

@@ -7,6 +7,7 @@ import { BsFillCameraFill } from "react-icons/bs";
 import { useImage } from "@/context/imageStore";
 import { BeatLoader } from "react-spinners";
 import { useUserInfo } from "@/context/userInfoStore";
+import { useState } from "react";
 const ProfileImg = () => {
   const isUserLoggedIn = useUserInfo((state) => state.login);
   const [loading, setLoading] = useState(false);

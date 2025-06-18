@@ -1,12 +1,13 @@
 import Dashboard from "@/components/pages/StudentPanel/dashboard/Dashboard";
+import dbConnect from "@/lib/dbConnect";
+import Course from "@/models/Course";
 
 async function getPosts() {
-  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
-    cache: "no-store",
-  });
-  const posts = await res.json();
-  return posts;
+  await dbConnect();
+  const posts = await Course.find({});
+  return JSON.parse(JSON.stringify(posts));
 }
+
 const StudentDashboardPage = async () => {
   const posts = await getPosts();
 

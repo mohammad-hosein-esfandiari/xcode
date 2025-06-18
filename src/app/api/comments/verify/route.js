@@ -4,10 +4,10 @@ import dbConnect from "@/lib/dbConnect";
 
 export async function POST(request) {
   await dbConnect();
-  
+
   try {
     const { id } = await request.json();
-    
+
     if (!id) {
       return NextResponse.json(
         { error: "Comment ID is required" },
@@ -24,16 +24,13 @@ export async function POST(request) {
     );
 
     if (!updatedComment) {
-      return NextResponse.json(
-        { error: "Comment not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Comment not found" }, { status: 404 });
     }
 
     return NextResponse.json(
-      { 
+      {
         message: "Comment verified successfully",
-        comment: updatedComment 
+        comment: updatedComment,
       },
       { status: 200 }
     );

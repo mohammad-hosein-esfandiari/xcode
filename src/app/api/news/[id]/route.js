@@ -2,21 +2,17 @@ import dbConnect from "@/lib/dbConnect";
 import News from "@/models/News";
 import { NextResponse } from "next/server";
 
-export async function GET(req,{params}) {
+export async function GET(req, { params }) {
   try {
     await dbConnect();
-    const {id} = params
+    const { id } = params;
     const news = await News.findById(id);
     if (!news) {
       return NextResponse.json({ error: "News not found" }, { status: 404 });
     }
 
-
     // بازگرداندن پاسخ موفقیت‌آمیز
-    return NextResponse.json(
-       news ,
-      { status: 200 }
-    );
+    return NextResponse.json(news, { status: 200 });
   } catch (error) {
     console.error("Error fetching news:", error);
     return NextResponse.json(

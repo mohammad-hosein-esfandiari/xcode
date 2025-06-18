@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 const NotFound = () => {
-  notFound()
-}
+  notFound();
+};
 
 export default NotFound;

@@ -8,7 +8,6 @@ const AuthHolder = () => {
       <TextInput name="name" label="Name" type="text" />
       <TextInput name="lastname" label="Last name" type="text" />
       <DatePicker name="date" label="Birthday" type="text" />
-
     </motion.div>
   );
 };

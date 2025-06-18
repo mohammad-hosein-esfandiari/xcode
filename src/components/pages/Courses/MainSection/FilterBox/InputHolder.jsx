@@ -1,7 +1,7 @@
 import AccordionHead from "./AccordionHead";
 import FilterInput from "./FilterInput";
 import { filterAccordion } from "@/constant/coursesFilter";
-const InputHolder = ({href}) => {
+const InputHolder = ({ href }) => {
   return (
     <div className="  flex-1 mt-2 ">
       {filterAccordion.map((item) => (
@@ -12,7 +12,7 @@ const InputHolder = ({href}) => {
           title={item.label}>
           {item.radioGroup.map((el) => (
             <FilterInput
-            href={href}
+              href={href}
               name={item.name}
               id={el.id}
               key={el.id}

@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { TfiLayoutListThumbAlt } from "react-icons/tfi";
-import { BsGridFill } from "react-icons/bs";
 import { useCoursesGridShow } from "@/context/coursesGridShow";
 import { useSearchParamsInUrl } from "@/hooks/useSearchParamsInUrl";
 import PageToggle from "@/components/common/PageToggle/PageToggle";
 
 const LeftFilter = () => {
-  const {limit} = useSearchParamsInUrl()
+  const { limit } = useSearchParamsInUrl();
   const setGridShow = useCoursesGridShow((state) => state.setGridShow);
   const gridShow = useCoursesGridShow((state) => state.grid);
   const [pageToggle, setPageToggle] = useState(false);
@@ -33,7 +31,7 @@ const LeftFilter = () => {
       </ul> */}
 
       <PageToggle
-        href='/courses'
+        href="/courses"
         show1={6}
         show2={9}
         show3={12}

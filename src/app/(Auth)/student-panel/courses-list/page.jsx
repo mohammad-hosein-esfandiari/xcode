@@ -1,10 +1,11 @@
 import CourseList from "@/components/pages/StudentPanel/courseList/CourseList";
+import dbConnect from "@/lib/dbConnect";
+import Course from "@/models/Course";
 
-const URL = process.env.NEXT_PUBLIC_BASE_URL
 async function getPosts() {
-  const res = await fetch(URL+"courses/getAll",{cache:'no-store'});
-  const posts = await res.json();
-  return posts;
+  await dbConnect();
+  const posts = await Course.find({});
+  return JSON.parse(JSON.stringify(posts));
 }
 
 const CoursesListPage = async () => {
