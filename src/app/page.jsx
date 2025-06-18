@@ -13,9 +13,9 @@ import AnimTrue from "@/components/common/AnimTrue";
 import PopState from "@/components/common/PopState";
 import { toast } from "react-toastify";
 import dbConnect from "@/lib/dbConnect";
-import Course from "@/models/Course";
-import News from "@/models/News";
-import User from "@/models/User";
+import Course from "@/models/Course.ts";
+import News from "@/models/News.ts";
+import User from "@/models/User.ts";
 
 async function getAllCourses() {
   await dbConnect();

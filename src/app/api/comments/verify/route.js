@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import Comments from "@/models/Comments";
+import Comments from "@/models/Comments.ts";
 import dbConnect from "@/lib/dbConnect";
 
 export async function POST(request) {
