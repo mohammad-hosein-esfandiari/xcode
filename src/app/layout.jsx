@@ -11,15 +11,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-
   return (
     <html>
       <body>
-    <Transition/>
-      <ToastBox/>
-      <GetUserInfo/>
+        <Transition />
+        <ToastBox />
+        <GetUserInfo />
         {children}
-        <ThemeSwitcher /> 
+        <ThemeSwitcher />
       </body>
     </html>
   );

@@ -20,13 +20,13 @@ export async function PATCH(req, { params }) {
     const user = await User.findById(userId);
 
     if (!user) {
-      return NextResponse.json(
-        { message: "User not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
 
-    const isPasswordValid = await bcrypt.compare(currentPassword, user.password);
+    const isPasswordValid = await bcrypt.compare(
+      currentPassword,
+      user.password
+    );
 
     if (!isPasswordValid) {
       return NextResponse.json(
@@ -45,9 +45,6 @@ export async function PATCH(req, { params }) {
     );
   } catch (error) {
     console.error("Password Change Error:", error);
-    return NextResponse.json(
-      { message: "Server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
 }
