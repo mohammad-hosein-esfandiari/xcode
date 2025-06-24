@@ -3,7 +3,6 @@
 import { useAnimStore } from "@/context/animStore";
 import { useEffect } from "react";
 
-
 const AnimTrue = () => {
   const setAnim = useAnimStore((state) => state.setAnim);
 

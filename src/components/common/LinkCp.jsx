@@ -6,13 +6,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useAnimStore } from "@/context/animStore";
 
-const LinkCp = ({ href, text ,children,className}) => {
+const LinkCp = ({ href, text, children, className }) => {
   const setAnim = useAnimStore((state) => state.setAnim);
 
   const navigate = useRouter();
   const clickHandler = (event) => {
     event.preventDefault();
-    setAnim(false)
+    setAnim(false);
     setTimeout(() => {
       // window.location = href
       navigate.push(href);
