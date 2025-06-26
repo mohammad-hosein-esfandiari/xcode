@@ -3,7 +3,6 @@
 import { useAnimStore } from "@/context/animStore";
 import { motion, AnimatePresence, delay } from "framer-motion";
 
-
 const Transition = () => {
   const anim = useAnimStore((state) => state.anim);
   const animate = {
@@ -32,7 +31,7 @@ const Transition = () => {
   return (
     <>
       <motion.div
-      style={{zIndex:999}}
+        style={{ zIndex: 999 }}
         className="fixed top-0 bottom-0 overflow-hidden flex items-center justify-center left-full  text-[60px] font-bold w-screen h-screen bg-linear2"
         initial={{ x: "-100%", width: "100%" }}
         animate={anim ? animate.open : animate.close}
@@ -75,14 +74,14 @@ const Transition = () => {
         </motion.span>
       </motion.div>
       <motion.div
-      style={{zIndex:998}}
+        style={{ zIndex: 998 }}
         className="fixed top-0 bottom-0 left-full w-screen h-screen  bg-[#FFA41B]"
         initial={{ x: "-100%", width: "100%" }}
         animate={anim ? animate.open : animate.close}
         transition={{ delay: 0.2, duration: 1.5, ease: "easeInOut" }}
       />
       <motion.div
-      style={{zIndex:997}}
+        style={{ zIndex: 997 }}
         className="fixed top-0 bottom-0 left-full w-screen h-screen  bg-[#5BC7BE]"
         initial={{ x: "-100%", width: "100%" }}
         animate={anim ? animate.open : animate.close}
