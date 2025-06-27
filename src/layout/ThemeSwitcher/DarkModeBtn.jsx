@@ -7,16 +7,16 @@ import { MdLightMode } from "react-icons/md";
 const DarkModeBtn = () => {
   const [toggle, setToggle] = useState(false);
   const input = useRef();
-  useEffect(()=>{
+  useEffect(() => {
     const activeTheme = localStorage.getItem("mode");
-    if(activeTheme === "dark"){
-      input.current.nextElementSibling.checked = true
+    if (activeTheme === "dark") {
+      input.current.nextElementSibling.checked = true;
       setToggle(true);
-    }else{
-      input.current.nextElementSibling.checked = false
+    } else {
+      input.current.nextElementSibling.checked = false;
       setToggle(false);
     }
-  },[])
+  }, []);
   const changeHandler = () => {
     if (input.current.nextElementSibling.checked) {
       localStorage.setItem("mode", "light");
@@ -65,4 +65,3 @@ const DarkModeBtn = () => {
 };
 
 export default DarkModeBtn;
-
