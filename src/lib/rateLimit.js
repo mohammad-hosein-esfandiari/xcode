@@ -28,25 +28,35 @@ export async function rateLimit(ip) {
           if (now - oldestAttempt < WINDOW_SIZE) {
             return {
               success: false,
-              retryAfter: Math.ceil((WINDOW_SIZE - (now - oldestAttempt)) / 1000),
+              retryAfter: Math.ceil(
+                (WINDOW_SIZE - (now - oldestAttempt)) / 1000
+              ),
             };
           }
           attempts.shift();
         }
         attempts.push(now);
-        await redis.set(key, JSON.stringify(attempts), { ex: Math.ceil(WINDOW_SIZE / 1000) });
+        await redis.set(key, JSON.stringify(attempts), {
+          ex: Math.ceil(WINDOW_SIZE / 1000),
+        });
       } else {
-        await redis.set(key, JSON.stringify([now]), { ex: Math.ceil(WINDOW_SIZE / 1000) });
+        await redis.set(key, JSON.stringify([now]), {
+          ex: Math.ceil(WINDOW_SIZE / 1000),
+        });
       }
     } else {
       // Using Memory store
       const attempts = store.get(key) || [];
-      const validAttempts = attempts.filter(timestamp => now - timestamp < WINDOW_SIZE);
+      const validAttempts = attempts.filter(
+        (timestamp) => now - timestamp < WINDOW_SIZE
+      );
 
       if (validAttempts.length >= MAX_REQUESTS) {
         return {
           success: false,
-          retryAfter: Math.ceil((WINDOW_SIZE - (now - validAttempts[0])) / 1000),
+          retryAfter: Math.ceil(
+            (WINDOW_SIZE - (now - validAttempts[0])) / 1000
+          ),
         };
       }
 
@@ -57,11 +67,11 @@ export async function rateLimit(ip) {
       if (store.size > 10000) {
         const oldEntries = [];
         store.forEach((value, key) => {
-          if (!value.some(timestamp => now - timestamp < WINDOW_SIZE)) {
+          if (!value.some((timestamp) => now - timestamp < WINDOW_SIZE)) {
             oldEntries.push(key);
           }
         });
-        oldEntries.forEach(key => store.delete(key));
+        oldEntries.forEach((key) => store.delete(key));
       }
     }
 
@@ -71,4 +81,4 @@ export async function rateLimit(ip) {
     // If rate limiting fails, allow the request to proceed
     return { success: true };
   }
-} 
+}

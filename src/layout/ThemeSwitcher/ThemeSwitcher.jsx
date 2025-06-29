@@ -18,7 +18,7 @@ const ThemeSwithcher = () => {
     event.stopPropagation();
     setIsShowTheme(!isShowTheme);
   };
-  return ( 
+  return (
     <div
       className={`fixed ss:z-[100] z-[15] left-2 flex flex-col-reverse  ${
         pathname[1] === "student-panel"
