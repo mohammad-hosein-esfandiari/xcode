@@ -8,7 +8,7 @@ const paragraphSchema = new mongoose.Schema({
     text: [{ type: String }],
     img: { type: String },
     numberList: [{ type: String }],
-    bulletList: [{title:{type:String},text:{type:String}}],
+    bulletList: [{ title: { type: String }, text: { type: String } }],
     box: { type: String },
   },
 });
