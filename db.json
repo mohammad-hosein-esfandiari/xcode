@@ -233,10 +233,10 @@
       "level": "beginner"
     }
   ],
-  "users":[
+  "users": [
     {
-      "id":1,
-      "name":"ali"
+      "id": 1,
+      "name": "ali"
     }
   ]
 }
