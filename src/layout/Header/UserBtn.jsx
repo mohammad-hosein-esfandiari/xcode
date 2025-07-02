@@ -3,7 +3,7 @@ import LinkCp from "@/components/common/LinkCp";
 import { useUserInfo } from "@/context/userInfoStore";
 import Link from "next/link";
 
-const UserBtn = ({ icon, userRole ,text }) => {
+const UserBtn = ({ icon, userRole ,text }) => { 
   const logOutHandler = () => {
     useUserInfo.getState().setUserLogout();
   };

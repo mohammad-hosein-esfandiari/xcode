@@ -23,7 +23,7 @@ const courseSchema = new mongoose.Schema(
     image: { type: String, required: true },
     description: { type: String, required: true },
     duration: { type: Number, required: true }, // مدت زمان به ساعت
-    startDate: {
+    startDate: { 
       type: Date,
       required: true,
       validate: {
