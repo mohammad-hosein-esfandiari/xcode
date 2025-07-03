@@ -6,7 +6,7 @@ import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 const DarkModeBtn = () => {
   const [toggle, setToggle] = useState(false);
-  const input = useRef();
+  const input = useRef(); 
   useEffect(() => {
     const activeTheme = localStorage.getItem("mode");
     if (activeTheme === "dark") {

@@ -9,7 +9,7 @@ const ThemeColorBtn = () => {
         color="checked:bg-[#525fe1] outline-[#525fe1]"
       />
       <ThemeRadio
-        id="green"
+        id="green" 
         name="a"
         color="checked:bg-color-green outline-color-green"
       />
