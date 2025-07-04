@@ -7,7 +7,7 @@ const FooterItem = ({ title, child, size }) => {
       {child.map((item) => (
         <Link
           key={item.id}
-          href={`${item.href}`}
+          href={`${item.href}`} 
           className="text-white group z-20 w-fit flex py-2 text-[13px] items-center">
           {item.icon}
           <span className="ml-1 group-hover:text-[#FFA41B] trannsition-all duration-500">

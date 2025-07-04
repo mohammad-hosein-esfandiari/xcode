@@ -5,3 +5,4 @@ export const useGridStudentPanel= create((set) => ({
   setGridSeven: () => set({ grid: 7 }),
   setGridSix: () => set({ grid: 6 }),
 }));
+ 

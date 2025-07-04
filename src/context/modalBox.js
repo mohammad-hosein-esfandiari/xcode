@@ -4,7 +4,7 @@ export const useModalAccept = create((set)=>({
     success:false,
     loading:false,
     Modaltext:"",
-    successText:"",
+    successText:"", 
     info:"",
     setInfo: (obj)=> set({info:obj}),
     setSuccess: (bol)=> set({success:bol}),
