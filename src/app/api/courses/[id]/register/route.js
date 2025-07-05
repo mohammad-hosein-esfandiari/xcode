@@ -1,6 +1,6 @@
-import dbConnect from "@/lib/dbConnect";
-import Course from "@/models/Course.ts";
-import User from "../../../../../models/User.ts";
+import dbConnect from "@/lib/dbConnect..js";
+import Course from "@/models/Course.js";
+import User from "../../../../../models/User";
 import { NextResponse } from "next/server";
 
 export async function POST(req, { params }) {

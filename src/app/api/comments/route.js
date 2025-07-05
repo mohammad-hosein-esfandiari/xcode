@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import Comments from "@/models/Comments.ts";
-import User from "../../../models/User.ts";
-import dbConnect from "@/lib/dbConnect";
+import Comments from "@/models/Comments.js";
+import User from "../../../models/User";
+import dbConnect from "@/lib/dbConnect..js";
 
 export async function GET(request) {
   await dbConnect();
