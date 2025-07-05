@@ -16,11 +16,11 @@ export default async function RootLayout({ children }) {
     <html>
       <body>
         hiiiiii
-    {/* <Transition/>
+    <Transition/>
       <ToastBox/>
       <GetUserInfo/>
         {children}
-        <ThemeSwitcher />  */}
+        <ThemeSwitcher /> 
       </body>
     </html>
   );

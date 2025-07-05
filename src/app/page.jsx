@@ -25,12 +25,14 @@ async function getAllCourses() {
       throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
     }
     const data = await res.json();
+    console.log("hhh++++",res)
     return data;
   } catch (error) {
     console.error("Failed to load data:", error.message);
     throw error; // Re-throw the error to handle it in the calling function
   }
 }
+
 
 async function getAllNews() {
   try {
@@ -40,7 +42,7 @@ async function getAllNews() {
 
     // Check if the response is OK (status code 200-299)
     if (!res.ok) {
-      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+      throw new Error(`Failed to fetch data`);
     }
     const data = await res.json();
     return data;
@@ -58,7 +60,7 @@ async function getTeachers() {
     // Check if the response is OK (status code 200-299)
     if (!res.ok) {
       throw new Error(
-        `Failed to fetch teachers: ${res.status} ${res.statusText}`
+        `Failed to fetch teachers`
       );
     }
     const data = await res.json();
