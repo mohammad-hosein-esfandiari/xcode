@@ -1,6 +1,6 @@
 import CourseList from "@/components/pages/StudentPanel/courseList/CourseList";
 import dbConnect from "@/lib/dbConnect";
-import Course from "@/models/Course.ts";
+import Course from "@/models/Course";
 
 async function getPosts() {
   await dbConnect();
