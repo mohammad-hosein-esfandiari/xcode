@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 
 async function getAllCourses() {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/courses", {
       cache: "no-store",
     });
 
