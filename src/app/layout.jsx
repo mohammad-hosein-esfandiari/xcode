@@ -15,11 +15,12 @@ export default async function RootLayout({ children }) {
   return (
     <html>
       <body>
-    <Transition/>
+        hiiiiii
+    {/* <Transition/>
       <ToastBox/>
       <GetUserInfo/>
         {children}
-        <ThemeSwitcher /> 
+        <ThemeSwitcher />  */}
       </body>
     </html>
   );
