@@ -9,7 +9,7 @@ const AnimTrue = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setAnim(true);
+      setAnim(false);
     }, 1000);
   }, []);
   return null;

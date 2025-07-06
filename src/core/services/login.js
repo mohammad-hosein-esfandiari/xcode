@@ -11,11 +11,11 @@ export const loginFunc = async (info) => {
   try {
     const response = await api.post("auth/login", obj2);
     console.log("response => ",response)
-
+    
     if (response.status === 200) {
       const obj = {
         token: response.data.token,
-        id: response.data.user._id,
+        id: response.data.user?._id
       };
       console.log("res =======>",response)
       console.log("obj ====>",obj)
@@ -32,7 +32,7 @@ export const loginFunc = async (info) => {
     }
     
   } catch  (error) {
-    console.log(error)
+    console.log("login", error)
   //   try {
   //     const res = await api.post('/auth/employee/login',obj2)
   //     if (res.data.success && res.status === 200) {

@@ -11,8 +11,8 @@ export const registerFunc = async (info) => {
     const response = await api.post("auth/register", info);
     if (response?.status === 201) {
       // const loginUserObj = {
-      //   email: response.data.result.email,
-      //   password: useStepperStore.getState().data.password,
+      //   email: info.email,
+      //   password: info.password,
       //   remember:false,
       // };
       // await loginFunc(loginUserObj);
@@ -23,7 +23,7 @@ export const registerFunc = async (info) => {
       console.log("success");
     }
   } catch (error) {
-    console.log(error);
+    console.log("register"+error);
     if (error.message == "Network Error") {
       await useErrorText.getState().setError("No connection");
     }

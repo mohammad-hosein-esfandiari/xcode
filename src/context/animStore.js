@@ -1,5 +1,5 @@
 import { create } from "zustand";
 export const useAnimStore = create((set) => ({
-  anim: true,
+  anim: false,
   setAnim : (info) => set({anim:info})
 }));

@@ -12,7 +12,7 @@ const LinkCp = ({ href, text ,children,className}) => {
   const navigate = useRouter();
   const clickHandler = (event) => {
     event.preventDefault();
-    setAnim(false)
+    setAnim(true)
     setTimeout(() => {
       // window.location = href
       navigate.push(href);

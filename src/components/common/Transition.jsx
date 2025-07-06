@@ -6,26 +6,27 @@ import { motion, AnimatePresence, delay } from "framer-motion";
 
 const Transition = () => {
   const anim = useAnimStore((state) => state.anim);
+  console.log(anim)
   const animate = {
     open: {
-      x: "0%",
-      width: "0%",
+      x: "-100%",
+      width: "100%",
     },
     close: {
-      x: ["0%", "-100%"],
-      width: ["0%", "-100%"],
+      x: ["-100%", "0%"],
+      width: ["100%", "0%"],
     },
   };
   const opacity = {
     open: {
-      opacity: [1, 0],
+      opacity: [0, 1],
       transition: {
-        delay: 0.1,
+        delay: 0.8,
         duration: 0.8,
       },
     },
     close: {
-      opacity: [0, 1],
+      opacity: [1, 0],
     },
   };
 
@@ -33,14 +34,14 @@ const Transition = () => {
     <>
       <motion.div
       style={{zIndex:999}}
-        className="fixed top-0 bottom-0 overflow-hidden flex items-center justify-center left-full  text-[60px] font-bold w-screen h-screen bg-linear2"
+        className=" fixed top-0 bottom-0 overflow-hidden flex items-center justify-center left-full text-[60px] font-bold w-screen h-screen bg-linear2"
         initial={{ x: "-100%", width: "100%" }}
         animate={anim ? animate.open : animate.close}
         transition={{ duration: 1.5, ease: "easeInOut" }}>
         <motion.span
           initial={{ opacity: 1 }}
           animate={anim ? opacity.open : opacity.close}
-          transition={{ delay: 0.8, duration: 1.3 }}>
+          transition={{  duration: 1 }}>
           {" "}
           <svg
             className="sm:w-[250px] w-[100px]"
