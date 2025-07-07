@@ -25,7 +25,6 @@ async function getAllCourses() {
       throw new Error(`Failed to fetch data`);
     }
     const data = await res.json();
-    console.log("hhh++++",res)
     return data;
   } catch (error) {
     console.error("Failed to load data:", error.message);

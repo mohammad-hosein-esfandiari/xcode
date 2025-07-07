@@ -23,26 +23,26 @@ export const useUserInfo = create((set) => ({
     },
   },
   login: false,
-  setUserInfo: (jwt, info) =>
+  setUserInfo: (jwt, loginDetails) =>
     set((state) => {
       return {
         userInfo: {
           jwtToken: jwt,
           studentModel: {
-            _id: info._id,
-            birthDate: info.birthDate,
-            email: info.email,
-            fullName: info.fullName,
-            isActive: info.isActive,
-            phoneNumber: info.phoneNumber,
-            nationalId: info.nationalId,
-            profile: info.profile,
-            role: info.role,
-            courses: info.courses,
-            resetPasswordExpires: info.resetPasswordExpires,
-            resetPasswordToken: info.resetPasswordToken,
-            __v: info.__v,
-            registerDate: info.registerDate,
+            _id: loginDetails.id,
+            birthDate: loginDetails.birthDate,
+            email: loginDetails.email,
+            fullName: loginDetails.fullName,
+            isActive: loginDetails.isActive,
+            phoneNumber: loginDetails.phoneNumber,
+            nationalId: loginDetails.nationalId,
+            profile: loginDetails.profile,
+            role: loginDetails.role,
+            courses: loginDetails.courses,
+            resetPasswordExpires: loginDetails.resetPasswordExpires,
+            resetPasswordToken: loginDetails.resetPasswordToken,
+            __v: loginDetails.__v,
+            registerDate: loginDetails.registerDate,
           },
         },
       };

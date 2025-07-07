@@ -33,32 +33,6 @@ export const loginFunc = async (info) => {
     
   } catch  (error) {
     console.log("login", error)
-  //   try {
-  //     const res = await api.post('/auth/employee/login',obj2)
-  //     if (res.data.success && res.status === 200) {
-  //     const obj = {
-  //       token: res.data.result.jwtToken,
-  //       id: res.data.result.employeeModel._id,
-  //     };
-      
-  //     if (info.remember) {
-  //       setCookie("UoXa-I", obj, 30);
-  //     } else {
-  //       setCookie("UoXa-I", obj);
-  //       }
-  //    console.log(res)
-     
-  //    useUserInfo.getState().setUserInfo(res.data.result.jwtToken,res.data.result.employeeModel);
-  //    useUserInfo.getState().setUserLogin();
-  //    console.log(res);
-  //    isSuccess = true;
-  //   }
-  // } catch (error2) {
-    
-  //   isSuccess = false;
-  // }
-  
-  
   
 }
 return {  isSuccess }

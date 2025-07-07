@@ -10,20 +10,18 @@ export const registerFunc = async (info) => {
   try {
     const response = await api.post("auth/register", info);
     if (response?.status === 201) {
-      // const loginUserObj = {
-      //   email: info.email,
-      //   password: info.password,
-      //   remember:false,
-      // };
-      // await loginFunc(loginUserObj);
-      // useUserInfo.getState().setUserInfo(info);
-      // useUserInfo.getState().setUserLogin();
-
+      const loginUserObj = {
+        email: info.email,
+        password: info.password,
+        remember:false,
+      };
+      await loginFunc(loginUserObj);
+      setStates.setLastStepLoading(false);
       setStates.setStepNext();
-      console.log("success");
+
     }
   } catch (error) {
-    console.log("register"+error);
+    console.log("register",error);
     if (error.message == "Network Error") {
       await useErrorText.getState().setError("No connection");
     }

@@ -13,7 +13,7 @@ function Final() {
   const navigate = useRouter();
   useEffect(() => {
     setTimeout(() => {
-      navigate.push("/login");
+      navigate.push("/");
     }, 3000);
   }, []);
   return (
