@@ -13,7 +13,6 @@ import AnimTrue from "@/components/common/AnimTrue";
 import PopState from "@/components/common/PopState";
 import { toast } from "react-toastify";
 
-
 async function getAllCourses() {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "courses", {
@@ -77,7 +76,7 @@ export default async function Home() {
   return (
     <>
       <AnimTrue />
-      <ScrollBug /> 
+      <ScrollBug />
       <ProgressBar />
       <Header />
       <Landing posts={courses} teachers={teachers} news={news} />

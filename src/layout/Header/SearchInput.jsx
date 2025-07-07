@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGetAllData } from "@/core/services/react-query/useSearchFunc";
 import { BeatLoader } from "react-spinners";
 import Link from "next/link";
-import LinkCp from "@/components/common/LinkCp";
+import LinkCp from "@/components/common/LinkCp"; 
 
 const SearchInput = () => {
   const [value, setValue] = useState("");

@@ -3,9 +3,9 @@ import LinkCp from "@/components/common/LinkCp";
 import { useUserInfo } from "@/context/userInfoStore";
 import Link from "next/link";
 
-const UserBtn = ({ icon, userRole ,text }) => {
+const UserBtn = ({ icon, userRole ,text }) => { 
   const logOutHandler = () => {
-    useUserInfo.getState().setUserLogout();
+    useUserInfo.getState().setUserLogout(); 
   };
   return (
     <div className="bg-primary cursor-pointer group relative rounded-[4px] flex items-center sm:ml-[8px] h-[34px] py-[6px] px-[10px] text-[14px]  text-white shadow-btnShadow hover:bg-[#5c5c5c] transition-all duration-300">
