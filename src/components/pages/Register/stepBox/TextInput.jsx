@@ -29,7 +29,7 @@ export default function TextInput({ color, label, type, ...props }) {
     <motion.div
       key={step}
       {...stepAnimate}
-      className=" w-fit h-[52px] flex flex-col  mx-auto ">
+      className=" w-fit min-h-[52px] flex flex-col  mx-auto ">
       <div className="relative">
         <input
           type={isShowPass ? "text" : type}
@@ -62,7 +62,7 @@ export default function TextInput({ color, label, type, ...props }) {
         )}
       </div>
       {meta.error && meta.touched && (
-        <p className="text-[7px] transition-all text-red-600  mt-1 pr-2">
+        <p className="text-[7px] max-w-48 transition-all text-red-600  mt-1 pr-2">
           {meta.error}
         </p>
       )}

@@ -69,7 +69,7 @@ export default function PhonePicker({ name, color }) {
                 onChange={(phone) => setFieldValue(name, phone)}
               />
               {meta.touched && meta.error && (
-                <p className="text-[9px]  text-red-400 mt-1 pr-2" dir="rtl">
+                <p className="text-[9px] max-w-72 text-red-400 mt-1 pr-2" dir="rtl">
                   {meta.error}
                 </p>
               )}
