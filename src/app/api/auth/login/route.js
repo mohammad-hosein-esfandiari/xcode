@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import dbConnect from "@/lib/dbConnect..js";
+import dbConnect from "@/lib/dbConnect.js";
 import User from "../../../../models/User";
 import jwt from "jsonwebtoken"; // For token generation
 

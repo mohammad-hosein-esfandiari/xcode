@@ -1,4 +1,4 @@
-import dbConnect from "@/lib/dbConnect.";
+import dbConnect from "@/lib/dbConnect";
 import Course from "@/models/Course";
 import { NextResponse } from "next/server";
 
